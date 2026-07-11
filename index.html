@@ -849,11 +849,11 @@ footer{ background:var(--navy-2); color:rgba(255,255,255,0.55); padding:64px 0 3
             <b>Visiting</b>
             <span>Follow along, read updates on papers and researchers, no contribution access.</span>
           </div>
-          <div class="role-card" data-role="admin">
-            <svg class="role-icon" viewBox="0 0 40 40" fill="none"><rect x="10" y="10" width="20" height="20" rx="4" stroke="#16AFFF" stroke-width="2"/><circle cx="20" cy="20" r="4" fill="#16AFFF"/></svg>
-            <b>Admin</b>
-            <span>Manage leads, researchers, and org settings.</span>
-          </div>
+        </div>
+
+        <div class="badge-note" style="margin-bottom:22px;">
+          <span>ⓘ</span>
+          <span>Admin access isn't self-serve — an existing admin can promote your account from the Admin dashboard once you've signed up.</span>
         </div>
 
         <div class="field-row">
@@ -882,17 +882,6 @@ footer{ background:var(--navy-2); color:rgba(255,255,255,0.55); padding:64px 0 3
               <div id="signupAvatarPreview"></div>
               <label class="upload-btn">Choose photo<input type="file" id="signupAvatarInput" accept="image/*"></label>
             </div>
-          </div>
-        </div>
-
-        <div class="role-extra" data-role-extra="admin">
-          <div class="field">
-            <label for="adminReason">Why do you need admin access?</label>
-            <input type="text" id="adminReason" placeholder="Briefly explain your role at Nova Helix">
-          </div>
-          <div class="badge-note" style="margin-top:0; margin-bottom:18px;">
-            <span>ⓘ</span>
-            <span>Admin accounts are self-serve for now while the team is small. Please only choose this if you're actually one of the founders/organizers.</span>
           </div>
         </div>
 
@@ -1915,7 +1904,6 @@ function wireForms(){
           password: document.getElementById('signupPassword').value,
           role: role,
           field: role === 'researcher' ? document.getElementById('field').value.trim() : '',
-          adminReason: role === 'admin' ? document.getElementById('adminReason').value.trim() : '',
           avatarFile: signupAvatarFile
         });
         renderHeader();
