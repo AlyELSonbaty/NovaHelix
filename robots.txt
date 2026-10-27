@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /profile/
+Disallow: /my-learning/
+Disallow: /educator/
+Disallow: /reset-password/
+
+Sitemap: https://alyelsonbaty.github.io/NovaHelix/sitemap.xml

@@ -3,13 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nova Helix Research — Where research ideas find their researchers</title>
-<meta name="description" content="Nova Helix Research links research leads with researchers, worldwide. Remote-first, international, and built around one orbit: a question, and the people who join it.">
-<link rel="icon" href="data:image/png;base64,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JjF69OiXX37ZHWf/8ssv77//fl3XGwd1pJSbN292x2lmzZrlNj8bt2RkZOTn5yuKcvPNN7v7vPvuu65tytWrV7vjZ4MHD77oootcrpO75x133OHhJ95yyy1nnnlmuyNMgYGBQUFBgb9GUFBQk+sqpfzpp5/cf/bs2fONN954/SSWLl1aXFzsdqIPHjzY7smfPHnykiVLmryG888//80332zO2eoG4QYAuPLKKw8dOnT//fe7/nzllVdycnIaRx80TSssLHTb/mPHjvXoEBISMmzYsEOHDrmMtoKCgri4uEsvvXTgwIEuSyszM3Pjxo0XXnjhv//9b/e3brrpJld059ixY26jrfHgnPNRo0Z988037bjBsLCwzZs3BwYGSik9xvzhhx8mTZrkEZfXNM29ReGSjq+99lqrZlP7MHXqVKfTefPNNxuD/kOGDFmxYkVwcHC3ibw3h3vvvXfGjBnumVq7dm19fX3jcLx7d0IIUVdX13gch8PhFhIuagYEBNxwww1uSfDee+9t27Zty5YtrpZ+/fpNnjzZY+tDStn41wGg3TtLjLGIiIiwsLDwXyM0NNRoBhglnHEfpoVCI0FBQWeffXZHZl7X9Z07d3o4EEeOHNm4cWP3DpC6p/7pp5/Oy8v7/PPPm+ujqmpcXJzLlaurq1uzZo1HODQ7O/uHH35wi7TY2FjX/6+++urnnnuuqKgIANauXVtUVOTm3zXXXBMWFuYmmZtYq1evvvDCC42D19bWbtiwod032JxcabJdVdW+ffu69f7UqVMnT55slCiMMZe7GhcXl56e3hFW3XvvvS+88IJHe2lp6fXXX798+fJLL720E1e9U413j7jc4MGDPX7daLwboy+hoaGffvqp+7v5+fnGaPhFF11k3Ma/5557Gt9XSEjIwYMH3X3Wr1/vNuxsNtuSJUvcgcGqqqrbb7+93V5hREREc77Vpk2bmoxjLVq0yKiYjh075vHFrKyssrIybwKkzRnvuq7/4x//8PAeevfu7f4zODj4s88+6wZpM60Si4h27NgRGRnZHLEqKyuND6jVav3LX/7y6KOP3n333e6EHJftYuScKw+nsYl68803G/s0NDQYzXNEvOCCCx5++OFZs2aNGDHC47udTayCgoLo6Ggjt1auXJmdnX3gwIGVK1eec845drs9JSUlLy+vfcTSNM1t1Lq97Nzc3DVr1hgnKjQ09Msvv+wGxAoMDHRdsd1u3717d5Pd1qxZYwzhxMfHGyPv69evb8FDduH2229vvAsxZcoUYx+r1eoRUCCijRs3erkdvmTJkpZvduvWrW5XNzw8vDlifffdd25zKjU11RhJX7JkiYd11bNnT497X79+vbu/MRZz0003udtnzZpl9G1djZ999pnR746Pj3c/50uXLjVaeIMGDeqkyLvPjHdVVd1zzRhrjh8XX3zxk08+6Z5Tf39/YwBp/Pjxr7/+utswaozp06c/+eSTjaMVt912m3G+LrroosZy6A9/+MMrr7zSnDc0aNAgt1xUW6t5a7w7Pz+/5rbY/f393eeB7Xa7sdv06dMfeugh441UV1fX1NQYY+IjR4400s44bJNX4v7/0aNH3S5qdHT0ypUrU1NTXX/eeOONjz32mNHeam5voKvYWFLK+fPn+/n52e12V7Cqhc6zZs2y2WyBgYFLly5tUmNeddVVxl13i8UyfPjwN99807UD0yQef/zxwMBAi8VyxhlnGKPwHvj+++8vvvhiu91uXI+rr7760KFDc+fOtVqt/fv337dvX8s363Q6b731VpvNFhAQ8OKLLzbXraGh4brrrrNarSEhIcuXL2/c4YMPPhgzZoz7gXQp+n79+s2dO9dDCh45cmTkyJEWiyUuLu7HH390tx88eHDIkCEWi2XAgAE7d+50NRYWFo4ZM8ZiscTGxn799deNV2rmzJk2m81utz/++OMtTGlH4OMj9rt37xZCDB48uNVynTt37rRYLO4nqTEOHDiwY8eOkpISPz+/5OTkoUOHGtnQJPbv319SUpKent6yypNSZmRk/Pzzz5WVlSEhIUOHDnXtZzscjp07d0ZFRfXt29cbT3Dnzp3+/v6NEzEaO/xBQUEDBgxosoPrRzMyMqqqqvz8/Pr37z98+PAm4xTl5eWZmZkJCQnGjS/XZuWePXs82quqqnbv3t2vX7+YmJgmf3fHjh2MsSFDhnSSU2jWbjDRbQOkJkximTBhEsuESSwTJrFMmPABunrhNV3XMzIy6urqXPGL0NDQhISEJmMZBw4cKCkpcX9ERHa7PT093SN6WVhY+Nlnn2VnZ4eHh1922WXGrK+2DgUAdXV1y5YtGzt27NChQ5u8/vLy8v3797t2oxVF6du3r0ewwIhNmzZ98803Dodj7NixEydObBwHLiwsrKysNG7PNzQ07NmzZ/DgwV3qtOqJWevK+O9//xsQEBAVFRUTExMVFRUcHHzllVc23rUtKirq169f7969Y04iMjLy7LPP9jjrsnbt2gEDBowZM+ayyy4bMGBAVFRU441YL4dyYeHChWDYS2mMO+64IyAgIDo6Ojo6OjIyMjIy8tlnn23craam5sYbb4yKirrgggv++Mc/+vn5XXPNNTU1NR7dbr/99mnTphlbPvzww+Tk5OaOCf0eajd0Eh5++OFhw4YVFxeXlZWVlZV98cUXISEhDz/8sEe3DRs2hISEZGRklJ1EaWmpx8Gyw4cPx8TELFiwoKGhgYjKysrGjx8/atQoTdPaOpQ7B3rQoEEjR47805/+1OROg9PpHDZs2Jw5c1zjHD169OGHH7bZbO4QuZF/qamprh09IcR7770HAGvXrjX20XX9zDPPnD17trFxzpw5Y8eO9bgFk1itY/Lkydddd52xZdq0aZMmTWqcJ56amtpyfZEXX3xx4MCBxsoce/fuXbNmjceehjdDuUk/fvz4FStWxMXFNSkzSkpKIiMj16xZYyyd0rt375UrV3psYfXq1WvLli0eGetHjx41tlRWVsbGxnp8d9KkScY96a6DLm28O53OAwcOpKSkGBuLi4sbb7lkZmYmJiZ6HLbxQFlZWW1trbG+VFJSkvHQmPdDucydN95445577klPT6+qqnLnVRuRk5PjdDqNJlFpaakQwp116MJHH32UlJTkkYY/efJkjxSjI0eO1NTUGHPahBAHDx5sYVvM9AqbRmVlZVFR0fDhw90tH3/88a5du6ZOnWrsJqXct29feHh4YWFhXl5eXl6eMU3AjUsuuaSuru78889fuXLl8ePHm/xFL4cCgEWLFsXExEycODE8PJxzfuDAgcZ9MjMzQ0ND3cfOHA7HY4895tr3NNq4P/300/Dhw1utGpKVlYWIJSUlu3bt2rVr188///zdd98dPXrU48EzjffWsW3bNrvdftVVV91xxx133XXX1KlTo6OjX3nllcaWb0JCQmBgYFRUlMtAfvnll5sc8Icffrj88suDgoJiYmLmzJlTWVnZvqHy8/P79OnjyjfUNC01NbVJk3zWrFlhYWEzZsxwXf+5556bnp7ukQJZW1ubnJzc+KYaY8GCBRaLJfIkoqKievXqFRAQcPjw4S64dl063JCVlWW32y0WS21t7c8//7xjx47169ePHz/eo9vRo0ePHz/++uuvp6SkCCEYYx66xo1Ro0Z9+OGH2dnZK1euXLBgwbFjxxYvXmwUFV4OtWjRooCAgMTERNcR3KCgoMbntFwZxpGRkU6ns6am5tNPP+3Xr9+GDRs8MhdKSkrKysq8kTq7du2aNGnSwoULXblWnPM333zzjTfeaDIVwoxjtYTdu3cPGzbs7bffdpFs2LBhubm5TfLPZrNNmDDBncLaMuLj4x988EFFURYtWlRXV2fMlfNmqLy8vGXLljmdznPOOUdKiYgVFRVBQUFSSiNHGxoa9u7d+/e//911QmnBggVPPfVU4wNCOTk5rnMTrZqb+/fvnzp1qrGIyLFjx/r3799qNpFpY3k+8Xv27HFbvsnJyRMmTFi8eHHjuniZmZkxMTHGvEoPaJr20ksveQgVIURkZKQxyc6boQDg+eefT05O3rx584YNG7766quNGzfOnDlz//79HqQpLS0tLS11Z2tNnTpV0zTXQ2JEfX29lNIY3tQ0beHChXl5eR7mZmFhoTH3i4gyMjKSk5NP7UvFu5+NVVdXl5ycvHjxYnfLxx9/jIiNS7j+9a9/vfrqq/WT0DTNI6pUU1PjsnXcLb/88ktMTMxLL73U1qEOHDgQERGxbt06Y+PXX38dEhLiUovG/P2wsDB38QXX4PHx8R6BiX379vn7+7/55pvuYNW//vWv8PDw/Px8Y7ctW7b06tXLeO6opqYmMTGx1fR808byRElJSVFRUVpamrtlwoQJcXFxq1atOu+884x7Pjk5OTk5ORMnTnQZH0SkKMpjjz3mLm7j7+9/3333zZw58/jx4+np6a4TjhdffLHxhL6XQz3//PPp6enGGkkA0L9/fyFEbm6u0SDbvXt3WFhYSEiIu+XGG2985513Nm/ebDzKlpCQMG3atDvvvHP79u2hoaHffvvtwYMHly1b5pH5uXv37sDAQON20LFjx4qLi43z06XAH3rooa55ZVLK2NjYCRMmuI82qKqalpY2ZMgQ92lVFyIiIlJTUwcMGJCUlJSUlJSYmJiamjp27Fij8TR27Njk5OQ9e/bs27evR48e999//z333NN4f63VoYQQU6ZM8aiW5ufn169fv3HjxhmLNXLOzzrrLKPyiomJSUhIGD16tDGdHxHHjx8fFBS0ffv2goKC0aNHL1y40HiM4oTJwtjYsWONNJJSxsfHjx8/vnEFpa6A0y41mYi6qFHy+8JplzZjssoklgmTWCZMmMQyYRLLhEksEyZMYpkwiWXCJJYJEyaxTJjEMmESy4QJk1gmTGKZMIllwoRJLBMmsUyYxDJhEsucAhMmsUyYxDJhEsuECZNYJkximTCJZcKESSwTJrFMmMQyYcIklgmTWCZMYpkwYRLLhEksEyaxTJgwiWWi6+L/AXUSTUdAmBuhAAAAAElFTkSuQmCC">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+/* Works under any folder (GitHub Pages /NovaHelix/) or at a domain root. */
+(function(){var p=location.pathname,m=p.match(/^(.*\/)(?:researchers|papers|education|board|contact|privacy|login|signup|admin|profile|my-learning|educator|reset-password)\/(?:index\.html)?$/);
+var base=m?m[1]:p.replace(/[^\/]*$/,'');window.SITE_BASE=base;
+var b=document.querySelector('base');if(!b){b=document.createElement('base');document.head.insertBefore(b,document.head.firstChild);}
+b.href=location.origin+base;})();
+</script>
+<title>Nova Helix Research — Remote-first research collective | Papers, researchers &amp; courses</title>
+<meta name="description" content="Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#16afff">
+<link rel="canonical" href="https://alyelsonbaty.github.io/NovaHelix/">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nova Helix Research">
+<meta property="og:title" content="Nova Helix Research — Remote-first research collective | Papers, researchers &amp; courses">
+<meta property="og:description" content="Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.">
+<meta property="og:url" content="https://alyelsonbaty.github.io/NovaHelix/">
+<meta property="og:image" content="https://alyelsonbaty.github.io/NovaHelix/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nova Helix Research — Remote-first research collective | Papers, researchers &amp; courses">
+<meta name="twitter:description" content="Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.">
+<meta name="twitter:image" content="https://alyelsonbaty.github.io/NovaHelix/og-image.jpg">
+<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://wqziszthhslbjzcmjczh.supabase.co" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" href="header-art.webp" as="image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://alyelsonbaty.github.io/NovaHelix/#org","name":"Nova Helix Research","url":"https://alyelsonbaty.github.io/NovaHelix/","logo":"https://alyelsonbaty.github.io/NovaHelix/logo.png","email":"novahelix.contact@gmail.com","description":"Independent, remote-first research collective linking research leads with researchers worldwide."},
+{"@type":"WebSite","@id":"https://alyelsonbaty.github.io/NovaHelix/#site","url":"https://alyelsonbaty.github.io/NovaHelix/","name":"Nova Helix Research","publisher":{"@id":"https://alyelsonbaty.github.io/NovaHelix/#org"}}]}
+</script>
 <style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(fonts/space-grotesk-latin-wght-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
 /* ===========================================================
    Nova Helix Research — shared styles
 =========================================================== */
@@ -191,21 +225,41 @@ header.scrolled .brand img, header.solid .brand img{ width:42px; height:42px; }
 
 /* ---------- PAGE HEADER (sub-pages) ---------- */
 .page-header{
-  padding:150px 0 70px;
-  background:
-    radial-gradient(ellipse 700px 400px at 85% 0%, rgba(22,175,255,0.12), transparent 60%),
-    var(--mist);
+  position:relative; overflow:hidden; isolation:isolate;
+  padding:150px 0 84px;
+  background:linear-gradient(180deg,#ffffff 0%, #f6faff 100%);
   border-bottom:1px solid var(--line);
 }
-.page-header .eyebrow{margin-bottom:16px;}
-.page-header h1{ font-size:clamp(32px,5vw,50px); font-weight:700; max-width:640px; }
-.page-header p{ margin-top:16px; font-size:16px; color:#555; max-width:520px; line-height:1.6; }
-
-#page-board .page-header{
-  background:
-    radial-gradient(ellipse 700px 400px at 85% 0%, rgba(184,134,60,0.14), transparent 60%),
-    var(--mist);
+/* orbit artwork from the brand banner, fading in from the right */
+.page-header::before{
+  content:''; position:absolute; z-index:-1; top:-18%; height:136%; right:-2%;
+  aspect-ratio:574/630; width:auto;
+  background:url('header-art.webp') center / 100% 100% no-repeat;
+  mix-blend-mode:multiply;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 32%);
+          mask-image:linear-gradient(90deg, transparent 0%, #000 32%);
+  animation:header-drift 14s ease-in-out infinite alternate;
 }
+@keyframes header-drift{ from{ transform:translate3d(0,0,0) scale(1); } to{ transform:translate3d(-14px,6px,0) scale(1.03); } }
+/* soft glow behind the title */
+.page-header::after{
+  content:''; position:absolute; z-index:-1; left:-120px; top:40px; width:520px; height:420px;
+  background:radial-gradient(closest-side, rgba(22,175,255,0.13), transparent);
+}
+.page-header .eyebrow{margin-bottom:18px;}
+.page-header h1{
+  font-size:clamp(34px,5.4vw,58px); font-weight:700; max-width:680px;
+  padding-left:22px; border-left:3px solid var(--ink);
+}
+.page-header p{ margin-top:18px; padding-left:25px; font-size:16.5px; color:#4a5568; max-width:560px; line-height:1.65; }
+@media (max-width:760px){
+  .page-header{ padding:128px 0 60px; }
+  .page-header::before{ opacity:0.4; right:-30%; }
+}
+
+#page-board .page-header::before{ filter:hue-rotate(172deg) saturate(0.9); }
+#page-board .page-header::after{ background:radial-gradient(closest-side, rgba(184,134,60,0.16), transparent); }
+#page-board .page-header h1{ border-left-color:var(--gold-deep); }
 #page-board .page-header .eyebrow{ color:var(--gold-deep); }
 #page-board .page-header .eyebrow .dot{ background:var(--gold); }
 
@@ -246,7 +300,7 @@ section{ padding:120px 0; position:relative; }
   overflow:hidden;
 }
 .hero-grid{ display:grid; grid-template-columns:1fr; gap:56px; align-items:center; }
-@media (min-width:960px){ .hero-grid{grid-template-columns:1.05fr 0.95fr;} }
+@media (min-width:960px){ .hero-grid{grid-template-columns:0.92fr 1.08fr; gap:24px;} }
 .hero h1{ font-size:clamp(38px, 6vw, 68px); font-weight:700; max-width:640px; }
 .hero h1 .accent{color:var(--blue);}
 .hero p.lead{ margin-top:22px; font-size:17px; line-height:1.65; color:#333; max-width:480px; }
@@ -256,18 +310,30 @@ section{ padding:120px 0; position:relative; }
 .hero-stat span{font-size:12px; color:#666; font-family:'IBM Plex Mono'; letter-spacing:0.04em;}
 
 .orbit-stage{
-  position:relative; aspect-ratio:1/1; max-width:620px; margin:0 auto;
-  opacity:0; transform:scale(0.85);
-  animation:orbit-in 1.1s 0.3s cubic-bezier(.2,.8,.2,1) forwards;
+  position:relative; aspect-ratio:1/1; width:100%; max-width:780px; margin:0 auto;
+  opacity:0; transform:scale(0.88);
+  animation:orbit-in 1.2s 0.25s cubic-bezier(.2,.8,.2,1) forwards;
+  perspective:1100px;
 }
+@media (min-width:960px){ .orbit-stage{ margin-right:-48px; } }
 @keyframes orbit-in{ to{opacity:1; transform:scale(1);} }
-.orbit-stage svg{width:100%; height:100%; display:block;}
-.orbit-ring{ transform-origin:250px 250px; }
-.ring-a{ animation:spin 22s linear infinite; }
-.ring-b{ animation:spin 34s linear infinite reverse; }
+.orbit-stage svg{
+  width:100%; height:100%; display:block; overflow:visible;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform 0.5s cubic-bezier(.2,.8,.2,1);
+  will-change:transform;
+}
+.orbit-sphere-pulse{ transform-origin:300px 300px; animation:sphere-pulse 3.6s ease-out infinite; }
+@keyframes sphere-pulse{ 0%{ transform:scale(1); opacity:0.5; } 100%{ transform:scale(1.9); opacity:0; } }
+.orbit-float{ transform-origin:300px 300px; animation:orbit-float 7s ease-in-out infinite alternate; }
+@keyframes orbit-float{ from{ transform:translateY(-6px); } to{ transform:translateY(8px); } }
+.orbit-spark{ animation:spark 3.4s ease-in-out infinite; }
+.orbit-spark:nth-child(2n){ animation-delay:-1.1s; }
+.orbit-spark:nth-child(3n){ animation-delay:-2.2s; }
+@keyframes spark{ 0%,100%{ opacity:0.25; } 50%{ opacity:1; } }
+.orbit-ring-dash{ animation:dash-run 40s linear infinite; }
+@keyframes dash-run{ to{ stroke-dashoffset:-400; } }
 @keyframes spin{ to{ transform:rotate(360deg); } }
-.node-pulse{ animation:node-pulse 3s ease-in-out infinite; }
-@keyframes node-pulse{ 0%,100%{ r:6; } 50%{ r:8; } }
 
 /* ---------- MARQUEE ---------- */
 .marquee-section{
@@ -657,6 +723,27 @@ footer{ background:var(--navy-2); color:rgba(255,255,255,0.55); padding:64px 0 3
   width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:10px;
   font-family:'Inter'; font-size:14px; background:#fbfdff; transition:border-color 0.2s ease, background 0.2s ease;
 }
+.field textarea{ width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:10px; font-family:'Inter'; font-size:14px; background:#fbfdff; min-height:130px; resize:vertical; line-height:1.55; transition:border-color 0.2s ease, background 0.2s ease; }
+.field textarea:focus{ border-color:var(--blue); background:#fff; outline:none; box-shadow:0 0 0 3px rgba(22,175,255,0.15); }
+.hp-field{ position:absolute !important; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.link-btn{ background:none; border:none; padding:0; color:var(--blue-deep); font:inherit; font-weight:600; cursor:pointer; }
+.link-btn:hover{ text-decoration:underline; }
+.form-success{ background:#eafaf1; border:1px solid #bfe8d0; color:#12663a; border-radius:10px; padding:14px 16px; font-size:14px; line-height:1.55; }
+.msg-item{ border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:12px; background:#fff; }
+.msg-item.unread{ border-color:var(--blue); background:#f5fbff; }
+.msg-item .msg-meta{ font-size:12.5px; color:#7a8794; margin-bottom:8px; }
+.msg-item .msg-body{ white-space:pre-wrap; font-size:14.5px; line-height:1.65; color:#2b3645; }
+.perm-table{ width:100%; border-collapse:collapse; font-size:13px; }
+.perm-table th, .perm-table td{ padding:10px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+.perm-table th{ font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#7a8794; }
+.perm-yes{ color:#12824A; font-weight:700; } .perm-no{ color:#c3c9d1; }
+.switch{ position:relative; width:44px; height:24px; display:inline-block; flex:none; }
+.switch input{ opacity:0; width:0; height:0; }
+.switch span{ position:absolute; inset:0; background:#d5dbe3; border-radius:24px; transition:background .2s; cursor:pointer; }
+.switch span:before{ content:''; position:absolute; left:3px; top:3px; width:18px; height:18px; border-radius:50%; background:#fff; transition:transform .2s; }
+.switch input:checked + span{ background:var(--blue); }
+.switch input:checked + span:before{ transform:translateX(20px); }
+.perm-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--line); }
 .field input:focus, .field select:focus{ border-color:var(--blue); background:#fff; outline:none; box-shadow:0 0 0 3px rgba(22,175,255,0.15); }
 .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 @media (max-width:480px){ .field-row{ grid-template-columns:1fr; } }
@@ -790,6 +877,55 @@ footer{ background:var(--navy-2); color:rgba(255,255,255,0.55); padding:64px 0 3
 .profile-meta b{ color:var(--ink); font-family:'IBM Plex Mono'; text-transform:uppercase; font-size:11px; background:var(--blue-soft); color:var(--blue-deep); padding:3px 9px; border-radius:100px; margin-right:8px; }
 
 
+
+/* ---------- PRIVACY / LEGAL PAGE ---------- */
+.legal{ max-width:780px; }
+.legal h2{ font-size:22px; font-weight:700; margin:40px 0 12px; }
+.legal h2:first-of-type{ margin-top:0; }
+.legal p, .legal li{ font-size:15px; line-height:1.75; color:#444; }
+.legal p{ margin-bottom:14px; }
+.legal ul{ margin:0 0 16px 20px; display:flex; flex-direction:column; gap:6px; }
+.legal a{ color:var(--blue-deep); text-decoration:underline; text-underline-offset:2px; }
+.legal .legal-note{ background:var(--blue-soft); border:1px solid rgba(22,175,255,0.28); border-radius:12px; padding:16px 18px; font-size:14px; color:#2a3b4e; margin-bottom:34px; }
+.legal table{ width:100%; border-collapse:collapse; margin:6px 0 18px; font-size:13.5px; }
+.legal th, .legal td{ text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.55; color:#444; }
+.legal th{ font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#888; background:var(--mist); }
+.legal .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:12px; margin-bottom:18px; }
+.legal .table-wrap table{ margin:0; min-width:520px; }
+.footer-bottom a{ color:rgba(255,255,255,0.55); text-decoration:underline; text-underline-offset:2px; }
+.footer-bottom a:hover{ color:var(--blue); }
+
+/* ---------- CONTACT: social buttons ---------- */
+.social-btn-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.social-btn{
+  display:inline-flex; align-items:center; gap:9px; padding:10px 16px; border-radius:100px;
+  border:1px solid var(--line); background:#fff; font-family:'Space Grotesk'; font-weight:600; font-size:13.5px; color:var(--ink);
+  transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.social-btn svg{ width:17px; height:17px; flex-shrink:0; }
+.social-btn:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 10px 22px -12px rgba(22,175,255,0.6); }
+.social-btn.linkedin svg{ color:#0A66C2; }
+.social-btn.facebook svg{ color:#1877F2; }
+.social-btn.instagram svg{ color:#D6249F; }
+
+/* ---------- "Working on" (papers on researcher cards) ---------- */
+.working-on{ margin:0 0 16px; padding:12px 12px 10px; background:var(--mist); border-radius:10px; }
+.working-on-label{ font-size:10px; color:#8a97ab; margin-bottom:6px; }
+.working-on-paper{
+  display:flex; align-items:center; gap:8px; width:100%; text-align:left; padding:5px 0;
+  font-size:13px; font-weight:500; color:var(--ink); line-height:1.35; cursor:pointer;
+}
+.working-on-paper:hover .wo-title{ color:var(--blue-deep); text-decoration:underline; text-underline-offset:2px; }
+.wo-dot{ width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+.wo-dot.done{ background:#12824A; }
+.wo-title{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
+.working-on-more{ font-size:10.5px; color:#8a97ab; padding-top:4px; }
+.researcher-card.is-lead .working-on, .researcher-card.is-board .working-on{ background:rgba(184,134,60,0.09); }
+.modal-papers{ margin:0 0 20px; }
+.modal-papers h4{ font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#888; margin-bottom:8px; font-weight:500; }
+.modal-papers .working-on-paper{ padding:7px 0; border-top:1px solid var(--line); }
+.modal-papers .wo-title{ white-space:normal; }
+
 /* ---------- SINGLE-PAGE APP ROUTING ---------- */
 .page{ display:none; }
 .page.active{ display:block; animation:pageIn 0.5s ease; }
@@ -886,36 +1022,41 @@ a.syllabus-lesson:visited{ color:#444; }
 </style>
 </head>
 <body>
+<noscript><div style="padding:24px;max-width:720px;margin:0 auto;font-family:sans-serif">
+<h1>Nova Helix Research</h1>
+<p>An independent, remote-first research collective in 25+ countries. Research leads and researchers work together on open papers.</p>
+<p>This site needs JavaScript. Pages: <a href="researchers/">Researchers</a> · <a href="papers/">Papers</a> · <a href="education/">Education</a> · <a href="board/">Board</a> · <a href="contact/">Contact</a> · <a href="privacy/">Privacy policy</a>.</p>
+</div></noscript>
 
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <header id="siteHeader">
   <div class="wrap">
     <nav>
-      <a href="#home" class="brand" aria-label="Nova Helix Research home">
-        <img src="data:image/png;base64,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JjF69OiXX37ZHWf/8ssv77//fl3XGwd1pJSbN292x2lmzZrlNj8bt2RkZOTn5yuKcvPNN7v7vPvuu65tytWrV7vjZ4MHD77oootcrpO75x133OHhJ95yyy1nnnlmuyNMgYGBQUFBgb9GUFBQk+sqpfzpp5/cf/bs2fONN954/SSWLl1aXFzsdqIPHjzY7smfPHnykiVLmryG888//80332zO2eoG4QYAuPLKKw8dOnT//fe7/nzllVdycnIaRx80TSssLHTb/mPHjvXoEBISMmzYsEOHDrmMtoKCgri4uEsvvXTgwIEuSyszM3Pjxo0XXnjhv//9b/e3brrpJld059ixY26jrfHgnPNRo0Z988037bjBsLCwzZs3BwYGSik9xvzhhx8mTZrkEZfXNM29ReGSjq+99lqrZlP7MHXqVKfTefPNNxuD/kOGDFmxYkVwcHC3ibw3h3vvvXfGjBnumVq7dm19fX3jcLx7d0IIUVdX13gch8PhFhIuagYEBNxwww1uSfDee+9t27Zty5YtrpZ+/fpNnjzZY+tDStn41wGg3TtLjLGIiIiwsLDwXyM0NNRoBhglnHEfpoVCI0FBQWeffXZHZl7X9Z07d3o4EEeOHNm4cWP3DpC6p/7pp5/Oy8v7/PPPm+ujqmpcXJzLlaurq1uzZo1HODQ7O/uHH35wi7TY2FjX/6+++urnnnuuqKgIANauXVtUVOTm3zXXXBMWFuYmmZtYq1evvvDCC42D19bWbtiwod032JxcabJdVdW+ffu69f7UqVMnT55slCiMMZe7GhcXl56e3hFW3XvvvS+88IJHe2lp6fXXX798+fJLL720E1e9U413j7jc4MGDPX7daLwboy+hoaGffvqp+7v5+fnGaPhFF11k3Ma/5557Gt9XSEjIwYMH3X3Wr1/vNuxsNtuSJUvcgcGqqqrbb7+93V5hREREc77Vpk2bmoxjLVq0yKiYjh075vHFrKyssrIybwKkzRnvuq7/4x//8PAeevfu7f4zODj4s88+6wZpM60Si4h27NgRGRnZHLEqKyuND6jVav3LX/7y6KOP3n333e6EHJftYuScKw+nsYl68803G/s0NDQYzXNEvOCCCx5++OFZs2aNGDHC47udTayCgoLo6Ggjt1auXJmdnX3gwIGVK1eec845drs9JSUlLy+vfcTSNM1t1Lq97Nzc3DVr1hgnKjQ09Msvv+wGxAoMDHRdsd1u3717d5Pd1qxZYwzhxMfHGyPv69evb8FDduH2229vvAsxZcoUYx+r1eoRUCCijRs3erkdvmTJkpZvduvWrW5XNzw8vDlifffdd25zKjU11RhJX7JkiYd11bNnT497X79+vbu/MRZz0003udtnzZpl9G1djZ999pnR746Pj3c/50uXLjVaeIMGDeqkyLvPjHdVVd1zzRhrjh8XX3zxk08+6Z5Tf39/YwBp/Pjxr7/+utswaozp06c/+eSTjaMVt912m3G+LrroosZy6A9/+MMrr7zSnDc0aNAgt1xUW6t5a7w7Pz+/5rbY/f393eeB7Xa7sdv06dMfeugh441UV1fX1NQYY+IjR4400s44bJNX4v7/0aNH3S5qdHT0ypUrU1NTXX/eeOONjz32mNHeam5voKvYWFLK+fPn+/n52e12V7Cqhc6zZs2y2WyBgYFLly5tUmNeddVVxl13i8UyfPjwN99807UD0yQef/zxwMBAi8VyxhlnGKPwHvj+++8vvvhiu91uXI+rr7760KFDc+fOtVqt/fv337dvX8s363Q6b731VpvNFhAQ8OKLLzbXraGh4brrrrNarSEhIcuXL2/c4YMPPhgzZoz7gXQp+n79+s2dO9dDCh45cmTkyJEWiyUuLu7HH390tx88eHDIkCEWi2XAgAE7d+50NRYWFo4ZM8ZiscTGxn799deNV2rmzJk2m81utz/++OMtTGlH4OMj9rt37xZCDB48uNVynTt37rRYLO4nqTEOHDiwY8eOkpISPz+/5OTkoUOHGtnQJPbv319SUpKent6yypNSZmRk/Pzzz5WVlSEhIUOHDnXtZzscjp07d0ZFRfXt29cbT3Dnzp3+/v6NEzEaO/xBQUEDBgxosoPrRzMyMqqqqvz8/Pr37z98+PAm4xTl5eWZmZkJCQnGjS/XZuWePXs82quqqnbv3t2vX7+YmJgmf3fHjh2MsSFDhnSSU2jWbjDRbQOkJkximTBhEsuESSwTJrFMmPABunrhNV3XMzIy6urqXPGL0NDQhISEJmMZBw4cKCkpcX9ERHa7PT093SN6WVhY+Nlnn2VnZ4eHh1922WXGrK+2DgUAdXV1y5YtGzt27NChQ5u8/vLy8v3797t2oxVF6du3r0ewwIhNmzZ98803Dodj7NixEydObBwHLiwsrKysNG7PNzQ07NmzZ/DgwV3qtOqJWevK+O9//xsQEBAVFRUTExMVFRUcHHzllVc23rUtKirq169f7969Y04iMjLy7LPP9jjrsnbt2gEDBowZM+ayyy4bMGBAVFRU441YL4dyYeHChWDYS2mMO+64IyAgIDo6Ojo6OjIyMjIy8tlnn23craam5sYbb4yKirrgggv++Mc/+vn5XXPNNTU1NR7dbr/99mnTphlbPvzww+Tk5OaOCf0eajd0Eh5++OFhw4YVFxeXlZWVlZV98cUXISEhDz/8sEe3DRs2hISEZGRklJ1EaWmpx8Gyw4cPx8TELFiwoKGhgYjKysrGjx8/atQoTdPaOpQ7B3rQoEEjR47805/+1OROg9PpHDZs2Jw5c1zjHD169OGHH7bZbO4QuZF/qamprh09IcR7770HAGvXrjX20XX9zDPPnD17trFxzpw5Y8eO9bgFk1itY/Lkydddd52xZdq0aZMmTWqcJ56amtpyfZEXX3xx4MCBxsoce/fuXbNmjceehjdDuUk/fvz4FStWxMXFNSkzSkpKIiMj16xZYyyd0rt375UrV3psYfXq1WvLli0eGetHjx41tlRWVsbGxnp8d9KkScY96a6DLm28O53OAwcOpKSkGBuLi4sbb7lkZmYmJiZ6HLbxQFlZWW1trbG+VFJSkvHQmPdDucydN95445577klPT6+qqnLnVRuRk5PjdDqNJlFpaakQwp116MJHH32UlJTkkYY/efJkjxSjI0eO1NTUGHPahBAHDx5sYVvM9AqbRmVlZVFR0fDhw90tH3/88a5du6ZOnWrsJqXct29feHh4YWFhXl5eXl6eMU3AjUsuuaSuru78889fuXLl8ePHm/xFL4cCgEWLFsXExEycODE8PJxzfuDAgcZ9MjMzQ0ND3cfOHA7HY4895tr3NNq4P/300/Dhw1utGpKVlYWIJSUlu3bt2rVr188///zdd98dPXrU48EzjffWsW3bNrvdftVVV91xxx133XXX1KlTo6OjX3nllcaWb0JCQmBgYFRUlMtAfvnll5sc8Icffrj88suDgoJiYmLmzJlTWVnZvqHy8/P79OnjyjfUNC01NbVJk3zWrFlhYWEzZsxwXf+5556bnp7ukQJZW1ubnJzc+KYaY8GCBRaLJfIkoqKievXqFRAQcPjw4S64dl063JCVlWW32y0WS21t7c8//7xjx47169ePHz/eo9vRo0ePHz/++uuvp6SkCCEYYx66xo1Ro0Z9+OGH2dnZK1euXLBgwbFjxxYvXmwUFV4OtWjRooCAgMTERNcR3KCgoMbntFwZxpGRkU6ns6am5tNPP+3Xr9+GDRs8MhdKSkrKysq8kTq7du2aNGnSwoULXblWnPM333zzjTfeaDIVwoxjtYTdu3cPGzbs7bffdpFs2LBhubm5TfLPZrNNmDDBncLaMuLj4x988EFFURYtWlRXV2fMlfNmqLy8vGXLljmdznPOOUdKiYgVFRVBQUFSSiNHGxoa9u7d+/e//911QmnBggVPPfVU4wNCOTk5rnMTrZqb+/fvnzp1qrGIyLFjx/r3799qNpFpY3k+8Xv27HFbvsnJyRMmTFi8eHHjuniZmZkxMTHGvEoPaJr20ksveQgVIURkZKQxyc6boQDg+eefT05O3rx584YNG7766quNGzfOnDlz//79HqQpLS0tLS11Z2tNnTpV0zTXQ2JEfX29lNIY3tQ0beHChXl5eR7mZmFhoTH3i4gyMjKSk5NP7UvFu5+NVVdXl5ycvHjxYnfLxx9/jIiNS7j+9a9/vfrqq/WT0DTNI6pUU1PjsnXcLb/88ktMTMxLL73U1qEOHDgQERGxbt06Y+PXX38dEhLiUovG/P2wsDB38QXX4PHx8R6BiX379vn7+7/55pvuYNW//vWv8PDw/Px8Y7ctW7b06tXLeO6opqYmMTGx1fR808byRElJSVFRUVpamrtlwoQJcXFxq1atOu+884x7Pjk5OTk5ORMnTnQZH0SkKMpjjz3mLm7j7+9/3333zZw58/jx4+np6a4TjhdffLHxhL6XQz3//PPp6enGGkkA0L9/fyFEbm6u0SDbvXt3WFhYSEiIu+XGG2985513Nm/ebDzKlpCQMG3atDvvvHP79u2hoaHffvvtwYMHly1b5pH5uXv37sDAQON20LFjx4qLi43z06XAH3rooa55ZVLK2NjYCRMmuI82qKqalpY2ZMgQ92lVFyIiIlJTUwcMGJCUlJSUlJSYmJiamjp27Fij8TR27Njk5OQ9e/bs27evR48e999//z333NN4f63VoYQQU6ZM8aiW5ufn169fv3HjxhmLNXLOzzrrLKPyiomJSUhIGD16tDGdHxHHjx8fFBS0ffv2goKC0aNHL1y40HiM4oTJwtjYsWONNJJSxsfHjx8/vnEFpa6A0y41mYi6qFHy+8JplzZjssoklgmTWCZMmMQyYRLLhEksEyZMYpkwiWXCJJYJEyaxTJjEMmESy4QJk1gmTGKZMIllwoRJLBMmsUyYxDJhEsucAhMmsUyYxDJhEsuECZNYJkximTCJZcKESSwTJrFMmMQyYcIklgmTWCZMYpkwYRLLhEksEyaxTJgwiWWi6+L/AXUSTUdAmBuhAAAAAElFTkSuQmCC" alt="Nova Helix Research logo">
+      <a href="./" class="brand" aria-label="Nova Helix Research home">
+        <img src="logo.png" alt="Nova Helix Research logo">
         <span class="brand-text"><b>Nova Helix</b><span>RESEARCH</span></span>
       </a>
       <div class="nav-links">
-        <a href="#researchers" data-page="researchers">Researchers</a>
-        <a href="#papers" data-page="papers">Papers</a>
-        <a href="#education" data-page="education">Education</a>
-        <a href="#board" data-page="board">Board</a>
-        <a href="#contact" data-page="contact">Contact</a>
+        <a href="researchers/" data-page="researchers">Researchers</a>
+        <a href="papers/" data-page="papers">Papers</a>
+        <a href="education/" data-page="education">Education</a>
+        <a href="board/" data-page="board">Board</a>
+        <a href="contact/" data-page="contact">Contact</a>
       </div>
       <div class="nav-right" id="navAuthArea">
-        <a href="#signup" class="btn btn-ghost btn-sm" id="navSignupLink">Sign up</a>
-        <a href="#login" class="btn btn-primary btn-sm">Log in</a>
+        <a href="signup/" class="btn btn-ghost btn-sm" id="navSignupLink">Sign up</a>
+        <a href="login/" class="btn btn-primary btn-sm">Log in</a>
       </div>
       <button type="button" class="hamburger-btn" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavPanel"><span></span></button>
     </nav>
   </div>
   <div class="mobile-nav-panel" id="mobileNavPanel">
-    <a href="#researchers" data-page="researchers">Researchers</a>
-    <a href="#papers" data-page="papers">Papers</a>
-    <a href="#education" data-page="education">Education</a>
-    <a href="#board" data-page="board">Board</a>
-    <a href="#contact" data-page="contact">Contact</a>
+    <a href="researchers/" data-page="researchers">Researchers</a>
+    <a href="papers/" data-page="papers">Papers</a>
+    <a href="education/" data-page="education">Education</a>
+    <a href="board/" data-page="board">Board</a>
+    <a href="contact/" data-page="contact">Contact</a>
   </div>
 </header>
 
@@ -926,42 +1067,88 @@ a.syllabus-lesson:visited{ color:#444; }
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow mono"><span class="dot"></span> Remote-first · 25 countries</div>
+        <div class="eyebrow mono"><span class="dot"></span> Remote-first · 25+ countries</div>
         <h1>Research ideas find <span class="accent">their researchers.</span></h1>
         <p class="lead">Nova Helix Research links people with a research question to the researchers who can help answer it — wherever they are. We're an independent, remote-first collective building rigorous collaborations from the ground up.</p>
         <div class="hero-actions">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHn0rM1Z7a4Iv9YUj7UgInyz_qXqg_uEvNd6mOqv-3-jDpcg/viewform?usp=dialog" target="_blank" rel="noopener" class="btn btn-primary">Propose a research lead</a>
-          <a href="#how" class="btn btn-ghost">See how it works</a>
+          <a href="./#how" class="btn btn-ghost">See how it works</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><b data-count="25">0</b><span>Countries</span></div>
+          <div class="hero-stat"><b data-count="25" data-suffix="+">0</b><span>Countries</span></div>
           <div class="hero-stat"><b id="heroActiveCount">0</b><span>Active papers</span></div>
           <div class="hero-stat"><b id="heroPublishedCount">0</b><span>Published papers</span></div>
         </div>
       </div>
 
-      <div class="orbit-stage" aria-hidden="true">
-        <svg viewBox="0 0 500 500">
+      <div class="orbit-stage" aria-hidden="true" id="orbitStage">
+        <svg viewBox="0 0 600 600" id="orbitSvg">
           <defs>
-            <clipPath id="orbitLogoClip">
-              <circle cx="250" cy="250" r="70"/>
-            </clipPath>
+            <radialGradient id="sphereGrad" cx="36%" cy="30%" r="80%">
+              <stop offset="0%" stop-color="#C9EEFF"/>
+              <stop offset="28%" stop-color="#5CCBFF"/>
+              <stop offset="62%" stop-color="#16AFFF"/>
+              <stop offset="100%" stop-color="#0A5FA3"/>
+            </radialGradient>
+            <radialGradient id="sphereRim" cx="50%" cy="50%" r="50%">
+              <stop offset="78%" stop-color="#16AFFF" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#9BE3FF" stop-opacity="0.75"/>
+            </radialGradient>
+            <radialGradient id="auraGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#16AFFF" stop-opacity="0.34"/>
+              <stop offset="55%" stop-color="#16AFFF" stop-opacity="0.09"/>
+              <stop offset="100%" stop-color="#16AFFF" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="nodeGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#E6F8FF"/>
+              <stop offset="45%" stop-color="#3DBBFF"/>
+              <stop offset="100%" stop-color="#0B6FB8"/>
+            </radialGradient>
+            <linearGradient id="ringFront" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#16AFFF" stop-opacity="0.15"/>
+              <stop offset="50%" stop-color="#16AFFF" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#0B6FB8" stop-opacity="0.35"/>
+            </linearGradient>
+            <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+            <filter id="nodeGlow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3.2"/></filter>
           </defs>
-          <g class="orbit-ring ring-a">
-            <ellipse cx="250" cy="250" rx="230" ry="98" stroke="#16AFFF" stroke-opacity="0.35" stroke-width="1.5" fill="none"/>
-            <circle cx="480" cy="250" r="7" fill="#16AFFF" class="node-pulse"/>
+
+          <!-- ambient aura -->
+          <circle cx="300" cy="300" r="290" fill="url(#auraGrad)"/>
+          <!-- ground shadow -->
+          <ellipse cx="300" cy="566" rx="150" ry="13" fill="#0B6FB8" opacity="0.16" filter="url(#softBlur)"/>
+
+          <g class="orbit-float">
+            <!-- outer dashed orbit -->
+            <g transform="translate(300 300) rotate(-20)">
+              <ellipse class="orbit-ring-dash" rx="292" ry="128" fill="none" stroke="#16AFFF" stroke-opacity="0.45" stroke-width="1.2" stroke-dasharray="3 7"/>
+            </g>
+
+            <!-- BACK layer: far halves of rings + nodes behind the sphere -->
+            <g id="orbBack"></g>
+
+            <!-- sphere -->
+            <circle class="orbit-sphere-pulse" cx="300" cy="300" r="84" fill="none" stroke="#16AFFF" stroke-width="2"/>
+            <circle cx="300" cy="300" r="86" fill="#16AFFF" opacity="0.22" filter="url(#softBlur)"/>
+            <circle cx="300" cy="300" r="82" fill="url(#sphereGrad)"/>
+            <circle cx="300" cy="300" r="82" fill="url(#sphereRim)"/>
+            <ellipse cx="270" cy="262" rx="30" ry="19" fill="#fff" opacity="0.5" transform="rotate(-32 270 262)"/>
+            <ellipse cx="262" cy="257" rx="11" ry="6" fill="#fff" opacity="0.85" transform="rotate(-32 262 257)"/>
+            <path d="M232 340 A82 82 0 0 0 362 352" fill="none" stroke="#9BE3FF" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- FRONT layer: near halves of rings + nodes in front -->
+            <g id="orbFront"></g>
           </g>
-          <g class="orbit-ring ring-b">
-            <ellipse cx="250" cy="250" rx="165" ry="210" stroke="#0B6FB8" stroke-opacity="0.3" stroke-width="1.5" fill="none"/>
-            <circle cx="250" cy="40" r="6" fill="#0B6FB8" class="node-pulse"/>
+
+          <!-- twinkling particles -->
+          <g fill="#16AFFF">
+            <circle class="orbit-spark" cx="70"  cy="150" r="3.2"/>
+            <circle class="orbit-spark" cx="540" cy="110" r="2.6"/>
+            <circle class="orbit-spark" cx="520" cy="470" r="3.4"/>
+            <circle class="orbit-spark" cx="92"  cy="468" r="2.4"/>
+            <circle class="orbit-spark" cx="318" cy="38"  r="2.2"/>
+            <circle class="orbit-spark" cx="214" cy="566" r="2.6"/>
           </g>
-          <circle cx="250" cy="250" r="76" fill="#fff"/>
-          <circle cx="250" cy="250" r="76" fill="#16AFFF" opacity="0.35">
-            <animate attributeName="r" values="76;104;76" dur="3.2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.35;0;0.35" dur="3.2s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="250" cy="250" r="72" fill="#fff" stroke="#E8F5FF" stroke-width="2"/>
-          <image href="data:image/png;base64,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JjF69OiXX37ZHWf/8ssv77//fl3XGwd1pJSbN292x2lmzZrlNj8bt2RkZOTn5yuKcvPNN7v7vPvuu65tytWrV7vjZ4MHD77oootcrpO75x133OHhJ95yyy1nnnlmuyNMgYGBQUFBgb9GUFBQk+sqpfzpp5/cf/bs2fONN954/SSWLl1aXFzsdqIPHjzY7smfPHnykiVLmryG888//80332zO2eoG4QYAuPLKKw8dOnT//fe7/nzllVdycnIaRx80TSssLHTb/mPHjvXoEBISMmzYsEOHDrmMtoKCgri4uEsvvXTgwIEuSyszM3Pjxo0XXnjhv//9b/e3brrpJld059ixY26jrfHgnPNRo0Z988037bjBsLCwzZs3BwYGSik9xvzhhx8mTZrkEZfXNM29ReGSjq+99lqrZlP7MHXqVKfTefPNNxuD/kOGDFmxYkVwcHC3ibw3h3vvvXfGjBnumVq7dm19fX3jcLx7d0IIUVdX13gch8PhFhIuagYEBNxwww1uSfDee+9t27Zty5YtrpZ+/fpNnjzZY+tDStn41wGg3TtLjLGIiIiwsLDwXyM0NNRoBhglnHEfpoVCI0FBQWeffXZHZl7X9Z07d3o4EEeOHNm4cWP3DpC6p/7pp5/Oy8v7/PPPm+ujqmpcXJzLlaurq1uzZo1HODQ7O/uHH35wi7TY2FjX/6+++urnnnuuqKgIANauXVtUVOTm3zXXXBMWFuYmmZtYq1evvvDCC42D19bWbtiwod032JxcabJdVdW+ffu69f7UqVMnT55slCiMMZe7GhcXl56e3hFW3XvvvS+88IJHe2lp6fXXX798+fJLL720E1e9U413j7jc4MGDPX7daLwboy+hoaGffvqp+7v5+fnGaPhFF11k3Ma/5557Gt9XSEjIwYMH3X3Wr1/vNuxsNtuSJUvcgcGqqqrbb7+93V5hREREc77Vpk2bmoxjLVq0yKiYjh075vHFrKyssrIybwKkzRnvuq7/4x//8PAeevfu7f4zODj4s88+6wZpM60Si4h27NgRGRnZHLEqKyuND6jVav3LX/7y6KOP3n333e6EHJftYuScKw+nsYl68803G/s0NDQYzXNEvOCCCx5++OFZs2aNGDHC47udTayCgoLo6Ggjt1auXJmdnX3gwIGVK1eec845drs9JSUlLy+vfcTSNM1t1Lq97Nzc3DVr1hgnKjQ09Msvv+wGxAoMDHRdsd1u3717d5Pd1qxZYwzhxMfHGyPv69evb8FDduH2229vvAsxZcoUYx+r1eoRUCCijRs3erkdvmTJkpZvduvWrW5XNzw8vDlifffdd25zKjU11RhJX7JkiYd11bNnT497X79+vbu/MRZz0003udtnzZpl9G1djZ999pnR746Pj3c/50uXLjVaeIMGDeqkyLvPjHdVVd1zzRhrjh8XX3zxk08+6Z5Tf39/YwBp/Pjxr7/+utswaozp06c/+eSTjaMVt912m3G+LrroosZy6A9/+MMrr7zSnDc0aNAgt1xUW6t5a7w7Pz+/5rbY/f393eeB7Xa7sdv06dMfeugh441UV1fX1NQYY+IjR4400s44bJNX4v7/0aNH3S5qdHT0ypUrU1NTXX/eeOONjz32mNHeam5voKvYWFLK+fPn+/n52e12V7Cqhc6zZs2y2WyBgYFLly5tUmNeddVVxl13i8UyfPjwN99807UD0yQef/zxwMBAi8VyxhlnGKPwHvj+++8vvvhiu91uXI+rr7760KFDc+fOtVqt/fv337dvX8s363Q6b731VpvNFhAQ8OKLLzbXraGh4brrrrNarSEhIcuXL2/c4YMPPhgzZoz7gXQp+n79+s2dO9dDCh45cmTkyJEWiyUuLu7HH390tx88eHDIkCEWi2XAgAE7d+50NRYWFo4ZM8ZiscTGxn799deNV2rmzJk2m81utz/++OMtTGlH4OMj9rt37xZCDB48uNVynTt37rRYLO4nqTEOHDiwY8eOkpISPz+/5OTkoUOHGtnQJPbv319SUpKent6yypNSZmRk/Pzzz5WVlSEhIUOHDnXtZzscjp07d0ZFRfXt29cbT3Dnzp3+/v6NEzEaO/xBQUEDBgxosoPrRzMyMqqqqvz8/Pr37z98+PAm4xTl5eWZmZkJCQnGjS/XZuWePXs82quqqnbv3t2vX7+YmJgmf3fHjh2MsSFDhnSSU2jWbjDRbQOkJkximTBhEsuESSwTJrFMmPABunrhNV3XMzIy6urqXPGL0NDQhISEJmMZBw4cKCkpcX9ERHa7PT093SN6WVhY+Nlnn2VnZ4eHh1922WXGrK+2DgUAdXV1y5YtGzt27NChQ5u8/vLy8v3797t2oxVF6du3r0ewwIhNmzZ98803Dodj7NixEydObBwHLiwsrKysNG7PNzQ07NmzZ/DgwV3qtOqJWevK+O9//xsQEBAVFRUTExMVFRUcHHzllVc23rUtKirq169f7969Y04iMjLy7LPP9jjrsnbt2gEDBowZM+ayyy4bMGBAVFRU441YL4dyYeHChWDYS2mMO+64IyAgIDo6Ojo6OjIyMjIy8tlnn23craam5sYbb4yKirrgggv++Mc/+vn5XXPNNTU1NR7dbr/99mnTphlbPvzww+Tk5OaOCf0eajd0Eh5++OFhw4YVFxeXlZWVlZV98cUXISEhDz/8sEe3DRs2hISEZGRklJ1EaWmpx8Gyw4cPx8TELFiwoKGhgYjKysrGjx8/atQoTdPaOpQ7B3rQoEEjR47805/+1OROg9PpHDZs2Jw5c1zjHD169OGHH7bZbO4QuZF/qamprh09IcR7770HAGvXrjX20XX9zDPPnD17trFxzpw5Y8eO9bgFk1itY/Lkydddd52xZdq0aZMmTWqcJ56amtpyfZEXX3xx4MCBxsoce/fuXbNmjceehjdDuUk/fvz4FStWxMXFNSkzSkpKIiMj16xZYyyd0rt375UrV3psYfXq1WvLli0eGetHjx41tlRWVsbGxnp8d9KkScY96a6DLm28O53OAwcOpKSkGBuLi4sbb7lkZmYmJiZ6HLbxQFlZWW1trbG+VFJSkvHQmPdDucydN95445577klPT6+qqnLnVRuRk5PjdDqNJlFpaakQwp116MJHH32UlJTkkYY/efJkjxSjI0eO1NTUGHPahBAHDx5sYVvM9AqbRmVlZVFR0fDhw90tH3/88a5du6ZOnWrsJqXct29feHh4YWFhXl5eXl6eMU3AjUsuuaSuru78889fuXLl8ePHm/xFL4cCgEWLFsXExEycODE8PJxzfuDAgcZ9MjMzQ0ND3cfOHA7HY4895tr3NNq4P/300/Dhw1utGpKVlYWIJSUlu3bt2rVr188///zdd98dPXrU48EzjffWsW3bNrvdftVVV91xxx133XXX1KlTo6OjX3nllcaWb0JCQmBgYFRUlMtAfvnll5sc8Icffrj88suDgoJiYmLmzJlTWVnZvqHy8/P79OnjyjfUNC01NbVJk3zWrFlhYWEzZsxwXf+5556bnp7ukQJZW1ubnJzc+KYaY8GCBRaLJfIkoqKievXqFRAQcPjw4S64dl063JCVlWW32y0WS21t7c8//7xjx47169ePHz/eo9vRo0ePHz/++uuvp6SkCCEYYx66xo1Ro0Z9+OGH2dnZK1euXLBgwbFjxxYvXmwUFV4OtWjRooCAgMTERNcR3KCgoMbntFwZxpGRkU6ns6am5tNPP+3Xr9+GDRs8MhdKSkrKysq8kTq7du2aNGnSwoULXblWnPM333zzjTfeaDIVwoxjtYTdu3cPGzbs7bffdpFs2LBhubm5TfLPZrNNmDDBncLaMuLj4x988EFFURYtWlRXV2fMlfNmqLy8vGXLljmdznPOOUdKiYgVFRVBQUFSSiNHGxoa9u7d+/e//911QmnBggVPPfVU4wNCOTk5rnMTrZqb+/fvnzp1qrGIyLFjx/r3799qNpFpY3k+8Xv27HFbvsnJyRMmTFi8eHHjuniZmZkxMTHGvEoPaJr20ksveQgVIURkZKQxyc6boQDg+eefT05O3rx584YNG7766quNGzfOnDlz//79HqQpLS0tLS11Z2tNnTpV0zTXQ2JEfX29lNIY3tQ0beHChXl5eR7mZmFhoTH3i4gyMjKSk5NP7UvFu5+NVVdXl5ycvHjxYnfLxx9/jIiNS7j+9a9/vfrqq/WT0DTNI6pUU1PjsnXcLb/88ktMTMxLL73U1qEOHDgQERGxbt06Y+PXX38dEhLiUovG/P2wsDB38QXX4PHx8R6BiX379vn7+7/55pvuYNW//vWv8PDw/Px8Y7ctW7b06tXLeO6opqYmMTGx1fR808byRElJSVFRUVpamrtlwoQJcXFxq1atOu+884x7Pjk5OTk5ORMnTnQZH0SkKMpjjz3mLm7j7+9/3333zZw58/jx4+np6a4TjhdffLHxhL6XQz3//PPp6enGGkkA0L9/fyFEbm6u0SDbvXt3WFhYSEiIu+XGG2985513Nm/ebDzKlpCQMG3atDvvvHP79u2hoaHffvvtwYMHly1b5pH5uXv37sDAQON20LFjx4qLi43z06XAH3rooa55ZVLK2NjYCRMmuI82qKqalpY2ZMgQ92lVFyIiIlJTUwcMGJCUlJSUlJSYmJiamjp27Fij8TR27Njk5OQ9e/bs27evR48e999//z333NN4f63VoYQQU6ZM8aiW5ufn169fv3HjxhmLNXLOzzrrLKPyiomJSUhIGD16tDGdHxHHjx8fFBS0ffv2goKC0aNHL1y40HiM4oTJwtjYsWONNJJSxsfHjx8/vnEFpa6A0y41mYi6qFHy+8JplzZjssoklgmTWCZMmMQyYRLLhEksEyZMYpkwiWXCJJYJEyaxTJjEMmESy4QJk1gmTGKZMIllwoRJLBMmsUyYxDJhEsucAhMmsUyYxDJhEsuECZNYJkximTCJZcKESSwTJrFMmMQyYcIklgmTWCZMYpkwYRLLhEksEyaxTJgwiWWi6+L/AXUSTUdAmBuhAAAAAElFTkSuQmCC" x="180" y="180" width="140" height="140" clip-path="url(#orbitLogoClip)" preserveAspectRatio="xMidYMid slice"/>
         </svg>
       </div>
     </div>
@@ -991,7 +1178,7 @@ a.syllabus-lesson:visited{ color:#444; }
           </div>
           <div class="mission-point reveal reveal-delay-2">
             <span class="num mono">C</span>
-            <div><h3>Fully remote, by design</h3><p>No office, no home country — just the collaboration. It's how we work across 25 countries without asking anyone to relocate.</p></div>
+            <div><h3>Fully remote, by design</h3><p>No office, no home country — just the collaboration. It's how we work across 25+ countries without asking anyone to relocate.</p></div>
           </div>
         </div>
       </div>
@@ -1067,7 +1254,7 @@ a.syllabus-lesson:visited{ color:#444; }
       </div>
 
       <div class="reveal" style="margin-top:36px;">
-        <a href="#papers" class="btn btn-ghost">View all papers →</a>
+        <a href="papers/" class="btn btn-ghost">View all papers →</a>
       </div>
     </div>
   </section>
@@ -1086,7 +1273,7 @@ a.syllabus-lesson:visited{ color:#444; }
       </div>
 
       <div class="reveal" style="margin-top:36px;">
-        <a href="#researchers" class="btn btn-ghost">View all researchers →</a>
+        <a href="researchers/" class="btn btn-ghost">View all researchers →</a>
       </div>
     </div>
   </section>
@@ -1099,7 +1286,7 @@ a.syllabus-lesson:visited{ color:#444; }
         <h2>Small on paper, wide on the map</h2>
       </div>
       <div class="stats-grid">
-        <div class="stat-box reveal"><b data-count="25">0</b><span>Countries represented</span></div>
+        <div class="stat-box reveal"><b data-count="25" data-suffix="+">0</b><span>Countries represented</span></div>
         <div class="stat-box reveal reveal-delay-1"><b id="statResearcherCount">0</b><span>Researchers</span></div>
         <div class="stat-box reveal reveal-delay-2"><b id="statActiveCount">0</b><span>Active research papers</span></div>
         <div class="stat-box reveal reveal-delay-3"><b id="statPublishedCount">0</b><span>Papers published</span></div>
@@ -1119,7 +1306,7 @@ a.syllabus-lesson:visited{ color:#444; }
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHn0rM1Z7a4Iv9YUj7UgInyz_qXqg_uEvNd6mOqv-3-jDpcg/viewform?usp=dialog" target="_blank" rel="noopener" class="btn btn-light">Propose a research lead</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6w9_eehdJqXYw6BG2jqGy63ZnTa1nOWYHvsIrek8LppuOpg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.3); color:#fff;">Join as a researcher</a>
       </div>
-      <p class="reveal reveal-delay-2" style="margin-top:22px; font-size:13.5px; color:rgba(255,255,255,0.5);">Already part of Nova Helix? <a href="#login" style="color:#16AFFF; font-weight:600;">Log in</a></p>
+      <p class="reveal reveal-delay-2" style="margin-top:22px; font-size:13.5px; color:rgba(255,255,255,0.5);">Already part of Nova Helix? <a href="login/" style="color:#16AFFF; font-weight:600;">Log in</a></p>
     </div>
   </section>
 
@@ -1130,7 +1317,7 @@ a.syllabus-lesson:visited{ color:#444; }
     <div class="wrap">
       <div class="eyebrow mono"><span class="dot"></span> The people</div>
       <h1>Current researchers</h1>
-      <p>Everyone actively orbiting a research lead right now — across 25 countries, all remote, all opted in by choice.</p>
+      <p>Everyone actively orbiting a research lead right now — across 25+ countries, all remote, all opted in by choice.</p>
     </div>
   </div>
 
@@ -1217,7 +1404,7 @@ a.syllabus-lesson:visited{ color:#444; }
 <div class="page" id="page-apply">
   <div class="page-header">
     <div class="wrap">
-      <div class="eyebrow mono"><span class="dot"></span> <a href="#papers" style="color:inherit;">Papers</a></div>
+      <div class="eyebrow mono"><span class="dot"></span> <a href="papers/" style="color:inherit;">Papers</a></div>
       <h1 id="applyPaperTitle">Apply to join this paper</h1>
       <p id="applyPaperDescription"></p>
     </div>
@@ -1230,7 +1417,7 @@ a.syllabus-lesson:visited{ color:#444; }
         <div class="admin-gate">
           <h2 id="applyGateHeading">Log in to apply</h2>
           <p id="applyGateText">You need a researcher account to apply to join this paper.</p>
-          <a href="#login" class="btn btn-primary" id="applyGateLoginLink">Log in</a>
+          <a href="login/" class="btn btn-primary" id="applyGateLoginLink">Log in</a>
         </div>
       </div>
 
@@ -1267,9 +1454,11 @@ a.syllabus-lesson:visited{ color:#444; }
             <p class="apply-error" id="applyPhoneError"></p>
           </div>
 
+          <p class="field-hint" style="margin:-6px 0 18px;">By submitting, you agree that your application and phone number are shared with this paper's research lead and the Nova Helix team. See our <a href="privacy/" target="_blank" style="color:var(--blue-deep); text-decoration:underline;">Privacy Policy</a>.</p>
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">Submit application</button>
-            <a href="#papers" class="btn btn-ghost">Cancel</a>
+            <a href="papers/" class="btn btn-ghost">Cancel</a>
           </div>
         </form>
       </div>
@@ -1302,7 +1491,7 @@ a.syllabus-lesson:visited{ color:#444; }
 <div class="page" id="page-course-detail">
   <div class="page-header">
     <div class="wrap">
-      <div class="eyebrow mono"><span class="dot"></span> <a href="#education" style="color:inherit;">Education</a></div>
+      <div class="eyebrow mono"><span class="dot"></span> <a href="education/" style="color:inherit;">Education</a></div>
       <h1 id="courseDetailTitle">Course title</h1>
       <p id="courseDetailSubtitle"></p>
     </div>
@@ -1335,7 +1524,7 @@ a.syllabus-lesson:visited{ color:#444; }
   <div class="lesson-shell">
     <div class="lesson-sidebar" id="lessonSidebar"></div>
     <div class="lesson-main">
-      <div class="eyebrow mono" style="margin-bottom:14px;"><a href="#course-detail" id="lessonBackLink" style="color:inherit;">← Back to course</a></div>
+      <div class="eyebrow mono" style="margin-bottom:14px;"><a href="education/" id="lessonBackLink" style="color:inherit;">← Back to course</a></div>
       <h1 id="lessonTitle" style="font-size:28px; margin-bottom:22px;">Lesson title</h1>
       <div id="lessonMediaArea"></div>
       <div class="text-content" id="lessonTextArea"></div>
@@ -1426,6 +1615,28 @@ a.syllabus-lesson:visited{ color:#444; }
       <div class="mission-grid">
         <div class="reveal in">
           <p class="mission-statement" id="contactMessage">Loading…</p>
+          <div class="researcher-card" style="margin-top:28px;">
+            <h3 style="margin-bottom:6px;">Send us a message</h3>
+            <p style="font-size:13px; color:#888; margin-bottom:18px;">We read every message and reply by email.</p>
+            <form id="contactMsgForm" novalidate>
+              <div class="field-error" id="contactMsgError"></div>
+              <div class="form-success" id="contactMsgSuccess" style="display:none;"></div>
+              <div id="contactMsgFields">
+                <div class="field-row">
+                  <div class="field"><label for="cmName">Your name</label><input type="text" id="cmName" maxlength="120" autocomplete="name" required></div>
+                  <div class="field"><label for="cmEmail">Your email</label><input type="email" id="cmEmail" maxlength="200" autocomplete="email" required></div>
+                </div>
+                <div class="field"><label for="cmSubject">Subject <span style="font-weight:400; color:#999;">(optional)</span></label><input type="text" id="cmSubject" maxlength="200"></div>
+                <div class="field"><label for="cmMessage">Message</label><textarea id="cmMessage" maxlength="5000" required></textarea></div>
+                <div class="hp-field" aria-hidden="true"><label>Leave empty<input type="text" id="cmWebsite" tabindex="-1" autocomplete="off"></label></div>
+                <label style="display:flex; gap:10px; align-items:flex-start; font-size:13px; color:#555; line-height:1.5; margin-bottom:18px;">
+                  <input type="checkbox" id="cmConsent" style="margin-top:3px;">
+                  <span>I agree that Nova Helix Research may use my name and email to reply to me, as described in the <a href="privacy/" style="color:var(--blue-deep); text-decoration:underline;">Privacy Policy</a>.</span>
+                </label>
+                <button type="submit" class="btn btn-primary" id="cmSubmit">Send message</button>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="reveal in">
           <div class="researcher-card" style="max-width:440px;">
@@ -1441,11 +1652,105 @@ a.syllabus-lesson:visited{ color:#444; }
   </section>
 </div>
 
+<div class="page" id="page-privacy">
+  <div class="page-header">
+    <div class="wrap">
+      <div class="eyebrow mono"><span class="dot"></span> Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>What we collect, why we collect it, who sees it, and the choices you have. Plain language, no tricks.</p>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="legal">
+        <div class="legal-note"><b>Last updated:</b> October 26, 2026. Nova Helix Research is an independent, remote-first research collective. We keep our data practices simple and only ask for what the platform needs to work.</div>
+
+        <h2>1. Who we are</h2>
+        <p>"Nova Helix Research", "we", "us" and "our" means the independent collective that runs this website and the research collaboration platform on it. You can reach us at any time at <a href="mailto:novahelix.contact@gmail.com" class="privacy-email">novahelix.contact@gmail.com</a>.</p>
+
+        <h2>2. What we collect</h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>When</th><th>What we collect</th></tr></thead>
+          <tbody>
+            <tr><td>You create an account</td><td>First and last name, email address, password (stored securely hashed by our authentication provider, never in plain text), country.</td></tr>
+            <tr><td>You fill in your profile</td><td>Field of research, short bio, LinkedIn link, profile photo. All optional.</td></tr>
+            <tr><td>You apply to join a paper</td><td>The application text you write (experience, publications, skills, availability) and your phone number.</td></tr>
+            <tr><td>You take a course</td><td>Enrollment, lesson progress, quiz interaction, certificates issued to you.</td></tr>
+            <tr><td>You pay for a course</td><td>Payment is handled by Stripe on its own checkout page. We never see or store your card details; we only record that a payment was made.</td></tr>
+            <tr><td>You contact us or fill in a Google Form</td><td>Whatever you choose to send us (for example when proposing a research lead or asking to join as a researcher).</td></tr>
+            <tr><td>You simply browse</td><td>Basic technical data your browser sends (such as IP address and device type) is processed by our hosting and infrastructure providers to deliver the site and keep it secure.</td></tr>
+          </tbody>
+        </table></div>
+
+        <h2>3. How we use it</h2>
+        <ul>
+          <li>To run your account and let you log in.</li>
+          <li>To list researchers, research leads and board members on the public pages.</li>
+          <li>To pass your paper applications to the research lead of that paper, and to email you when you are accepted.</li>
+          <li>To run courses, track progress and issue certificates.</li>
+          <li>To email you about things you asked for or that directly concern your account or applications. We do not send marketing emails.</li>
+          <li>To keep the platform secure and fix problems.</li>
+        </ul>
+        <p>We do not sell your personal data, and we do not use it for advertising or profiling.</p>
+
+        <h2>4. What is public and what is private</h2>
+        <p><b>Public:</b> if you are listed as a researcher or research lead (or are a board member), your name, photo, country, field, bio, LinkedIn link and the papers you work on appear on the website for anyone to see. You control most of these details from your profile page and can leave optional ones empty.</p>
+        <p><b>Private:</b> your email address, phone number, application text, course progress and payment status are not shown publicly. Your application text and phone number are visible only to the research lead of the paper you applied to and to the Nova Helix administrators.</p>
+
+        <h2>5. Who we share data with</h2>
+        <p>We use a small number of service providers to operate the platform. They process data on our behalf:</p>
+        <ul>
+          <li><b>Supabase</b> &mdash; database, authentication and file storage (profile photos, paper files, certificates).</li>
+          <li><b>Netlify</b> &mdash; website hosting.</li>
+          <li><b>Google</b> &mdash; Google Forms (proposal and researcher sign-up forms), Gmail (sending notification emails) and Google Fonts (page fonts).</li>
+          <li><b>Stripe</b> &mdash; payment processing for paid courses.</li>
+          <li><b>jsDelivr</b> &mdash; delivers a code library the site needs to run.</li>
+        </ul>
+        <p>We may also disclose information if the law requires it, or to protect the rights and safety of our members.</p>
+
+        <h2>6. International transfers</h2>
+        <p>Our members work from many countries and our providers operate globally, so your information may be processed outside the country where you live. Where required, we rely on the safeguards offered by our providers, such as standard contractual clauses.</p>
+
+        <h2>7. How long we keep it</h2>
+        <p>We keep your account and profile for as long as your account exists. Application messages are kept while the related paper is active and for a reasonable period afterwards. If you ask us to delete your account, we remove your profile and personal data, except where we are required to keep something by law (for example payment records held by Stripe).</p>
+
+        <h2>8. Your rights and choices</h2>
+        <p>Depending on where you live (for example under the GDPR in the EU/UK), you may have the right to:</p>
+        <ul>
+          <li>access the personal data we hold about you;</li>
+          <li>correct it &mdash; you can edit most of it yourself on your <a href="profile/">profile page</a>;</li>
+          <li>delete it, or restrict or object to how we use it;</li>
+          <li>receive a copy of it in a portable format;</li>
+          <li>withdraw consent at any time, where we rely on consent;</li>
+          <li>complain to your local data protection authority.</li>
+        </ul>
+        <p>To use any of these rights, email us at <a href="mailto:novahelix.contact@gmail.com" class="privacy-email">novahelix.contact@gmail.com</a>. We will answer within a reasonable time, normally within 30 days. We may need to verify your identity first.</p>
+
+        <h2>9. Security</h2>
+        <p>Data is transmitted over encrypted connections, passwords are hashed, and access to private information is limited by account role. No online service can promise perfect security, so please use a strong, unique password.</p>
+
+        <h2>10. Cookies and local storage</h2>
+        <p>We do not use advertising or tracking cookies. Your browser stores a login session (in local storage) so you stay signed in; that is strictly necessary for the platform to work. Third-party services you use through us, such as Stripe checkout or Google Forms, may set their own cookies under their own policies.</p>
+
+        <h2>11. Children</h2>
+        <p>The platform is intended for people aged 16 and over. We do not knowingly collect data from younger children. If you believe a child has given us personal data, contact us and we will delete it.</p>
+
+        <h2>12. Changes to this policy</h2>
+        <p>If we change this policy in a meaningful way we will update the date at the top and, for significant changes, let account holders know. Continued use of the platform after a change means you accept the updated policy.</p>
+
+        <h2>13. Contact</h2>
+        <p>Questions or requests about your data: <a href="mailto:novahelix.contact@gmail.com" class="privacy-email">novahelix.contact@gmail.com</a>, or use the <a href="contact/">Contact page</a>.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
 <div class="page" id="page-login">
   <div class="auth-shell">
     <div class="auth-card">
       <div class="auth-brand">
-        <img src="data:image/png;base64,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JjF69OiXX37ZHWf/8ssv77//fl3XGwd1pJSbN292x2lmzZrlNj8bt2RkZOTn5yuKcvPNN7v7vPvuu65tytWrV7vjZ4MHD77oootcrpO75x133OHhJ95yyy1nnnlmuyNMgYGBQUFBgb9GUFBQk+sqpfzpp5/cf/bs2fONN954/SSWLl1aXFzsdqIPHjzY7smfPHnykiVLmryG888//80332zO2eoG4QYAuPLKKw8dOnT//fe7/nzllVdycnIaRx80TSssLHTb/mPHjvXoEBISMmzYsEOHDrmMtoKCgri4uEsvvXTgwIEuSyszM3Pjxo0XXnjhv//9b/e3brrpJld059ixY26jrfHgnPNRo0Z988037bjBsLCwzZs3BwYGSik9xvzhhx8mTZrkEZfXNM29ReGSjq+99lqrZlP7MHXqVKfTefPNNxuD/kOGDFmxYkVwcHC3ibw3h3vvvXfGjBnumVq7dm19fX3jcLx7d0IIUVdX13gch8PhFhIuagYEBNxwww1uSfDee+9t27Zty5YtrpZ+/fpNnjzZY+tDStn41wGg3TtLjLGIiIiwsLDwXyM0NNRoBhglnHEfpoVCI0FBQWeffXZHZl7X9Z07d3o4EEeOHNm4cWP3DpC6p/7pp5/Oy8v7/PPPm+ujqmpcXJzLlaurq1uzZo1HODQ7O/uHH35wi7TY2FjX/6+++urnnnuuqKgIANauXVtUVOTm3zXXXBMWFuYmmZtYq1evvvDCC42D19bWbtiwod032JxcabJdVdW+ffu69f7UqVMnT55slCiMMZe7GhcXl56e3hFW3XvvvS+88IJHe2lp6fXXX798+fJLL720E1e9U413j7jc4MGDPX7daLwboy+hoaGffvqp+7v5+fnGaPhFF11k3Ma/5557Gt9XSEjIwYMH3X3Wr1/vNuxsNtuSJUvcgcGqqqrbb7+93V5hREREc77Vpk2bmoxjLVq0yKiYjh075vHFrKyssrIybwKkzRnvuq7/4x//8PAeevfu7f4zODj4s88+6wZpM60Si4h27NgRGRnZHLEqKyuND6jVav3LX/7y6KOP3n333e6EHJftYuScKw+nsYl68803G/s0NDQYzXNEvOCCCx5++OFZs2aNGDHC47udTayCgoLo6Ggjt1auXJmdnX3gwIGVK1eec845drs9JSUlLy+vfcTSNM1t1Lq97Nzc3DVr1hgnKjQ09Msvv+wGxAoMDHRdsd1u3717d5Pd1qxZYwzhxMfHGyPv69evb8FDduH2229vvAsxZcoUYx+r1eoRUCCijRs3erkdvmTJkpZvduvWrW5XNzw8vDlifffdd25zKjU11RhJX7JkiYd11bNnT497X79+vbu/MRZz0003udtnzZpl9G1djZ999pnR746Pj3c/50uXLjVaeIMGDeqkyLvPjHdVVd1zzRhrjh8XX3zxk08+6Z5Tf39/YwBp/Pjxr7/+utswaozp06c/+eSTjaMVt912m3G+LrroosZy6A9/+MMrr7zSnDc0aNAgt1xUW6t5a7w7Pz+/5rbY/f393eeB7Xa7sdv06dMfeugh441UV1fX1NQYY+IjR4400s44bJNX4v7/0aNH3S5qdHT0ypUrU1NTXX/eeOONjz32mNHeam5voKvYWFLK+fPn+/n52e12V7Cqhc6zZs2y2WyBgYFLly5tUmNeddVVxl13i8UyfPjwN99807UD0yQef/zxwMBAi8VyxhlnGKPwHvj+++8vvvhiu91uXI+rr7760KFDc+fOtVqt/fv337dvX8s363Q6b731VpvNFhAQ8OKLLzbXraGh4brrrrNarSEhIcuXL2/c4YMPPhgzZoz7gXQp+n79+s2dO9dDCh45cmTkyJEWiyUuLu7HH390tx88eHDIkCEWi2XAgAE7d+50NRYWFo4ZM8ZiscTGxn799deNV2rmzJk2m81utz/++OMtTGlH4OMj9rt37xZCDB48uNVynTt37rRYLO4nqTEOHDiwY8eOkpISPz+/5OTkoUOHGtnQJPbv319SUpKent6yypNSZmRk/Pzzz5WVlSEhIUOHDnXtZzscjp07d0ZFRfXt29cbT3Dnzp3+/v6NEzEaO/xBQUEDBgxosoPrRzMyMqqqqvz8/Pr37z98+PAm4xTl5eWZmZkJCQnGjS/XZuWePXs82quqqnbv3t2vX7+YmJgmf3fHjh2MsSFDhnSSU2jWbjDRbQOkJkximTBhEsuESSwTJrFMmPABunrhNV3XMzIy6urqXPGL0NDQhISEJmMZBw4cKCkpcX9ERHa7PT093SN6WVhY+Nlnn2VnZ4eHh1922WXGrK+2DgUAdXV1y5YtGzt27NChQ5u8/vLy8v3797t2oxVF6du3r0ewwIhNmzZ98803Dodj7NixEydObBwHLiwsrKysNG7PNzQ07NmzZ/DgwV3qtOqJWevK+O9//xsQEBAVFRUTExMVFRUcHHzllVc23rUtKirq169f7969Y04iMjLy7LPP9jjrsnbt2gEDBowZM+ayyy4bMGBAVFRU441YL4dyYeHChWDYS2mMO+64IyAgIDo6Ojo6OjIyMjIy8tlnn23craam5sYbb4yKirrgggv++Mc/+vn5XXPNNTU1NR7dbr/99mnTphlbPvzww+Tk5OaOCf0eajd0Eh5++OFhw4YVFxeXlZWVlZV98cUXISEhDz/8sEe3DRs2hISEZGRklJ1EaWmpx8Gyw4cPx8TELFiwoKGhgYjKysrGjx8/atQoTdPaOpQ7B3rQoEEjR47805/+1OROg9PpHDZs2Jw5c1zjHD169OGHH7bZbO4QuZF/qamprh09IcR7770HAGvXrjX20XX9zDPPnD17trFxzpw5Y8eO9bgFk1itY/Lkydddd52xZdq0aZMmTWqcJ56amtpyfZEXX3xx4MCBxsoce/fuXbNmjceehjdDuUk/fvz4FStWxMXFNSkzSkpKIiMj16xZYyyd0rt375UrV3psYfXq1WvLli0eGetHjx41tlRWVsbGxnp8d9KkScY96a6DLm28O53OAwcOpKSkGBuLi4sbb7lkZmYmJiZ6HLbxQFlZWW1trbG+VFJSkvHQmPdDucydN95445577klPT6+qqnLnVRuRk5PjdDqNJlFpaakQwp116MJHH32UlJTkkYY/efJkjxSjI0eO1NTUGHPahBAHDx5sYVvM9AqbRmVlZVFR0fDhw90tH3/88a5du6ZOnWrsJqXct29feHh4YWFhXl5eXl6eMU3AjUsuuaSuru78889fuXLl8ePHm/xFL4cCgEWLFsXExEycODE8PJxzfuDAgcZ9MjMzQ0ND3cfOHA7HY4895tr3NNq4P/300/Dhw1utGpKVlYWIJSUlu3bt2rVr188///zdd98dPXrU48EzjffWsW3bNrvdftVVV91xxx133XXX1KlTo6OjX3nllcaWb0JCQmBgYFRUlMtAfvnll5sc8Icffrj88suDgoJiYmLmzJlTWVnZvqHy8/P79OnjyjfUNC01NbVJk3zWrFlhYWEzZsxwXf+5556bnp7ukQJZW1ubnJzc+KYaY8GCBRaLJfIkoqKievXqFRAQcPjw4S64dl063JCVlWW32y0WS21t7c8//7xjx47169ePHz/eo9vRo0ePHz/++uuvp6SkCCEYYx66xo1Ro0Z9+OGH2dnZK1euXLBgwbFjxxYvXmwUFV4OtWjRooCAgMTERNcR3KCgoMbntFwZxpGRkU6ns6am5tNPP+3Xr9+GDRs8MhdKSkrKysq8kTq7du2aNGnSwoULXblWnPM333zzjTfeaDIVwoxjtYTdu3cPGzbs7bffdpFs2LBhubm5TfLPZrNNmDDBncLaMuLj4x988EFFURYtWlRXV2fMlfNmqLy8vGXLljmdznPOOUdKiYgVFRVBQUFSSiNHGxoa9u7d+/e//911QmnBggVPPfVU4wNCOTk5rnMTrZqb+/fvnzp1qrGIyLFjx/r3799qNpFpY3k+8Xv27HFbvsnJyRMmTFi8eHHjuniZmZkxMTHGvEoPaJr20ksveQgVIURkZKQxyc6boQDg+eefT05O3rx584YNG7766quNGzfOnDlz//79HqQpLS0tLS11Z2tNnTpV0zTXQ2JEfX29lNIY3tQ0beHChXl5eR7mZmFhoTH3i4gyMjKSk5NP7UvFu5+NVVdXl5ycvHjxYnfLxx9/jIiNS7j+9a9/vfrqq/WT0DTNI6pUU1PjsnXcLb/88ktMTMxLL73U1qEOHDgQERGxbt06Y+PXX38dEhLiUovG/P2wsDB38QXX4PHx8R6BiX379vn7+7/55pvuYNW//vWv8PDw/Px8Y7ctW7b06tXLeO6opqYmMTGx1fR808byRElJSVFRUVpamrtlwoQJcXFxq1atOu+884x7Pjk5OTk5ORMnTnQZH0SkKMpjjz3mLm7j7+9/3333zZw58/jx4+np6a4TjhdffLHxhL6XQz3//PPp6enGGkkA0L9/fyFEbm6u0SDbvXt3WFhYSEiIu+XGG2985513Nm/ebDzKlpCQMG3atDvvvHP79u2hoaHffvvtwYMHly1b5pH5uXv37sDAQON20LFjx4qLi43z06XAH3rooa55ZVLK2NjYCRMmuI82qKqalpY2ZMgQ92lVFyIiIlJTUwcMGJCUlJSUlJSYmJiamjp27Fij8TR27Njk5OQ9e/bs27evR48e999//z333NN4f63VoYQQU6ZM8aiW5ufn169fv3HjxhmLNXLOzzrrLKPyiomJSUhIGD16tDGdHxHHjx8fFBS0ffv2goKC0aNHL1y40HiM4oTJwtjYsWONNJJSxsfHjx8/vnEFpa6A0y41mYi6qFHy+8JplzZjssoklgmTWCZMmMQyYRLLhEksEyZMYpkwiWXCJJYJEyaxTJjEMmESy4QJk1gmTGKZMIllwoRJLBMmsUyYxDJhEsucAhMmsUyYxDJhEsuECZNYJkximTCJZcKESSwTJrFMmMQyYcIklgmTWCZMYpkwYRLLhEksEyaxTJgwiWWi6+L/AXUSTUdAmBuhAAAAAElFTkSuQmCC" alt="">
+        <img src="logo.png" alt="">
         <span class="brand-text"><b>Nova Helix</b><span>RESEARCH</span></span>
       </div>
       <div class="auth-head">
@@ -1464,11 +1769,55 @@ a.syllabus-lesson:visited{ color:#444; }
           <input type="password" id="password" placeholder="••••••••" required>
         </div>
 
+        <p style="text-align:right; margin:-6px 0 16px; font-size:13px;"><button type="button" class="link-btn" id="forgotLink">Forgot your password?</button></p>
         <button type="submit" class="btn btn-primary btn-block">Log in</button>
       </form>
 
+      <form id="forgotForm" style="display:none;">
+        <div class="field-error" id="forgotError"></div>
+        <div class="form-success" id="forgotSuccess" style="display:none;"></div>
+        <p style="font-size:14px; color:#555; line-height:1.6; margin-bottom:16px;">Enter your account email and we'll send you a link to choose a new password.</p>
+        <div class="field">
+          <label for="forgotEmail">Email address</label>
+          <input type="email" id="forgotEmail" placeholder="you@example.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send reset link</button>
+        <p style="text-align:center; margin-top:14px; font-size:13px;"><button type="button" class="link-btn" id="forgotBack">← Back to log in</button></p>
+      </form>
+
       <div class="divider">or</div>
-      <p class="switch-line">New here? <a href="#signup">Create a free account</a> · Have a research lead? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHn0rM1Z7a4Iv9YUj7UgInyz_qXqg_uEvNd6mOqv-3-jDpcg/viewform?usp=dialog" target="_blank" rel="noopener">Propose it</a></p>
+      <p class="switch-line">New here? <a href="signup/">Create a free account</a> · Have a research lead? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHn0rM1Z7a4Iv9YUj7UgInyz_qXqg_uEvNd6mOqv-3-jDpcg/viewform?usp=dialog" target="_blank" rel="noopener">Propose it</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-reset-password">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <img src="logo.png" alt="">
+        <span class="brand-text"><b>Nova Helix</b><span>RESEARCH</span></span>
+      </div>
+      <div class="auth-head">
+        <h1>Choose a new password</h1>
+        <p id="resetLead">Pick something at least 8 characters long.</p>
+      </div>
+      <div id="resetExpired" style="display:none;">
+        <div class="field-error" style="display:block;">This reset link is invalid or has expired. Reset links work once and only for a short time.</div>
+        <p class="switch-line" style="margin-top:18px;"><a href="login/">Back to log in</a> and choose "Forgot your password?" to get a fresh link.</p>
+      </div>
+      <form id="resetForm" style="display:none;">
+        <div class="field-error" id="resetError"></div>
+        <div class="field">
+          <label for="resetPw1">New password</label>
+          <input type="password" id="resetPw1" minlength="8" autocomplete="new-password" required>
+        </div>
+        <div class="field">
+          <label for="resetPw2">Repeat new password</label>
+          <input type="password" id="resetPw2" minlength="8" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Save new password</button>
+      </form>
     </div>
   </div>
 </div>
@@ -1509,11 +1858,16 @@ a.syllabus-lesson:visited{ color:#444; }
           <span>Everyone signs up as a <b>visiting</b> account. Research Lead, Educator, and other roles are granted by an admin once you're involved with a paper or course.</span>
         </div>
 
+        <label class="checkbox-line" style="margin-bottom:18px;">
+          <input type="checkbox" id="signupConsent" required>
+          <span>I have read and agree to the <a href="privacy/" target="_blank" style="color:var(--blue-deep); text-decoration:underline;">Privacy Policy</a>.</span>
+        </label>
+
         <button type="submit" class="btn btn-primary btn-block">Create account</button>
       </form>
 
       <div class="divider">or</div>
-      <p class="switch-line">Already have an account? <a href="#login">Log in</a></p>
+      <p class="switch-line">Already have an account? <a href="login/">Log in</a></p>
     </div>
   </div>
 </div>
@@ -1533,7 +1887,7 @@ a.syllabus-lesson:visited{ color:#444; }
       <div class="admin-gate" id="adminGate">
         <h2>Admins, Research Leads &amp; IT only</h2>
         <p>Log in with an admin account to manage everything, a Research Lead account to edit papers you've been given access to, or an IT account to manage the researcher directory.</p>
-        <a href="#login" class="btn btn-primary">Log in</a>
+        <a href="login/" class="btn btn-primary">Log in</a>
       </div>
 
       <div id="adminContent" style="display:none;">
@@ -1995,14 +2349,49 @@ a.syllabus-lesson:visited{ color:#444; }
                 <textarea id="contactFormMessage" placeholder="A line or two inviting people to reach out"></textarea>
               </div>
               <div class="field-row-3">
-                <div class="field"><label for="contactFormEmail">Email</label><input type="email" id="contactFormEmail" placeholder="hello@novahelixresearch.org"></div>
+                <div class="field"><label for="contactFormEmail">Email</label><input type="email" id="contactFormEmail" placeholder="novahelix.contact@gmail.com"></div>
                 <div class="field"><label for="contactFormPhone">Phone number</label><input type="text" id="contactFormPhone" placeholder="+1 555 010 1234"></div>
                 <div class="field"><label for="contactFormLinkedin">LinkedIn URL</label><input type="url" id="contactFormLinkedin" placeholder="https://www.linkedin.com/company/..."></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="contactFormFacebook">Facebook URL</label><input type="url" id="contactFormFacebook" placeholder="https://www.facebook.com/yourpage"></div>
+                <div class="field"><label for="contactFormInstagram">Instagram URL</label><input type="url" id="contactFormInstagram" placeholder="https://www.instagram.com/yourhandle"></div>
               </div>
               <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Save contact info</button>
               </div>
             </form>
+          </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="admin-block" id="adminBlockMessages">
+          <div class="admin-block-head">
+            <div>
+              <h2>Messages <span id="msgUnreadBadge" class="mono" style="font-size:12px; color:var(--blue-deep);"></span></h2>
+              <p>Messages sent through the Contact page form. Click an email address to reply.</p>
+            </div>
+          </div>
+          <div id="adminMessagesList"></div>
+        </div>
+
+        <!-- PERMISSIONS -->
+        <div class="admin-block" id="adminBlockPermissions">
+          <div class="admin-block-head">
+            <div>
+              <h2>Roles &amp; permissions</h2>
+              <p>What each role can do, and quick switches for which research leads may edit their papers.</p>
+            </div>
+          </div>
+          <div class="form-panel" style="display:block; margin-bottom:22px;">
+            <h3 style="font-size:16px; margin-bottom:12px;">Research lead editing</h3>
+            <p style="font-size:13px; color:#666; margin-bottom:6px;">Switch on to let a paper's research lead edit it, see its applications, accept or decline applicants and get emailed about new applications. Admins can always do all of this.</p>
+            <div id="permLeadSwitches"></div>
+          </div>
+          <div class="form-panel" style="display:block;">
+            <h3 style="font-size:16px; margin-bottom:12px;">What each role can do</h3>
+            <div class="admin-table-wrap"><table class="perm-table" id="permMatrix"></table></div>
+            <p style="font-size:12.5px; color:#888; margin-top:12px;">Change a person's role in the <b>Accounts</b> table below.</p>
           </div>
         </div>
 
@@ -2021,7 +2410,7 @@ a.syllabus-lesson:visited{ color:#444; }
           <div class="admin-table-wrap">
             <table class="admin-table">
               <thead>
-                <tr><th>Name</th><th>Email</th><th>Role</th><th>Country</th><th></th></tr>
+                <tr><th>Name</th><th>Email</th><th>Role</th><th>Country</th><th>Password</th><th></th></tr>
               </thead>
               <tbody id="adminAccountsBody"></tbody>
             </table>
@@ -2048,7 +2437,7 @@ a.syllabus-lesson:visited{ color:#444; }
       <div class="admin-gate" id="profileGate">
         <h2>Not logged in</h2>
         <p>Log in to view and edit your profile.</p>
-        <a href="#login" class="btn btn-primary">Log in</a>
+        <a href="login/" class="btn btn-primary">Log in</a>
       </div>
 
       <div class="profile-shell" id="profileContent" style="display:none;">
@@ -2099,28 +2488,28 @@ a.syllabus-lesson:visited{ color:#444; }
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href="#mission">Mission</a>
-        <a href="#how">How it works</a>
-        <a href="#researchers">Researchers</a>
-        <a href="#papers">Papers</a>
-        <a href="#board">Board</a>
-        <a href="#contact">Contact</a>
+        <a href="./#mission">Mission</a>
+        <a href="./#how">How it works</a>
+        <a href="researchers/">Researchers</a>
+        <a href="papers/">Papers</a>
+        <a href="board/">Board</a>
+        <a href="contact/">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Get involved</h4>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHn0rM1Z7a4Iv9YUj7UgInyz_qXqg_uEvNd6mOqv-3-jDpcg/viewform?usp=dialog" target="_blank" rel="noopener">Propose a lead</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6w9_eehdJqXYw6BG2jqGy63ZnTa1nOWYHvsIrek8LppuOpg/viewform?usp=publish-editor" target="_blank" rel="noopener">Join as a researcher</a>
-        <a href="#login">Log in</a>
+        <a href="login/">Log in</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:hello@novahelixresearch.org" id="footerEmailLink">hello@novahelixresearch.org</a>
+        <a href="mailto:novahelix.contact@gmail.com" id="footerEmailLink">novahelix.contact@gmail.com</a>
         <div class="footer-social" id="footerSocial"></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Nova Helix Research. Independent research collective.</span>
-      <span>Remote-first · 25 countries</span>
+      <span>© 2026 Nova Helix Research. Independent research collective. &middot; <a href="privacy/">Privacy policy</a></span>
+      <span>Remote-first · 25+ countries</span>
     </div>
   </div>
 </footer>
@@ -2618,8 +3007,91 @@ NH.listApplicationsForPaper = async function(paperId){
   return data || [];
 };
 
+// Accepts an application in ONE atomic step on the server: marks it accepted,
+// adds the applicant to the paper's researcher_ids and recalculates contributors.
+// (SQL function accept_application — see nova-helix-update.sql.) Then asks the
+// backend to email the applicant. The email is fire-and-forget: if it fails the
+// acceptance still stands.
+NH.acceptApplication = async function(applicationId){
+  var { error } = await supabaseClient.rpc('accept_application', { p_application_id: applicationId });
+  if(error) throw new Error(error.message);
+  try{
+    supabaseClient.functions.invoke('notify-acceptance', { body: { application_id: applicationId } })
+      .then(function(res){ if(res && res.error){ console.warn('Acceptance email failed:', res.error); } })
+      .catch(function(e){ console.warn('Acceptance email failed:', e); });
+  }catch(e){ console.warn('Acceptance email failed:', e); }
+};
+
 NH.setApplicationStatus = async function(id, status){
   var { error } = await supabaseClient.from('paper_applications').update({status: status}).eq('id', id);
+  if(error) throw new Error(error.message);
+  if(status === 'declined'){
+    // Polite "not this time" email to the applicant. Fire-and-forget.
+    try{
+      supabaseClient.functions.invoke('notify-decision', { body: { application_id: id } })
+        .then(function(res){ if(res && res.error){ console.warn('Decline email failed:', res.error); } })
+        .catch(function(e){ console.warn('Decline email failed:', e); });
+    }catch(e){ console.warn('Decline email failed:', e); }
+  }
+};
+
+/* ---------------- passwords ---------------- */
+
+// "Forgot password": Supabase emails a one-time link that opens /reset-password.
+// (Add https://YOUR-SITE/reset-password to Supabase -> Authentication -> URL Configuration -> Redirect URLs.)
+NH.requestPasswordReset = async function(email){
+  var { error } = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + SITE_BASE + 'reset-password/' });
+  if(error) throw new Error(error.message);
+};
+NH.updateMyPassword = async function(newPassword){
+  var { error } = await supabaseClient.auth.updateUser({ password: newPassword });
+  if(error) throw new Error(error.message);
+};
+// Admin only: sets a new password for any account (server-side function). Passwords can
+// never be READ back by anyone, they are stored as one-way hashes.
+NH.adminSetPassword = async function(userId, newPassword){
+  var res = await supabaseClient.functions.invoke('admin-set-password', { body: { user_id: userId, new_password: newPassword } });
+  if(res.error){
+    var msg = res.error.message;
+    try{ var j = await res.error.context.json(); if(j && j.error) msg = j.error; }catch(e){}
+    throw new Error(msg);
+  }
+};
+
+/* ---------------- contact messages ---------------- */
+
+NH.sendContactMessage = async function(m){
+  var id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : null;
+  var row = { name: m.name, email: m.email, subject: m.subject || null, message: m.message };
+  if(id) row.id = id;
+  var { error } = await supabaseClient.from('contact_messages').insert(row);
+  if(error) throw new Error('Sorry, your message could not be sent. Please try again, or email us directly.');
+  if(id){
+    // Fire-and-forget: the message is already saved even if the email step fails.
+    try{
+      supabaseClient.functions.invoke('send-contact-message', { body: { message_id: id } })
+        .then(function(r){ if(r && r.error){ console.warn('Contact email failed:', r.error); } })
+        .catch(function(e){ console.warn('Contact email failed:', e); });
+    }catch(e){ console.warn('Contact email failed:', e); }
+  }
+};
+NH.listContactMessages = async function(){
+  var { data, error } = await supabaseClient.from('contact_messages').select('*').order('created_at', { ascending:false });
+  if(error){ console.error(error); return []; }
+  return data || [];
+};
+NH.setContactMessageRead = async function(id, isRead){
+  var { error } = await supabaseClient.from('contact_messages').update({ is_read: isRead }).eq('id', id);
+  if(error) throw new Error(error.message);
+};
+NH.deleteContactMessage = async function(id){
+  var { error } = await supabaseClient.from('contact_messages').delete().eq('id', id);
+  if(error) throw new Error(error.message);
+};
+
+// Quick permission switch: may this paper's research lead edit it?
+NH.setLeadEditAllowed = async function(paperId, allowed){
+  var { error } = await supabaseClient.from('papers').update({ lead_edit_allowed: !!allowed }).eq('id', paperId);
   if(error) throw new Error(error.message);
 };
 
@@ -2930,11 +3402,44 @@ NH.listMyCertificates = async function(){
 
 </script>
 <script>
+
+/* ---------------- read cache (speed) ----------------
+   Several page sections ask for the same lists (papers, researchers…).
+   Identical reads made within a few seconds share one network request.
+   Any save / delete / accept / apply call clears the cache. */
+(function(){
+  var TTL = 8000, store = {};
+  var READS = ['listPapers','listResearchers','listResearchLeads','listBoardMembers','getContactInfo','listCourses','listAllAccounts'];
+  var WRITE = /^(save|delete|set|accept|apply|add|admin|grant|update|issue|enroll|mark)/;
+  Object.keys(NH).forEach(function(k){
+    var fn = NH[k];
+    if(typeof fn !== 'function') return;
+    if(READS.indexOf(k) !== -1){
+      NH[k] = function(){
+        var now = Date.now(), hit = store[k];
+        if(hit && now - hit.t < TTL){ return hit.p; }
+        var p = fn.apply(NH, arguments);
+        store[k] = { t: now, p: p };
+        p.catch(function(){ delete store[k]; });
+        return p;
+      };
+    } else if(WRITE.test(k)){
+      NH[k] = function(){
+        store = {};
+        var r = fn.apply(NH, arguments);
+        if(r && r.then){ r.then(function(){ store = {}; }, function(){}); }
+        return r;
+      };
+    }
+  });
+  NH.clearCache = function(){ store = {}; };
+})();
+
 // ===========================================================
 // Nova Helix Research — router + page chrome behavior
 // ===========================================================
 
-var pageRoutes = ['home','researchers','papers','education','course-detail','lesson','my-learning','educator','board','contact','login','signup','admin','profile'];
+var pageRoutes = ['home','researchers','papers','education','course-detail','lesson','my-learning','educator','board','contact','privacy','login','signup','admin','profile','reset-password'];
 var homeAnchors = ['mission','how','research','network','join'];
 
 function showPage(name){
@@ -2946,61 +3451,136 @@ function showPage(name){
   if(header){ header.classList.toggle('solid', name !== 'home'); }
 
   var footer = document.getElementById('siteFooter');
-  if(footer){ footer.style.display = (name === 'login' || name === 'signup' || name === 'lesson') ? 'none' : ''; }
+  if(footer){ footer.style.display = (name === 'login' || name === 'signup' || name === 'lesson' || name === 'reset-password') ? 'none' : ''; }
 
   document.querySelectorAll('.nav-links a[data-page], .mobile-nav-panel a[data-page]').forEach(function(a){
     a.classList.toggle('active', a.getAttribute('data-page') === name);
   });
 
+  if(name === 'reset-password' && typeof renderResetPasswordPage === 'function'){ renderResetPasswordPage(); }
   if(name === 'admin' && typeof renderAdminPage === 'function'){ renderAdminPage(); }
   if(name === 'profile' && typeof renderProfilePage === 'function'){ renderProfilePage(); }
   if(name === 'contact' && typeof renderContactPage === 'function'){ renderContactPage(); }
+  if(name === 'privacy' && typeof renderPrivacyPage === 'function'){ renderPrivacyPage(); }
   if(name === 'education' && typeof renderEducationPage === 'function'){ renderEducationPage(); }
   if(name === 'my-learning' && typeof renderMyLearningPage === 'function'){ renderMyLearningPage(); }
   if(name === 'educator' && typeof renderEducatorPage === 'function'){ renderEducatorPage(); }
   setTimeout(function(){ if(typeof refreshBioClamps === 'function'){ refreshBioClamps(); } }, 120);
 }
 
-// Hash formats supported: #page, #course/<courseId>, #lesson/<lessonId>
+// ---------- Router (History API) ----------
+// Public pages are real folders (/papers/, /contact/ …) so search engines can index them.
+// Detail views (course, lesson, apply) use "#course/ID" style links on the home address.
+var SITE_BASE = window.SITE_BASE || '/';
+var SITE_ORIGIN = location.origin;
+var staticPages = ['researchers','papers','education','board','contact','privacy','login','signup','admin','profile','my-learning','educator','reset-password'];
+var routeBases = ['course','lesson','apply'];
+var PAGE_SEO = {
+  home:        ['Nova Helix Research — Remote-first research collective | Papers, researchers & courses', 'Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.', true],
+  researchers: ['Researchers & Research Leads | Nova Helix Research', 'Meet the researchers and research leads of Nova Helix Research, and the papers they are working on.', true],
+  papers:      ['Research Papers — Join a Team | Nova Helix Research', 'Browse open research papers at Nova Helix Research and apply to join a paper\'s research team, remotely, from anywhere.', true],
+  education:   ['Research Courses & Education | Nova Helix Research', 'Learn research skills with courses from the Nova Helix Research community.', true],
+  board:       ['Board & Governance | Nova Helix Research', 'The board of Nova Helix Research, an independent, remote-first research collective.', true],
+  contact:     ['Contact Us | Nova Helix Research', 'Get in touch with Nova Helix Research: send us a message, email us, or find us on LinkedIn, Facebook and Instagram.', true],
+  privacy:     ['Privacy Policy | Nova Helix Research', 'How Nova Helix Research collects, uses and protects your personal data, and the rights you have over it.', true]
+};
+
+function routeFromPath(){
+  var rel = window.location.pathname.slice(SITE_BASE.length).replace(/index\.html$/, '').replace(/\/+$/, '');
+  return rel ? decodeURIComponent(rel) : '';
+}
+function currentRoute(){
+  return routeFromPath() || window.location.hash.replace('#', '') || 'home';
+}
+
+function navTo(target){
+  target = String(target || 'home').replace(/^[#\/]+/, '');
+  var url;
+  if(target === '' || target === 'home'){ url = SITE_BASE; }
+  else if(staticPages.indexOf(target) !== -1){ url = SITE_BASE + target + '/'; }
+  else { url = SITE_BASE + '#' + target; }
+  if(url === window.location.pathname + window.location.hash){ route(); return; }
+  history.pushState(null, '', url);
+  route();
+}
+
+function setSeo(name, noindex){
+  var seo = PAGE_SEO[name];
+  var title = seo ? seo[0] : (name === 'course-detail' ? 'Course | Nova Helix Research' : 'Nova Helix Research');
+  var desc = seo ? seo[1] : PAGE_SEO.home[1];
+  var canon = SITE_ORIGIN + SITE_BASE + ((seo && name !== 'home') ? name + '/' : '');
+  document.title = title;
+  var d = document.querySelector('meta[name="description"]'); if(d) d.setAttribute('content', desc);
+  var c = document.querySelector('link[rel="canonical"]'); if(c) c.setAttribute('href', canon);
+  var ou = document.querySelector('meta[property="og:url"]'); if(ou) ou.setAttribute('content', canon);
+  var ot = document.querySelector('meta[property="og:title"]'); if(ot) ot.setAttribute('content', title);
+  var od = document.querySelector('meta[property="og:description"]'); if(od) od.setAttribute('content', desc);
+  var r = document.querySelector('meta[name="robots"]');
+  if(r) r.setAttribute('content', (seo && !noindex) ? 'index, follow, max-image-preview:large' : 'noindex, follow');
+}
+
 function route(){
-  var raw = window.location.hash.replace('#','') || 'home';
+  var raw = currentRoute();
+  // Auth redirects arrive as #access_token=... — not a route.
+  if(/(^|&)(access_token|error|type)=/.test(raw)) raw = routeFromPath() || 'home';
   var parts = raw.split('/');
   var hash = parts[0];
 
+  // Upgrade legacy "#papers" links to the real page address
+  if(!routeFromPath() && window.location.hash && parts.length === 1 && staticPages.indexOf(hash) !== -1){
+    history.replaceState(null, '', SITE_BASE + hash + '/');
+  }
+
   if(hash === 'course' && parts[1]){
-    showPage('course-detail');
+    showPage('course-detail'); setSeo('course-detail');
     if(typeof renderCourseDetailPage === 'function'){ renderCourseDetailPage(parts[1]); }
     window.scrollTo({top:0, behavior:'instant'});
     return;
   }
   if(hash === 'lesson' && parts[1]){
-    showPage('lesson');
+    showPage('lesson'); setSeo('lesson');
     if(typeof renderLessonPage === 'function'){ renderLessonPage(parts[1]); }
     window.scrollTo({top:0, behavior:'instant'});
     return;
   }
   if(hash === 'apply' && parts[1]){
-    showPage('apply');
+    showPage('apply'); setSeo('apply');
     if(typeof renderApplyPage === 'function'){ renderApplyPage(parts[1]); }
     window.scrollTo({top:0, behavior:'instant'});
     return;
   }
 
-  if(pageRoutes.indexOf(hash) !== -1){
-    showPage(hash);
+  if(staticPages.indexOf(hash) !== -1 || hash === 'home'){
+    showPage(hash); setSeo(hash);
     window.scrollTo({top:0, behavior:'instant'});
   } else if(homeAnchors.indexOf(hash) !== -1){
-    showPage('home');
+    showPage('home'); setSeo('home');
     setTimeout(function(){
       var target = document.getElementById(hash);
       if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
     }, 60);
   } else {
-    showPage('home');
+    showPage('home'); setSeo('unknown');
     window.scrollTo({top:0, behavior:'instant'});
   }
 }
 
+// Turn same-site links into History navigation (no full reload).
+document.addEventListener('click', function(e){
+  if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var a = e.target.closest && e.target.closest('a[href]');
+  if(!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+  var u;
+  try{ u = new URL(a.href, document.baseURI); }catch(x){ return; }
+  if(u.origin !== window.location.origin || u.pathname.indexOf(SITE_BASE) !== 0) return;
+  var rel = u.pathname.slice(SITE_BASE.length).replace(/index\.html$/, '').replace(/\/+$/, '');
+  var target = rel || u.hash.replace('#', '') || 'home';
+  var first = target.split('/')[0];
+  if(first !== 'home' && staticPages.indexOf(first) === -1 && routeBases.indexOf(first) === -1 && homeAnchors.indexOf(first) === -1) return;
+  e.preventDefault();
+  navTo(target);
+});
+window.addEventListener('popstate', route);
 window.addEventListener('hashchange', route);
 // Note: the initial route() call happens from ui.js's bootApp(), after
 // the backend/session has loaded — not here — to avoid a flash of
@@ -3122,14 +3702,95 @@ window.addEventListener('hashchange', route);
   track.innerHTML = list + list;
 })();
 
-/* ---------- Mouse parallax on hero orbit ---------- */
+/* ---------- Hero 3D orbit (rings + depth-sorted nodes) ---------- */
 (function(){
-  var orbitStage = document.querySelector('.orbit-stage');
-  if(orbitStage && window.matchMedia('(min-width: 960px)').matches){
+  var svg = document.getElementById('orbitSvg');
+  var back = document.getElementById('orbBack');
+  var front = document.getElementById('orbFront');
+  var stage = document.getElementById('orbitStage');
+  if(!svg || !back || !front) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var CX = 300, CY = 300;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // rx / ry = ring radii, tilt = degrees, nodes = [{t0, speed (rad/s), r, hue}]
+  var rings = [
+    {rx:262, ry:100, tilt:-20, w:1.6, nodes:[{t0:0.4, sp:0.34, r:11},{t0:3.6, sp:0.34, r:6}]},
+    {rx:214, ry:78,  tilt:-20, w:1.2, nodes:[{t0:2.2, sp:-0.46, r:8}]},
+    {rx:158, ry:60,  tilt:-20, w:1.2, nodes:[{t0:5.1, sp:0.62, r:6.5}]},
+    {rx:232, ry:70,  tilt:38,  w:1.1, nodes:[{t0:1.3, sp:-0.28, r:7.5},{t0:4.4, sp:-0.28, r:5}]}
+  ];
+
+  function el(name, attrs){
+    var e = document.createElementNS(NS, name);
+    for(var k in attrs){ e.setAttribute(k, attrs[k]); }
+    return e;
+  }
+
+  // static ring halves
+  rings.forEach(function(rg){
+    var tf = 'translate(' + CX + ' ' + CY + ') rotate(' + rg.tilt + ')';
+    var backG = el('g', {transform:tf});
+    backG.appendChild(el('path', {d:'M ' + (-rg.rx) + ' 0 A ' + rg.rx + ' ' + rg.ry + ' 0 0 1 ' + rg.rx + ' 0',
+      fill:'none', stroke:'#0B6FB8', 'stroke-opacity':'0.22', 'stroke-width':rg.w}));
+    back.appendChild(backG);
+    var frontG = el('g', {transform:tf});
+    frontG.appendChild(el('path', {d:'M ' + rg.rx + ' 0 A ' + rg.rx + ' ' + rg.ry + ' 0 0 1 ' + (-rg.rx) + ' 0',
+      fill:'none', stroke:'url(#ringFront)', 'stroke-width':rg.w + 0.8}));
+    front.appendChild(frontG);
+  });
+
+  // nodes
+  var nodes = [];
+  rings.forEach(function(rg){
+    var rad = rg.tilt * Math.PI / 180, cos = Math.cos(rad), sin = Math.sin(rad);
+    rg.nodes.forEach(function(n){
+      var g = el('g', {});
+      g.appendChild(el('circle', {r:n.r * 2.3, fill:'#16AFFF', opacity:'0.35', filter:'url(#nodeGlow)'}));
+      g.appendChild(el('circle', {r:n.r, fill:'url(#nodeGrad)'}));
+      g.appendChild(el('circle', {cx:-n.r*0.3, cy:-n.r*0.35, r:n.r*0.28, fill:'#fff', opacity:'0.85'}));
+      nodes.push({g:g, rg:rg, n:n, t:n.t0, cos:cos, sin:sin, layer:null});
+    });
+  });
+
+  function place(o){
+    var x = o.rg.rx * Math.cos(o.t), y = o.rg.ry * Math.sin(o.t);
+    var px = CX + x * o.cos - y * o.sin;
+    var py = CY + x * o.sin + y * o.cos;
+    var depth = Math.sin(o.t);                    // +1 = nearest to viewer
+    var sc = 0.78 + 0.34 * (depth + 1) / 2;
+    o.g.setAttribute('transform', 'translate(' + px.toFixed(2) + ' ' + py.toFixed(2) + ') scale(' + sc.toFixed(3) + ')');
+    o.g.setAttribute('opacity', (0.62 + 0.38 * (depth + 1) / 2).toFixed(2));
+    var layer = depth >= 0 ? 'front' : 'back';
+    if(o.layer !== layer){
+      (layer === 'front' ? front : back).appendChild(o.g);
+      o.layer = layer;
+    }
+  }
+
+  nodes.forEach(place);
+  if(reduce) return;
+
+  var last = performance.now(), running = true;
+  function frame(now){
+    var dt = Math.min((now - last) / 1000, 0.05); last = now;
+    if(running){ nodes.forEach(function(o){ o.t += o.n.sp * dt; place(o); }); }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  // pause when scrolled out of view or tab hidden
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ running = en[0].isIntersecting && !document.hidden; }).observe(svg);
+  }
+  document.addEventListener('visibilitychange', function(){ running = !document.hidden; });
+
+  // gentle 3D tilt that follows the pointer
+  if(stage && window.matchMedia('(min-width: 960px) and (hover: hover)').matches){
     document.addEventListener('mousemove', function(e){
-      var x = (e.clientX / window.innerWidth - 0.5) * 14;
-      var y = (e.clientY / window.innerHeight - 0.5) * 14;
-      orbitStage.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+      var ry = (e.clientX / window.innerWidth - 0.5) * 14;
+      var rx = -(e.clientY / window.innerHeight - 0.5) * 10;
+      svg.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+      svg.style.setProperty('--rx', rx.toFixed(2) + 'deg');
     }, {passive:true});
   }
 })();
@@ -3285,16 +3946,16 @@ function renderHeader(){
     var u = NH.currentUser;
     var extraLinks = '';
     if(u.role === 'admin'){
-      extraLinks += '<a href="#admin" data-page="admin">Admin</a>';
+      extraLinks += '<a href="admin/" data-page="admin">Admin</a>';
     }
     if(u.role === 'research_lead'){
-      extraLinks += '<a href="#admin" data-page="admin">Papers I edit</a>';
+      extraLinks += '<a href="admin/" data-page="admin">Papers I edit</a>';
     }
     if(u.role === 'educator'){
-      extraLinks += '<a href="#educator" data-page="educator">Educator</a>';
+      extraLinks += '<a href="educator/" data-page="educator">Educator</a>';
     }
     if(u.role === 'it'){
-      extraLinks += '<a href="#admin" data-page="admin">Researchers</a>';
+      extraLinks += '<a href="admin/" data-page="admin">Researchers</a>';
     }
     area.innerHTML =
       '<div class="account-menu" id="accountMenu">' +
@@ -3302,8 +3963,8 @@ function renderHeader(){
           avatarHtml(u, 22) + '<span>' + escapeHtml(u.first_name) + '</span><span class="chev">▾</span>' +
         '</button>' +
         '<div class="account-menu-panel">' +
-          '<a href="#profile">Profile</a>' +
-          '<a href="#my-learning" data-page="my-learning">My Learning</a>' +
+          '<a href="profile/">Profile</a>' +
+          '<a href="my-learning/" data-page="my-learning">My Learning</a>' +
           extraLinks +
           '<div class="menu-divider"></div>' +
           '<button class="menu-logout" id="logoutBtn" type="button">Log out</button>' +
@@ -3326,11 +3987,11 @@ function renderHeader(){
       logoutBtn.addEventListener('click', async function(){
         await NH.logout();
         renderHeader();
-        window.location.hash = '#home';
+        navTo('#home');
       });
     }
   } else {
-    area.innerHTML = '<a href="#signup" class="btn btn-ghost btn-sm">Sign up</a><a href="#login" class="btn btn-primary btn-sm">Log in</a>';
+    area.innerHTML = '<a href="signup/" class="btn btn-ghost btn-sm">Sign up</a><a href="login/" class="btn btn-primary btn-sm">Log in</a>';
   }
 }
 
@@ -3466,7 +4127,7 @@ async function openPaperDetail(paperId){
       '<p style="font-size:12.5px; color:#888; margin-top:12px; text-align:center;">' +
       (NH.currentUser
         ? 'Only researcher accounts can apply directly — fill out the form and mention this paper.'
-        : 'Already have a researcher account? <a href="#login">Log in</a> to apply directly.') +
+        : 'Already have a researcher account? <a href="login/">Log in</a> to apply directly.') +
       '</p>';
   }
 
@@ -3565,7 +4226,7 @@ async function renderApplyPage(paperId){
       : 'Application submitted — the research lead will follow up.';
     alreadyEl.innerHTML = '<div class="admin-gate"><h2>' + escapeHtml(label) + '</h2>' +
       '<p>Submitted ' + escapeHtml(new Date(myApplication.created_at).toLocaleDateString()) + '. You can browse other papers in the meantime.</p>' +
-      '<a href="#papers" class="btn btn-primary">Back to Papers</a></div>';
+      '<a href="papers/" class="btn btn-primary">Back to Papers</a></div>';
   } else {
     form.style.display = '';
     alreadyEl.style.display = 'none';
@@ -3672,7 +4333,10 @@ function readApplyPhone(){
 // Event delegation: works for cards rendered now or later.
 document.addEventListener('click', function(e){
   var card = e.target.closest('[data-open-paper]');
-  if(card){ openPaperDetail(card.getAttribute('data-open-paper')); }
+  if(card){
+    if(typeof closeResearcherModal === 'function'){ closeResearcherModal(); }
+    openPaperDetail(card.getAttribute('data-open-paper'));
+  }
 });
 
 /* ---------------- LINKEDIN ICON ---------------- */
@@ -3690,6 +4354,27 @@ function linkedinIconHtml(url){
 /* ---------------- RESEARCHER CARD ---------------- */
 
 var LEAD_BADGE_SVG = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.5 8.5L21 9.5L16 14L17.5 21L12 17.5L6.5 21L8 14L3 9.5L9.5 8.5L12 2Z" fill="currentColor"/></svg>';
+
+// Papers a profile is attached to (as research lead or as a team researcher),
+// read from the shared papersCache that the Papers pages keep fresh.
+function papersForProfile(id){
+  return (papersCache || []).filter(function(p){
+    return p.research_lead_id === id || (p.researcher_ids || []).indexOf(id) !== -1;
+  });
+}
+function workingOnPaperBtnHtml(p){
+  return '<button type="button" class="working-on-paper" data-open-paper="' + p.id + '" title="' + escapeHtml(p.title) + '">' +
+    '<span class="wo-dot' + (p.status === 'published' ? ' done' : '') + '"></span><span class="wo-title">' + escapeHtml(p.title) + '</span></button>';
+}
+function workingOnHtml(id){
+  var list = papersForProfile(id);
+  if(!list.length) return '';
+  var more = list.length - 2;
+  return '<div class="working-on"><div class="working-on-label mono">Working on</div>' +
+    list.slice(0, 2).map(workingOnPaperBtnHtml).join('') +
+    (more > 0 ? '<div class="working-on-more mono">+' + more + ' more</div>' : '') +
+  '</div>';
+}
 
 var researcherDetailCache = {};
 var boardDetailCache = {};
@@ -3725,6 +4410,10 @@ function openResearcherDetail(id, isBoard){
       linkedinIconHtml(record.linkedin_url) +
     '</div>' +
     '<p class="desc">' + escapeHtml(record.bio || 'No bio yet.') + '</p>' +
+    (isBoard ? '' : (function(){
+      var ps = papersForProfile(record.id);
+      return ps.length ? '<div class="modal-papers"><h4>Working on</h4>' + ps.map(workingOnPaperBtnHtml).join('') + '</div>' : '';
+    })()) +
     '<div class="tag-row">' + (record.country ? '<span class="tag">' + escapeHtml(record.country) + '</span>' : '') + leadChip + '</div>';
 
   document.getElementById('researcherModalCloseBtn').addEventListener('click', closeResearcherModal);
@@ -3756,6 +4445,7 @@ function researcherCardHtml(r, opts){
     linkedinIconHtml(r.linkedin_url) +
     '</div>' +
     '<div class="bio-wrap"><p class="bio">' + escapeHtml(r.bio || 'No bio yet.') + '</p><button type="button" class="read-more-btn" data-id="' + escapeHtml(r.id) + '">Read more</button></div>' +
+    (opts.admin ? '' : workingOnHtml(r.id)) +
     '<div class="tag-row"><span class="tag">' + escapeHtml(r.country || '—') + '</span>' + leadChip + '</div>' +
     adminControls +
     '</div>';
@@ -3778,6 +4468,7 @@ function leadCardHtml(r){
     linkedinIconHtml(r.linkedin_url) +
     '</div>' +
     '<div class="bio-wrap"><p class="bio">' + escapeHtml(r.bio || 'No bio yet.') + '</p><button type="button" class="read-more-btn" data-id="' + escapeHtml(r.id) + '">Read more</button></div>' +
+    workingOnHtml(r.id) +
     '<div class="tag-row"><span class="tag">' + escapeHtml(r.country || '—') + '</span></div>' +
     '</div>' +
     '</div>';
@@ -3847,7 +4538,7 @@ function refreshBioClamps(root){
   });
 }
 window.addEventListener('resize', function(){ refreshBioClamps(); });
-window.addEventListener('hashchange', function(){ setTimeout(function(){ refreshBioClamps(); }, 80); });
+['hashchange','popstate'].forEach(function(ev){ window.addEventListener(ev, function(){ setTimeout(function(){ refreshBioClamps(); }, 80); }); });
 window.addEventListener('load', function(){ refreshBioClamps(); });
 if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ refreshBioClamps(); }); }
 
@@ -3876,24 +4567,37 @@ async function renderBoardPage(){
 // Admin > Contact page, so the footer email + social icons stay in sync
 // with whatever the admin sets there. No separate footer settings needed.
 
-function footerLinkedinIconHtml(url){
-  if(!url) return '';
-  var safeUrl = escapeHtml(url);
-  return '<a href="' + safeUrl + '" target="_blank" rel="noopener" aria-label="LinkedIn">' +
-    '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
-      '<path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>' +
-    '</svg>' +
-  '</a>';
+// Only allow normal web links in admin-entered URLs (blocks javascript: etc.),
+// and add https:// if the admin typed a bare domain.
+function safeWebUrl(u){
+  u = (u || '').trim();
+  if(!u) return '';
+  if(/^https?:\/\//i.test(u)) return u;
+  if(/^[a-z][a-z0-9+.-]*:/i.test(u)) return '';
+  return 'https://' + u;
 }
 
-function footerMailIconHtml(email){
-  if(!email) return '';
-  var safeEmail = escapeHtml(email);
-  return '<a href="mailto:' + safeEmail + '" aria-label="Email">' +
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">' +
-      '<path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/>' +
-    '</svg>' +
-  '</a>';
+var SOCIAL_ICONS = {
+  linkedin: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>',
+  facebook: '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 6l9 7 9-7"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>'
+};
+var SOCIAL_NETWORKS = [
+  { key:'linkedin',  field:'linkedin_url',  label:'LinkedIn' },
+  { key:'facebook',  field:'facebook_url',  label:'Facebook' },
+  { key:'instagram', field:'instagram_url', label:'Instagram' }
+];
+
+function footerSocialIconsHtml(info){
+  var html = '';
+  SOCIAL_NETWORKS.forEach(function(n){
+    var url = safeWebUrl(info ? info[n.field] : '');
+    if(url){ html += '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" aria-label="' + n.label + '">' + SOCIAL_ICONS[n.key] + '</a>'; }
+  });
+  var email = info ? (info.email || '') : '';
+  if(email){ html += '<a href="mailto:' + escapeHtml(email) + '" aria-label="Email">' + SOCIAL_ICONS.mail + '</a>'; }
+  return html;
 }
 
 async function renderFooterContactInfo(){
@@ -3903,7 +4607,6 @@ async function renderFooterContactInfo(){
 
   var info = await NH.getContactInfo();
   var email = info ? (info.email || '') : '';
-  var linkedin = info ? (info.linkedin_url || '') : '';
 
   if(email){
     emailLink.textContent = email;
@@ -3912,8 +4615,20 @@ async function renderFooterContactInfo(){
   } else {
     emailLink.style.display = 'none';
   }
+  social.innerHTML = footerSocialIconsHtml(info);
+  // keep the privacy page's contact address in sync too
+  document.querySelectorAll('.privacy-email').forEach(function(a){
+    if(email){ a.textContent = email; a.href = 'mailto:' + email; }
+  });
+}
 
-  social.innerHTML = footerLinkedinIconHtml(linkedin) + footerMailIconHtml(email);
+/* ---------------- RENDER: PRIVACY PAGE ---------------- */
+async function renderPrivacyPage(){
+  if(!NH.ready) return;
+  var info = await NH.getContactInfo();
+  var email = info ? (info.email || '') : '';
+  if(!email) return;
+  document.querySelectorAll('.privacy-email').forEach(function(a){ a.textContent = email; a.href = 'mailto:' + email; });
 }
 
 /* ---------------- RENDER: CONTACT PAGE ---------------- */
@@ -3924,6 +4639,16 @@ function contactDetailRowHtml(label, value, href){
     '<span class="mono" style="font-size:11px; color:#888; flex-shrink:0;">' + escapeHtml(label) + '</span>' +
     '<a href="' + escapeHtml(href) + '" target="_blank" rel="noopener" style="font-weight:600; color:var(--blue-deep); text-align:right; word-break:break-word;">' + escapeHtml(value) + '</a>' +
   '</div>';
+}
+
+function socialButtonsHtml(info){
+  var btns = SOCIAL_NETWORKS.map(function(n){
+    var url = safeWebUrl(info ? info[n.field] : '');
+    if(!url) return '';
+    return '<a class="social-btn ' + n.key + '" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + SOCIAL_ICONS[n.key] + n.label + '</a>';
+  }).join('');
+  if(!btns) return '';
+  return '<div style="padding-top:16px;"><span class="mono" style="font-size:11px; color:#888;">Find us on</span><div class="social-btn-row">' + btns + '</div></div>';
 }
 
 async function renderContactPage(){
@@ -3938,10 +4663,243 @@ async function renderContactPage(){
   if(info){
     rows += contactDetailRowHtml('Email', info.email, info.email ? ('mailto:' + info.email) : '');
     rows += contactDetailRowHtml('Phone', info.phone, info.phone ? ('tel:' + info.phone.replace(/\s+/g, '')) : '');
-    rows += contactDetailRowHtml('LinkedIn', info.linkedin_url, info.linkedin_url);
+    rows += socialButtonsHtml(info);
   }
   detailsEl.innerHTML = rows || '<p style="color:#888;">Contact details coming soon.</p>';
 }
+
+
+/* ---------------- RESET PASSWORD PAGE ---------------- */
+
+async function renderResetPasswordPage(){
+  var form = document.getElementById('resetForm');
+  var expired = document.getElementById('resetExpired');
+  if(!form || !expired) return;
+  if(!NH.ready){ return; }
+  var res = await supabaseClient.auth.getSession();
+  var hasSession = !!(res && res.data && res.data.session);
+  form.style.display = hasSession ? '' : 'none';
+  expired.style.display = hasSession ? 'none' : '';
+}
+
+/* ---------------- ADMIN: password tool ---------------- */
+
+function randomPassword(){
+  var chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var out = '', arr = new Uint32Array(14);
+  crypto.getRandomValues(arr);
+  for(var i = 0; i < arr.length; i++){ out += chars.charAt(arr[i] % chars.length); }
+  return out;
+}
+
+function openPasswordTool(acct){
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed; inset:0; background:rgba(7,11,18,0.55); z-index:1100; display:flex; align-items:center; justify-content:center; padding:20px;';
+  overlay.innerHTML =
+    '<div style="background:#fff; border-radius:16px; max-width:460px; width:100%; padding:28px; box-shadow:0 30px 70px -20px rgba(0,0,0,0.4); max-height:90vh; overflow:auto;">' +
+      '<h3 style="font-family:Space Grotesk, sans-serif; font-size:18px; margin-bottom:4px;">Reset password</h3>' +
+      '<p style="font-size:13px; color:#666; margin-bottom:16px;">' + escapeHtml(acct.first_name + ' ' + acct.last_name) + ' · ' + escapeHtml(acct.email) + '</p>' +
+      '<p style="font-size:12.5px; color:#6b5400; background:#fff8e1; border:1px solid #f3e2a6; border-radius:10px; padding:10px 12px; line-height:1.55; margin-bottom:18px;">Passwords can\'t be viewed by anyone, not even admins: they are stored as one-way hashes. You can send the person a reset link, or set a new temporary password for them.</p>' +
+      '<div style="margin-bottom:20px;"><b style="font-size:13.5px;">Option 1 · Email a reset link</b>' +
+        '<p style="font-size:12.5px; color:#777; margin:4px 0 10px;">Safest: they choose their own password.</p>' +
+        '<button type="button" class="btn btn-primary btn-sm" id="ptSendLink">Send reset email</button></div>' +
+      '<div style="border-top:1px solid var(--line); padding-top:18px;"><b style="font-size:13.5px;">Option 2 · Set a new password now</b>' +
+        '<p style="font-size:12.5px; color:#777; margin:4px 0 10px;">Share it with them privately and ask them to change it after logging in.</p>' +
+        '<div style="display:flex; gap:8px; margin-bottom:10px;"><input type="text" id="ptNewPw" minlength="8" placeholder="At least 8 characters" style="flex:1; padding:10px 12px; border:1px solid var(--line); border-radius:10px; font-family:IBM Plex Mono, monospace; font-size:13px;" autocomplete="off">' +
+        '<button type="button" class="btn btn-ghost btn-sm" id="ptGen">Generate</button></div>' +
+        '<div style="display:flex; gap:8px;"><button type="button" class="btn btn-primary btn-sm" id="ptSet">Set password</button><button type="button" class="btn btn-ghost btn-sm" id="ptCopy">Copy</button></div>' +
+      '</div>' +
+      '<div style="text-align:right; margin-top:22px;"><button type="button" class="btn btn-ghost btn-sm" id="ptClose">Close</button></div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  function close(){ overlay.remove(); }
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+  overlay.querySelector('#ptClose').onclick = close;
+  var pw = overlay.querySelector('#ptNewPw');
+  overlay.querySelector('#ptGen').onclick = function(){ pw.value = randomPassword(); };
+  overlay.querySelector('#ptCopy').onclick = function(){
+    if(!pw.value) return;
+    try{ navigator.clipboard.writeText(pw.value); showToast('Copied.', 'success'); }catch(e){ pw.select(); }
+  };
+  overlay.querySelector('#ptSendLink').onclick = async function(){
+    var b = this; b.disabled = true;
+    try{ await NH.requestPasswordReset(acct.email); showToast('Reset email sent to ' + acct.email + '.', 'success'); }
+    catch(err){ showToast(err.message, 'error'); }
+    b.disabled = false;
+  };
+  overlay.querySelector('#ptSet').onclick = async function(){
+    var b = this;
+    if(pw.value.length < 8){ showToast('Use at least 8 characters.', 'error'); return; }
+    b.disabled = true;
+    try{ await NH.adminSetPassword(acct.id, pw.value); showToast('Password updated. Copy it now and share it privately.', 'success'); }
+    catch(err){ showToast(err.message, 'error'); }
+    b.disabled = false;
+  };
+}
+
+/* ---------------- ADMIN: messages ---------------- */
+
+async function renderAdminMessages(){
+  var list = document.getElementById('adminMessagesList');
+  if(!list) return;
+  var msgs = await NH.listContactMessages();
+  var unread = msgs.filter(function(m){ return !m.is_read; }).length;
+  var badge = document.getElementById('msgUnreadBadge');
+  if(badge) badge.textContent = unread ? '· ' + unread + ' new' : '';
+  list.innerHTML = msgs.map(function(m){
+    var when = new Date(m.created_at).toLocaleString();
+    return '<div class="msg-item' + (m.is_read ? '' : ' unread') + '">' +
+      '<div class="msg-meta"><b style="color:#0A0A0A;">' + escapeHtml(m.name) + '</b> · <a href="mailto:' + escapeHtml(m.email) + '" style="color:var(--blue-deep);">' + escapeHtml(m.email) + '</a> · ' + escapeHtml(when) + '</div>' +
+      (m.subject ? '<div style="font-weight:600; margin-bottom:6px;">' + escapeHtml(m.subject) + '</div>' : '') +
+      '<div class="msg-body">' + escapeHtml(m.message) + '</div>' +
+      '<div style="display:flex; gap:8px; margin-top:12px;">' +
+        '<button type="button" class="btn btn-ghost btn-sm msg-read-btn" data-id="' + m.id + '" data-read="' + (m.is_read ? '1' : '0') + '">' + (m.is_read ? 'Mark unread' : 'Mark read') + '</button>' +
+        '<button type="button" class="btn btn-ghost btn-sm msg-del-btn" data-id="' + m.id + '" style="color:#c0392b; border-color:#f2d5d0;">Delete</button>' +
+      '</div></div>';
+  }).join('') || '<p style="color:#888;">No messages yet. They will appear here when someone uses the Contact form.</p>';
+  list.querySelectorAll('.msg-read-btn').forEach(function(b){
+    b.onclick = async function(){
+      try{ await NH.setContactMessageRead(b.getAttribute('data-id'), b.getAttribute('data-read') !== '1'); renderAdminMessages(); }
+      catch(err){ showToast(err.message, 'error'); }
+    };
+  });
+  list.querySelectorAll('.msg-del-btn').forEach(function(b){
+    b.onclick = async function(){
+      var ok = await showConfirm('Delete this message?', {danger:true, confirmLabel:'Delete'});
+      if(!ok) return;
+      try{ await NH.deleteContactMessage(b.getAttribute('data-id')); renderAdminMessages(); }
+      catch(err){ showToast(err.message, 'error'); }
+    };
+  });
+}
+
+/* ---------------- ADMIN: roles & permissions ---------------- */
+
+var ROLE_MATRIX = [
+  ['See the public site, papers, researchers',           1,1,1,1,1,1],
+  ['Create an account, edit own profile',                1,1,1,1,1,1],
+  ['Apply to join a paper',                              0,1,0,0,0,0],
+  ['Enroll in and take courses (some are paid)',      1,1,1,1,1,1],
+  ['Edit papers they lead (if switched on above)',       0,0,1,0,0,1],
+  ['Accept / decline applicants on those papers',        0,0,1,0,0,1],
+  ['Get emailed when someone applies to their paper',    0,0,1,0,0,1],
+  ['Create and edit courses they are assigned to',       0,0,0,1,0,1],
+  ['Add, edit and remove researchers',                   0,0,0,0,1,1],
+  ['Create / delete papers, board, contact info',        0,0,0,0,0,1],
+  ['Read contact messages, change roles, reset passwords',0,0,0,0,0,1]
+];
+
+async function renderAdminPermissions(){
+  var matrix = document.getElementById('permMatrix');
+  if(matrix){
+    var heads = ['Visiting','Researcher','Research Lead','Educator','IT','Admin'];
+    matrix.innerHTML = '<thead><tr><th>Can…</th>' + heads.map(function(h){ return '<th style="text-align:center;">' + h + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      ROLE_MATRIX.map(function(r){
+        return '<tr><td>' + escapeHtml(r[0]) + '</td>' + r.slice(1).map(function(v){ return '<td style="text-align:center;" class="' + (v ? 'perm-yes' : 'perm-no') + '">' + (v ? '✓' : '–') + '</td>'; }).join('') + '</tr>';
+      }).join('') + '</tbody>';
+  }
+  var box = document.getElementById('permLeadSwitches');
+  if(!box) return;
+  var papers = (await NH.listPapers()).filter(function(p){ return p.research_lead_id; });
+  var leads = await NH.getProfilesByIds(papers.map(function(p){ return p.research_lead_id; }));
+  box.innerHTML = papers.map(function(p){
+    var l = leads[p.research_lead_id];
+    return '<div class="perm-row"><div><div style="font-weight:600; font-size:14px;">' + escapeHtml(p.title) + '</div>' +
+      '<div style="font-size:12.5px; color:#7a8794;">Research lead: ' + escapeHtml(l ? (l.first_name + ' ' + l.last_name) : 'unknown') + '</div></div>' +
+      '<label class="switch" title="Lead can edit this paper"><input type="checkbox" class="perm-lead-toggle" data-id="' + p.id + '"' + (p.lead_edit_allowed ? ' checked' : '') + '><span></span></label></div>';
+  }).join('') || '<p style="color:#888; margin-top:12px;">No papers with a research lead yet.</p>';
+  box.querySelectorAll('.perm-lead-toggle').forEach(function(t){
+    t.onchange = async function(){
+      try{ await NH.setLeadEditAllowed(t.getAttribute('data-id'), t.checked); showToast(t.checked ? 'Lead can now edit this paper.' : 'Lead editing switched off.', 'success'); }
+      catch(err){ showToast(err.message, 'error'); t.checked = !t.checked; }
+    };
+  });
+}
+
+/* ---------------- CONTACT FORM ---------------- */
+
+function wireContactMessageForm(){
+  var form = document.getElementById('contactMsgForm');
+  if(!form || form.dataset.wired) return;
+  form.dataset.wired = '1';
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var err = document.getElementById('contactMsgError'), ok = document.getElementById('contactMsgSuccess');
+    err.style.display = 'none';
+    var name = document.getElementById('cmName').value.trim();
+    var email = document.getElementById('cmEmail').value.trim();
+    var subject = document.getElementById('cmSubject').value.trim();
+    var message = document.getElementById('cmMessage').value.trim();
+    function fail(t){ err.textContent = t; err.style.display = 'block'; }
+    if(document.getElementById('cmWebsite').value){ return; } // spam trap
+    if(!name){ return fail('Please enter your name.'); }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ return fail('Please enter a valid email address.'); }
+    if(message.length < 5){ return fail('Please write a short message.'); }
+    if(!document.getElementById('cmConsent').checked){ return fail('Please tick the box to agree to the Privacy Policy.'); }
+    var last = 0; try{ last = parseInt(localStorage.getItem('nhLastMsg') || '0', 10); }catch(x){}
+    if(Date.now() - last < 30000){ return fail('Please wait a moment before sending another message.'); }
+    if(!NH.ready){ return fail('The site is still loading. Please try again in a moment.'); }
+    var btn = document.getElementById('cmSubmit');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try{
+      await NH.sendContactMessage({ name: name, email: email, subject: subject, message: message });
+      try{ localStorage.setItem('nhLastMsg', String(Date.now())); }catch(x){}
+      document.getElementById('contactMsgFields').style.display = 'none';
+      ok.innerHTML = '<b>Thank you, ' + escapeHtml(name.split(' ')[0]) + '.</b> Your message is on its way. We\'ve emailed you a confirmation, and we\'ll reply as soon as we can.';
+      ok.style.display = 'block';
+    }catch(ex){ fail(ex.message); }
+    finally{ btn.disabled = false; btn.textContent = 'Send message'; }
+  });
+}
+document.addEventListener('DOMContentLoaded', wireContactMessageForm);
+
+/* ---------------- FORGOT / RESET WIRING ---------------- */
+
+function wireForgotPassword(){
+  var link = document.getElementById('forgotLink'), back = document.getElementById('forgotBack');
+  var login = document.getElementById('loginForm'), forgot = document.getElementById('forgotForm');
+  if(!link || !forgot || forgot.dataset.wired) return;
+  forgot.dataset.wired = '1';
+  link.onclick = function(){
+    login.style.display = 'none'; forgot.style.display = '';
+    document.getElementById('forgotEmail').value = document.getElementById('email').value;
+  };
+  back.onclick = function(){ forgot.style.display = 'none'; login.style.display = ''; };
+  forgot.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var err = document.getElementById('forgotError'), ok = document.getElementById('forgotSuccess');
+    err.style.display = 'none'; ok.style.display = 'none';
+    var btn = forgot.querySelector('button[type="submit"]'); btn.disabled = true; btn.textContent = 'Sending…';
+    try{
+      if(!NH.ready) throw new Error('The site is still loading. Please try again in a moment.');
+      await NH.requestPasswordReset(document.getElementById('forgotEmail').value.trim());
+      // Same message whether or not the email exists (doesn't reveal who has an account)
+      ok.textContent = 'If an account exists for that email, a reset link is on its way. Check your inbox (and spam folder).';
+      ok.style.display = 'block';
+    }catch(ex){ err.textContent = ex.message; err.style.display = 'block'; }
+    finally{ btn.disabled = false; btn.textContent = 'Send reset link'; }
+  });
+  var rf = document.getElementById('resetForm');
+  if(rf){
+    rf.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var er = document.getElementById('resetError'); er.style.display = 'none';
+      var a = document.getElementById('resetPw1').value, b = document.getElementById('resetPw2').value;
+      if(a.length < 8){ er.textContent = 'Use at least 8 characters.'; er.style.display = 'block'; return; }
+      if(a !== b){ er.textContent = 'The two passwords don\'t match.'; er.style.display = 'block'; return; }
+      var sb = rf.querySelector('button[type="submit"]'); sb.disabled = true; sb.textContent = 'Saving…';
+      try{
+        await NH.updateMyPassword(a);
+        await NH.restoreSession();
+        renderHeader();
+        showToast('Password updated. You\'re logged in.', 'success');
+        navTo('home');
+      }catch(ex){ er.textContent = ex.message; er.style.display = 'block'; }
+      finally{ sb.disabled = false; sb.textContent = 'Save new password'; }
+    });
+  }
+}
+document.addEventListener('DOMContentLoaded', wireForgotPassword);
 
 /* ---------------- RENDER: HOME preview ---------------- */
 
@@ -4010,7 +4968,7 @@ async function renderPapersPage(){
         '</svg>' +
         '<h3>Nothing published yet</h3>' +
         '<p>As soon as a paper is submitted and accepted, it will appear here.</p>' +
-        '<a href="#researchers" class="btn btn-ghost btn-sm">Meet the researchers</a>' +
+        '<a href="researchers/" class="btn btn-ghost btn-sm">Meet the researchers</a>' +
       '</div>';
   } else {
     publishedEl.innerHTML = '<div class="research-grid">' + published.map(function(p){ return paperCardHtml(p); }).join('') + '</div>';
@@ -4046,6 +5004,7 @@ function renderHomeResearchers(leadAccounts, researcherAccounts){
 async function renderResearchersPage(){
   var grid = document.getElementById('researchersGrid');
   if(!grid || !NH.ready) return;
+  papersCache = await NH.listPapers();   // so cards can show the papers each person works on
   // Research leads are researchers too, but they get their own featured
   // strip up top so they stand out from the wider researcher directory.
   var researcherAccounts = sortByProfileCompleteness(await NH.listResearchers());
@@ -4124,7 +5083,7 @@ var adminEditingPaperId = null;
 var adminEditingPaperFile = null;
 var adminEditingResearcherId = null;
 
-var ADMIN_BLOCK_IDS = ['adminBlockPapers','adminBlockCourses','adminBlockResearchers','adminBlockResearchLeads','adminBlockBoard','adminBlockContact','adminBlockAccounts'];
+var ADMIN_BLOCK_IDS = ['adminBlockPapers','adminBlockCourses','adminBlockResearchers','adminBlockResearchLeads','adminBlockBoard','adminBlockContact','adminBlockMessages','adminBlockPermissions','adminBlockAccounts'];
 
 // Shared human-readable labels for account roles, used anywhere a role is
 // displayed (admin accounts table, profile page, course enrollments table).
@@ -4159,6 +5118,8 @@ async function renderAdminPage(){
     await renderAdminResearchLeads();
     await renderAdminBoard();
     await renderAdminContactForm();
+    await renderAdminMessages();
+    await renderAdminPermissions();
     await renderAdminAccounts();
   } else if(role === 'it'){
     // it: only the Researchers block — add, edit, and remove researchers,
@@ -4182,6 +5143,8 @@ async function renderAdminContactForm(){
   document.getElementById('contactFormEmail').value = info ? (info.email || '') : '';
   document.getElementById('contactFormPhone').value = info ? (info.phone || '') : '';
   document.getElementById('contactFormLinkedin').value = info ? (info.linkedin_url || '') : '';
+  document.getElementById('contactFormFacebook').value = info ? (info.facebook_url || '') : '';
+  document.getElementById('contactFormInstagram').value = info ? (info.instagram_url || '') : '';
 }
 
 async function renderAdminPapers(){
@@ -4214,6 +5177,7 @@ async function renderAdminPapers(){
       await renderAdminPapers();
       await renderPapersPage();
       await renderHomePapers();
+      await renderResearchersPage();
       showToast('Paper deleted.', 'success');
     });
   });
@@ -4332,7 +5296,7 @@ async function renderPaperFormApplications(paperId){
     var name = p ? (p.first_name + ' ' + p.last_name) : 'Unknown applicant';
     var pillColor = a.status === 'accepted' ? '#12824A' : a.status === 'declined' ? '#c0392b' : '#B36B00';
     var actions = a.status === 'pending'
-      ? '<button type="button" class="btn btn-ghost btn-sm paper-app-accept-btn" data-id="' + a.id + '" data-user="' + (p ? p.id : '') + '">Add to team</button>' +
+      ? '<button type="button" class="btn btn-ghost btn-sm paper-app-accept-btn" data-id="' + a.id + '" data-user="' + (p ? p.id : '') + '">Accept &amp; add to team</button>' +
         '<button type="button" class="btn btn-ghost btn-sm paper-app-decline-btn" data-id="' + a.id + '" style="color:#c0392b; border-color:#f2d5d0;">Decline</button>'
       : '<span class="mono" style="font-size:11px; text-transform:uppercase; color:' + pillColor + ';">' + escapeHtml(a.status) + '</span>';
     return '<div style="border:1px solid var(--line); border-radius:10px; padding:12px 14px;">' +
@@ -4349,17 +5313,29 @@ async function renderPaperFormApplications(paperId){
   list.querySelectorAll('.paper-app-accept-btn').forEach(function(btn){
     btn.addEventListener('click', async function(){
       var userId = btn.getAttribute('data-user');
-      var checkbox = document.querySelector('.paper-form-researcher-checkbox[value="' + userId + '"]');
-      if(checkbox){ checkbox.checked = true; }
+      btn.disabled = true; btn.textContent = 'Adding…';
       try{
-        await NH.setApplicationStatus(btn.getAttribute('data-id'), 'accepted');
-        showToast('Added to the Researchers list below — remember to save the paper.', 'success');
+        // Server adds them to the team right away — no need to hit "Save paper".
+        await NH.acceptApplication(btn.getAttribute('data-id'));
+        var checkbox = document.querySelector('.paper-form-researcher-checkbox[value="' + userId + '"]');
+        if(checkbox){ checkbox.checked = true; }
+        updatePaperFormTeamSummary();
+        showToast('Accepted and added to the team. We\'re emailing them now.', 'success');
         await renderPaperFormApplications(paperId);
-      }catch(err){ showToast(err.message, 'error'); }
+        await renderAdminPapers();
+        await renderPapersPage();
+        await renderHomePapers();
+        await renderResearchersPage();
+      }catch(err){
+        btn.disabled = false; btn.textContent = 'Accept & add to team';
+        showToast(err.message, 'error');
+      }
     });
   });
   list.querySelectorAll('.paper-app-decline-btn').forEach(function(btn){
     btn.addEventListener('click', async function(){
+      var okDecline = await showConfirm('Decline this applicant? They will receive a polite email letting them know.', {danger:true, confirmLabel:'Decline'});
+      if(!okDecline) return;
       try{
         await NH.setApplicationStatus(btn.getAttribute('data-id'), 'declined');
         await renderPaperFormApplications(paperId);
@@ -4572,9 +5548,10 @@ async function renderAdminAccounts(){
         '</select>' +
       '</td>' +
       '<td style="padding:12px 10px; border-bottom:1px solid var(--line); font-size:13px; color:#888;">' + escapeHtml(a.country || '—') + '</td>' +
+      '<td style="padding:12px 10px; border-bottom:1px solid var(--line);">' + (a.standalone ? '<span style="color:#bbb; font-size:12px;">—</span>' : '<button class="btn btn-ghost btn-sm password-tool-btn" data-id="' + a.id + '" type="button">Reset</button>') + '</td>' +
       '<td style="padding:12px 10px; border-bottom:1px solid var(--line);"><button class="btn btn-ghost btn-sm delete-account-btn" data-id="' + a.id + '" type="button" style="color:#c0392b; border-color:#f2d5d0;">Remove</button></td>' +
       '</tr>';
-  }).join('') || '<tr><td colspan="5" style="padding:20px 10px; color:#888; font-size:13.5px;">' +
+  }).join('') || '<tr><td colspan="6" style="padding:20px 10px; color:#888; font-size:13.5px;">' +
     (adminAccountsScope === 'all' ? 'No accounts yet.' : 'No researcher or research lead accounts yet — switch to "All accounts" to grant someone that role.') +
     '</td></tr>';
 
@@ -4594,6 +5571,12 @@ async function renderAdminAccounts(){
       await renderAdminAccounts();
       await renderResearchersPage();
       renderHeader();
+    });
+  });
+  document.querySelectorAll('.password-tool-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var acct = allAccounts.filter(function(x){ return x.id === btn.getAttribute('data-id'); })[0];
+      if(acct) openPasswordTool(acct);
     });
   });
   document.querySelectorAll('.delete-account-btn').forEach(function(btn){
@@ -4764,7 +5747,7 @@ async function renderEducationPage(){
       '<div class="empty-state"><h3>No courses yet</h3><p>Check back soon — we\'re building out the curriculum.</p></div>';
     grid.querySelectorAll('[data-open-course]').forEach(function(card){
       card.addEventListener('click', function(){
-        window.location.hash = '#course/' + card.getAttribute('data-open-course');
+        navTo('#course/' + card.getAttribute('data-open-course'));
       });
     });
   }
@@ -4831,7 +5814,7 @@ async function renderCourseDetailPage(courseId){
   var isFree = !course.price_cents || freeForMyRole;
 
   if(!NH.currentUser){
-    enrollArea.innerHTML = '<a href="#login" class="btn btn-primary btn-block">Log in to enroll</a>';
+    enrollArea.innerHTML = '<a href="login/" class="btn btn-primary btn-block">Log in to enroll</a>';
     noteEl.textContent = 'New here? Sign up first — it only takes a minute.';
   } else if(enrollment){
     enrollArea.innerHTML = '<a href="#lesson/' + (lessons[0] ? lessons[0].id : '') + '" class="btn btn-primary btn-block">Continue learning</a>';
@@ -4861,14 +5844,14 @@ async function renderCourseDetailPage(courseId){
       });
     }
   } else {
-    enrollArea.innerHTML = '<a href="#contact" class="btn btn-primary btn-block">Contact us to enroll</a>';
+    enrollArea.innerHTML = '<a href="contact/" class="btn btn-primary btn-block">Contact us to enroll</a>';
     noteEl.textContent = 'Online payment isn\'t set up for this course yet.';
   }
 }
 
 async function renderLessonPage(lessonId){
   var { data: lesson, error } = await supabaseClient.from('course_lessons').select('*').eq('id', lessonId).maybeSingle();
-  if(error || !lesson){ showToast('Lesson not found.', 'error'); window.location.hash = '#education'; return; }
+  if(error || !lesson){ showToast('Lesson not found.', 'error'); navTo('#education'); return; }
 
   var course = await NH.getCourse(lesson.course_id);
   var modules = await NH.listModules(lesson.course_id);
@@ -4878,7 +5861,7 @@ async function renderLessonPage(lessonId){
   var isEditor = NH.currentUser && (NH.currentUser.role === 'admin' || await NH.canEditCourse(lesson.course_id));
   if(!enrollment && !isEditor){
     showToast('Enroll in this course first.', 'error');
-    window.location.hash = '#course/' + lesson.course_id;
+    navTo('#course/' + lesson.course_id);
     return;
   }
 
@@ -4946,19 +5929,19 @@ async function renderLessonPage(lessonId){
   var idx = lessons.findIndex(function(l){ return l.id === lessonId; });
   var next = lessons[idx+1];
   nextBtn.style.display = next ? '' : 'none';
-  nextBtn.onclick = function(){ window.location.hash = '#lesson/' + next.id; };
+  nextBtn.onclick = function(){ navTo('#lesson/' + next.id); };
 }
 
 async function renderMyLearningPage(){
   var grid = document.getElementById('myLearningGrid');
   if(!grid || !NH.ready) return;
   if(!NH.currentUser){
-    grid.innerHTML = '<div class="empty-state"><h3>Log in to see your courses</h3><p><a href="#login" class="btn btn-primary" style="margin-top:10px;">Log in</a></p></div>';
+    grid.innerHTML = '<div class="empty-state"><h3>Log in to see your courses</h3><p><a href="login/" class="btn btn-primary" style="margin-top:10px;">Log in</a></p></div>';
     return;
   }
   var enrollments = await NH.listMyEnrollments();
   if(!enrollments.length){
-    grid.innerHTML = '<div class="empty-state"><h3>No courses yet</h3><p>Browse the catalog and enroll in your first course.</p><a href="#education" class="btn btn-primary" style="margin-top:10px;">Browse courses</a></div>';
+    grid.innerHTML = '<div class="empty-state"><h3>No courses yet</h3><p>Browse the catalog and enroll in your first course.</p><a href="education/" class="btn btn-primary" style="margin-top:10px;">Browse courses</a></div>';
     return;
   }
   var cards = await Promise.all(enrollments.map(async function(e){
@@ -4974,7 +5957,7 @@ async function renderMyLearningPage(){
   }));
   grid.innerHTML = cards.join('');
   grid.querySelectorAll('[data-open-course]').forEach(function(card){
-    card.addEventListener('click', function(){ window.location.hash = '#course/' + card.getAttribute('data-open-course'); });
+    card.addEventListener('click', function(){ navTo('#course/' + card.getAttribute('data-open-course')); });
   });
 
   await renderMyCertificates();
@@ -5370,7 +6353,7 @@ function wireForms(){
       try{
         await NH.login(document.getElementById('email').value, document.getElementById('password').value);
         renderHeader();
-        window.location.hash = '#home';
+        navTo('#home');
       }catch(err){
         errEl.textContent = err.message;
         errEl.style.display = 'block';
@@ -5387,6 +6370,8 @@ function wireForms(){
       e.preventDefault();
       var errEl = document.getElementById('signupError');
       errEl.style.display = 'none';
+      var consentBox = document.getElementById('signupConsent');
+      if(consentBox && !consentBox.checked){ errEl.textContent = 'Please accept the Privacy Policy to create an account.'; errEl.style.display = 'block'; return; }
       var submitBtn = signupForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true; submitBtn.textContent = 'Creating account…';
       try{
@@ -5399,7 +6384,7 @@ function wireForms(){
         });
         renderHeader();
         showToast('Welcome to Nova Helix! You\'re signed up as a visiting account.', 'success');
-        window.location.hash = '#home';
+        navTo('#home');
       }catch(err){
         errEl.textContent = err.message;
         errEl.style.display = 'block';
@@ -5515,6 +6500,7 @@ function wireForms(){
         await renderAdminPapers();
         await renderPapersPage();
         await renderHomePapers();
+        await renderResearchersPage();
         showToast(adminEditingPaperId ? 'Paper updated.' : 'Paper added.', 'success');
       }catch(err){ showToast(err.message, 'error'); }
       finally{ submitBtn.disabled = false; submitBtn.textContent = 'Save paper'; }
@@ -5926,7 +6912,9 @@ function wireForms(){
           message: document.getElementById('contactFormMessage').value.trim(),
           email: document.getElementById('contactFormEmail').value.trim(),
           phone: document.getElementById('contactFormPhone').value.trim(),
-          linkedin_url: document.getElementById('contactFormLinkedin').value.trim()
+          linkedin_url: document.getElementById('contactFormLinkedin').value.trim(),
+          facebook_url: document.getElementById('contactFormFacebook').value.trim(),
+          instagram_url: document.getElementById('contactFormInstagram').value.trim()
         };
         await NH.saveContactInfo(patch);
         await renderContactPage();
@@ -5944,17 +6932,15 @@ async function startApp(){
   await NH.restoreSession();
   renderHeader();
   wireForms();
-  await renderHomePapers();
-  await renderPapersPage();
-  await renderResearchersPage();
-  await renderBoardPage();
-  await renderContactPage();
-  await renderEducationPage();
-  await renderMyLearningPage();
-  await renderEducatorPage();
-  await renderAdminPage();
-  await renderProfilePage();
-  await renderFooterContactInfo();
+  wireForgotPassword(); wireContactMessageForm();
+  // Load every section in parallel instead of one after another —
+  // the page becomes complete in the time of the slowest request.
+  var jobs = [renderHomePapers, renderPapersPage, renderResearchersPage, renderBoardPage,
+    renderContactPage, renderEducationPage, renderMyLearningPage, renderEducatorPage,
+    renderAdminPage, renderProfilePage, renderFooterContactInfo];
+  await Promise.all(jobs.map(function(fn){
+    return Promise.resolve().then(fn).catch(function(err){ console.error(fn.name, err); });
+  }));
   route();
 }
 
