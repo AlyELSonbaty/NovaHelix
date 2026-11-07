@@ -1904,6 +1904,7 @@ a.syllabus-lesson:visited{ color:#444; }
 
           <div class="form-panel" id="paperFormPanel">
             <h3 id="paperFormHeading">Add a paper</h3>
+            <p id="paperFormDirectorNote" style="display:none; font-size:13px; color:#6b5a1f; background:#fff8e6; border:1px solid #f0e0b0; border-radius:8px; padding:10px 12px; margin:0 0 16px;">As a Research Director you can edit this paper's <b>description</b> and <b>team</b>. The title, status, lead and other details are locked.</p>
             <form id="paperForm">
               <div class="field">
                 <label for="paperFormTitle">Title</label>
@@ -2309,9 +2310,20 @@ a.syllabus-lesson:visited{ color:#444; }
                 <label for="boardFormLinkedin">LinkedIn URL</label>
                 <input type="url" id="boardFormLinkedin" placeholder="https://www.linkedin.com/in/username">
               </div>
-              <div class="field">
-                <label for="boardFormOrder">Display order</label>
-                <input type="number" id="boardFormOrder" value="0" style="max-width:120px;">
+              <div class="field-row">
+                <div class="field">
+                  <label for="boardFormOrder">Position on the page</label>
+                  <input type="number" id="boardFormOrder" min="1" value="1" style="max-width:120px;">
+                  <span style="font-size:11px; color:#999; display:block; margin-top:4px;">1 = first. The other members shift automatically.</span>
+                </div>
+                <div class="field">
+                  <label for="boardFormSize">Card size</label>
+                  <select id="boardFormSize">
+                    <option value="auto">Automatic (large for leadership titles)</option>
+                    <option value="large">Large</option>
+                    <option value="small">Small</option>
+                  </select>
+                </div>
               </div>
               <div class="field">
                 <label>Profile picture</label>
@@ -2944,6 +2956,9 @@ NH.savePaper = async function(paper){
 NH.canEditPaper = function(paper){
   if(!NH.currentUser) return false;
   if(NH.currentUser.role === 'admin') return true;
+  // A research_director may open any paper (the form itself limits them to
+  // the description + team; the database enforces the same).
+  if(NH.currentUser.role === 'research_director') return true;
   return NH.currentUser.role === 'research_lead'
     && paper.research_lead_id === NH.currentUser.id
     && !!paper.lead_edit_allowed;
@@ -3098,29 +3113,59 @@ NH.setLeadEditAllowed = async function(paperId, allowed){
 /* ---------------- board members ---------------- */
 
 NH.listBoardMembers = async function(){
-  var { data, error } = await supabaseClient.from('board_members').select('*').order('display_order');
+  var { data, error } = await supabaseClient.from('board_members').select('*').order('display_order').order('name');
   if(error){ console.error(error); return []; }
   return data || [];
 };
 
+// Moves one member to the wanted position (1 = first) and renumbers everybody
+// 1..n, so changing one member's order always shifts the others to make room.
+// Reads straight from the database (not the short-lived read cache) so the
+// order it works from is always the real, current one.
+async function reorderBoardMembers(movedId, wantedPosition){
+  var { data, error } = await supabaseClient.from('board_members')
+    .select('id, display_order').order('display_order').order('name');
+  if(error) throw new Error(error.message);
+  var all = data || [];
+  var moved = all.find(function(m){ return m.id === movedId; });
+  if(!moved) return;
+  var others = all.filter(function(m){ return m.id !== movedId; });
+  var idx = Math.max(0, Math.min(others.length, (parseInt(wantedPosition, 10) || 1) - 1));
+  others.splice(idx, 0, moved);
+  var jobs = [];
+  others.forEach(function(m, i){
+    if(m.display_order !== i + 1){
+      jobs.push(supabaseClient.from('board_members').update({ display_order: i + 1 }).eq('id', m.id));
+    }
+  });
+  var results = await Promise.all(jobs);
+  results.forEach(function(r){ if(r.error) throw new Error(r.error.message); });
+}
+
 NH.saveBoardMember = async function(member){
+  var wanted = member.display_order;
+  var savedId = member.id;
   if(member.id){
     var { error } = await supabaseClient.from('board_members').update({
       name: member.name, role_title: member.role_title, bio: member.bio,
       linkedin_url: member.linkedin_url || null,
       display_order: member.display_order, avatar_url: member.avatar_url,
-      avatar_position_x: member.avatar_position_x, avatar_position_y: member.avatar_position_y
+      avatar_position_x: member.avatar_position_x, avatar_position_y: member.avatar_position_y,
+      card_size: member.card_size || 'auto'
     }).eq('id', member.id);
     if(error) throw new Error(error.message);
   } else {
-    var { error: insertError } = await supabaseClient.from('board_members').insert({
+    var { data: inserted, error: insertError } = await supabaseClient.from('board_members').insert({
       name: member.name, role_title: member.role_title, bio: member.bio,
       linkedin_url: member.linkedin_url || null,
       display_order: member.display_order, avatar_url: member.avatar_url || null,
-      avatar_position_x: member.avatar_position_x, avatar_position_y: member.avatar_position_y
-    });
+      avatar_position_x: member.avatar_position_x, avatar_position_y: member.avatar_position_y,
+      card_size: member.card_size || 'auto'
+    }).select('id').single();
     if(insertError) throw new Error(insertError.message);
+    savedId = inserted.id;
   }
+  await reorderBoardMembers(savedId, wanted);
   return member;
 };
 
@@ -3951,6 +3996,9 @@ function renderHeader(){
     if(u.role === 'research_lead'){
       extraLinks += '<a href="admin/" data-page="admin">Papers I edit</a>';
     }
+    if(u.role === 'research_director'){
+      extraLinks += '<a href="admin/" data-page="admin">Manage papers</a>';
+    }
     if(u.role === 'educator'){
       extraLinks += '<a href="educator/" data-page="educator">Educator</a>';
     }
@@ -4488,19 +4536,33 @@ function isFeaturedBoardRole(roleTitle){
   return FEATURED_BOARD_ROLE_MATCHERS.some(function(needle){ return r.indexOf(needle) !== -1; });
 }
 
+// Large or small card for a board member. The admin picks it per member
+// (card_size: 'large' | 'small'); 'auto' (the default) keeps the old
+// behaviour of enlarging the leadership role titles listed above.
+function boardCardIsLarge(m){
+  var pref = m.card_size || 'auto';
+  if(pref === 'large') return true;
+  if(pref === 'small') return false;
+  return isFeaturedBoardRole(m.role_title);
+}
+
 function boardCardHtml(m, opts){
   opts = opts || {};
   var adminControls = '';
   if(opts.admin){
-    adminControls = '<div style="display:flex; gap:8px; margin-top:auto; padding-top:14px;">' +
+    var sizeLabel = (m.card_size === 'large') ? 'Large' : (m.card_size === 'small') ? 'Small' : ('Auto · ' + (boardCardIsLarge(m) ? 'large' : 'small'));
+    adminControls = '<div style="display:flex; gap:8px; align-items:center; margin-top:auto; padding-top:14px;">' +
       '<button class="btn btn-ghost btn-sm edit-board-btn" data-id="' + m.id + '" type="button">Edit</button>' +
       '<button class="btn btn-ghost btn-sm delete-board-btn" data-id="' + m.id + '" type="button" style="color:#c0392b; border-color:#f2d5d0;">Delete</button>' +
+      '<span class="mono" style="margin-left:auto; font-size:11px; color:#888;">' + (opts.pos ? '#' + opts.pos + ' · ' : '') + 'Card: ' + sizeLabel + '</span>' +
       '</div>';
   }
   boardDetailCache[m.id] = m;
-  var featured = !opts.admin && isFeaturedBoardRole(m.role_title);
+  var featured = !opts.admin && boardCardIsLarge(m);
   var avatarSize = featured ? 76 : 60;
-  var featuredTag = featured ? '<div class="featured-tag">★ Leadership</div>' : '';
+  // The "Leadership" ribbon only appears on genuine leadership titles, not on
+  // a card the admin simply chose to make large.
+  var featuredTag = (featured && isFeaturedBoardRole(m.role_title)) ? '<div class="featured-tag">★ Leadership</div>' : '';
   var avatarUser = {avatar_url:m.avatar_url, avatar_position_x:m.avatar_position_x, avatar_position_y:m.avatar_position_y, first_name:m.name, last_name:''};
   // Fall back to the same "No bio yet." placeholder the researcher/lead
   // cards use, so board cards behave identically for the read-more toggle
@@ -4776,23 +4838,25 @@ async function renderAdminMessages(){
 /* ---------------- ADMIN: roles & permissions ---------------- */
 
 var ROLE_MATRIX = [
-  ['See the public site, papers, researchers',           1,1,1,1,1,1],
-  ['Create an account, edit own profile',                1,1,1,1,1,1],
-  ['Apply to join a paper',                              0,1,0,0,0,0],
-  ['Enroll in and take courses (some are paid)',      1,1,1,1,1,1],
-  ['Edit papers they lead (if switched on above)',       0,0,1,0,0,1],
-  ['Accept / decline applicants on those papers',        0,0,1,0,0,1],
-  ['Get emailed when someone applies to their paper',    0,0,1,0,0,1],
-  ['Create and edit courses they are assigned to',       0,0,0,1,0,1],
-  ['Add, edit and remove researchers',                   0,0,0,0,1,1],
-  ['Create / delete papers, board, contact info',        0,0,0,0,0,1],
-  ['Read contact messages, change roles, reset passwords',0,0,0,0,0,1]
+  // columns: Visiting, Researcher, Research Lead, Research Director, Educator, IT, Admin
+  ['See the public site, papers, researchers',           1,1,1,1,1,1,1],
+  ['Create an account, edit own profile',                1,1,1,1,1,1,1],
+  ['Apply to join a paper',                              0,1,0,0,0,0,0],
+  ['Enroll in and take courses (some are paid)',      1,1,1,1,1,1,1],
+  ['Edit papers they lead (if switched on above)',       0,0,1,0,0,0,1],
+  ['Accept / decline applicants on those papers',        0,0,1,0,0,0,1],
+  ['Get emailed when someone applies to their paper',    0,0,1,0,0,0,1],
+  ['Add papers; edit description + team of any paper',   0,0,0,1,0,0,1],
+  ['Create and edit courses they are assigned to',       0,0,0,0,1,0,1],
+  ['Add, edit and remove researchers',                   0,0,0,0,0,1,1],
+  ['Rename / delete papers, change lead, board, contact info',0,0,0,0,0,0,1],
+  ['Read contact messages, change roles, reset passwords',0,0,0,0,0,0,1]
 ];
 
 async function renderAdminPermissions(){
   var matrix = document.getElementById('permMatrix');
   if(matrix){
-    var heads = ['Visiting','Researcher','Research Lead','Educator','IT','Admin'];
+    var heads = ['Visiting','Researcher','Research Lead','Research Director','Educator','IT','Admin'];
     matrix.innerHTML = '<thead><tr><th>Can…</th>' + heads.map(function(h){ return '<th style="text-align:center;">' + h + '</th>'; }).join('') + '</tr></thead><tbody>' +
       ROLE_MATRIX.map(function(r){
         return '<tr><td>' + escapeHtml(r[0]) + '</td>' + r.slice(1).map(function(v){ return '<td style="text-align:center;" class="' + (v ? 'perm-yes' : 'perm-no') + '">' + (v ? '✓' : '–') + '</td>'; }).join('') + '</tr>';
@@ -5087,7 +5151,7 @@ var ADMIN_BLOCK_IDS = ['adminBlockPapers','adminBlockCourses','adminBlockResearc
 
 // Shared human-readable labels for account roles, used anywhere a role is
 // displayed (admin accounts table, profile page, course enrollments table).
-var ROLE_LABELS = { visiting:'Visiting', researcher:'Researcher', research_lead:'Research Lead', educator:'Educator', it:'IT', admin:'Admin' };
+var ROLE_LABELS = { visiting:'Visiting', researcher:'Researcher', research_lead:'Research Lead', research_director:'Research Director', educator:'Educator', it:'IT', admin:'Admin' };
 
 function showAdminBlocks(idsToShow){
   ADMIN_BLOCK_IDS.forEach(function(id){
@@ -5101,7 +5165,7 @@ async function renderAdminPage(){
   if(!wrap || !NH.ready) return;
 
   var role = NH.currentUser ? NH.currentUser.role : null;
-  if(role !== 'admin' && role !== 'research_lead' && role !== 'it'){
+  if(role !== 'admin' && role !== 'research_lead' && role !== 'research_director' && role !== 'it'){
     document.getElementById('adminGate').style.display = '';
     document.getElementById('adminContent').style.display = 'none';
     return;
@@ -5121,6 +5185,12 @@ async function renderAdminPage(){
     await renderAdminMessages();
     await renderAdminPermissions();
     await renderAdminAccounts();
+  } else if(role === 'research_director'){
+    // research_director: only the Papers block. They can add papers and edit
+    // the description + team of any paper, but never delete or retitle.
+    showAdminBlocks(['adminBlockPapers']);
+    document.getElementById('addPaperBtn').style.display = '';
+    await renderAdminPapers();
   } else if(role === 'it'){
     // it: only the Researchers block — add, edit, and remove researchers,
     // nothing else in the admin area is shown or reachable.
@@ -5151,15 +5221,16 @@ async function renderAdminPapers(){
   var list = document.getElementById('adminPapersList');
   if(!list) return;
   var isAdmin = NH.currentUser && NH.currentUser.role === 'admin';
+  var isDirector = NH.currentUser && NH.currentUser.role === 'research_director';
   var papers = await NH.listPapers();
-  if(!isAdmin){
+  if(!isAdmin && !isDirector){
     // research_lead: only show papers they're actually allowed to edit
     papers = papers.filter(function(p){ return NH.canEditPaper(p); });
   }
   list.innerHTML = papers.map(function(p){
-    return paperCardHtml(p, { admin:true, canDelete:isAdmin, canEdit: isAdmin || NH.canEditPaper(p) });
+    return paperCardHtml(p, { admin:true, canDelete:isAdmin, canEdit: isAdmin || isDirector || NH.canEditPaper(p) });
   }).join('') ||
-    (isAdmin ? '<p style="color:#888;">No papers yet — add one below.</p>' : '<p style="color:#888;">No papers assigned to you for editing yet — ask an admin.</p>');
+    ((isAdmin || isDirector) ? '<p style="color:#888;">No papers yet — add one below.</p>' : '<p style="color:#888;">No papers assigned to you for editing yet — ask an admin.</p>');
 
   document.querySelectorAll('.edit-paper-btn').forEach(function(btn){
     btn.addEventListener('click', async function(){
@@ -5361,7 +5432,26 @@ async function openPaperForm(paper){
     : '';
   document.getElementById('paperFormLeadEdit').checked = paper ? !!paper.lead_edit_allowed : false;
   await populatePaperFormTeamFields(paper);
-  await renderPaperFormApplications(paper ? paper.id : null);
+  var isDirectorEditing = NH.currentUser && NH.currentUser.role === 'research_director';
+  if(isDirectorEditing){
+    var appsWrap = document.getElementById('paperFormApplicationsWrap');
+    if(appsWrap){ appsWrap.style.display = 'none'; }
+  } else {
+    await renderPaperFormApplications(paper ? paper.id : null);
+  }
+
+  // Research Director on an EXISTING paper: only description + team are
+  // editable. (On a brand-new paper they fill everything in, since there is
+  // nothing to protect yet; the lead stays empty.)
+  var lockExisting = !!(isDirectorEditing && paper);
+  ['paperFormTitle','paperFormStatus','paperFormCountries','paperFormField','paperFormLink','paperFormFileInput'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el){ el.disabled = lockExisting; }
+  });
+  var fileLabel = document.getElementById('paperFormFileInput');
+  if(fileLabel && fileLabel.closest('label')){ fileLabel.closest('label').style.opacity = lockExisting ? '0.5' : ''; }
+  var dirNote = document.getElementById('paperFormDirectorNote');
+  if(dirNote){ dirNote.style.display = lockExisting ? '' : 'none'; }
 
   // A research_lead can edit their paper's content, but only an admin can
   // reassign the lead or flip who's allowed to edit.
@@ -5542,7 +5632,7 @@ async function renderAdminAccounts(){
       '<td style="padding:12px 10px; border-bottom:1px solid var(--line); font-size:13px; color:#666;">' + (a.standalone ? '<span style="color:#999;">— no login —</span>' : escapeHtml(a.email)) + '</td>' +
       '<td style="padding:12px 10px; border-bottom:1px solid var(--line);">' +
         '<select class="role-select-inline" data-id="' + a.id + '">' +
-          ['visiting','researcher','research_lead','educator','it','admin'].map(function(role){
+          ['visiting','researcher','research_lead','research_director','educator','it','admin'].map(function(role){
             return '<option value="' + role + '" ' + (a.role===role?'selected':'') + '>' + (ROLE_LABELS[role] || role) + '</option>';
           }).join('') +
         '</select>' +
@@ -5620,7 +5710,7 @@ async function renderAdminBoard(){
   var list = document.getElementById('adminBoardList');
   if(!list) return;
   var members = await NH.listBoardMembers();
-  list.innerHTML = members.map(function(m){ return boardCardHtml(m, {admin:true}); }).join('') ||
+  list.innerHTML = members.map(function(m, i){ return boardCardHtml(m, {admin:true, pos:i+1}); }).join('') ||
     '<p style="color:#888;">No board members yet — add one below.</p>';
   refreshBioClamps(list);
 
@@ -5644,13 +5734,18 @@ async function renderAdminBoard(){
   });
 }
 
-function openBoardForm(m){
+async function openBoardForm(m){
   adminEditingBoardId = m ? m.id : null;
+  // Show the member's real current position (1-based), or the next free one
+  // for a new member, so the number always means "place in the list".
+  var boardNow = await NH.listBoardMembers();
+  var boardPos = m ? (boardNow.findIndex(function(x){ return x.id === m.id; }) + 1) : (boardNow.length + 1);
   document.getElementById('boardFormName').value = m ? m.name : '';
   document.getElementById('boardFormRole').value = m ? m.role_title : '';
   document.getElementById('boardFormBio').value = m ? m.bio : '';
   document.getElementById('boardFormLinkedin').value = m ? (m.linkedin_url || '') : '';
-  document.getElementById('boardFormOrder').value = m ? m.display_order : 0;
+  document.getElementById('boardFormOrder').value = boardPos > 0 ? boardPos : 1;
+  document.getElementById('boardFormSize').value = (m && m.card_size) ? m.card_size : 'auto';
   boardAvatarFile = null;
   if(m && m.avatar_url){
     boardAvatarPosX = (m.avatar_position_x != null && m.avatar_position_x !== '') ? m.avatar_position_x : 50;
@@ -6488,6 +6583,16 @@ function wireForms(){
         var existing = editingPapers.find(function(x){ return x.id === adminEditingPaperId; });
         paper.research_lead_id = existing ? existing.research_lead_id : null;
         paper.lead_edit_allowed = existing ? existing.lead_edit_allowed : false;
+        if(existing && NH.currentUser && NH.currentUser.role === 'research_director'){
+          // Research Director: description + team only. Everything else is
+          // taken from the saved paper, never from the form.
+          paper.title = existing.title;
+          paper.status = existing.status;
+          paper.countries = existing.countries;
+          paper.field = existing.field;
+          paper.link_url = existing.link_url || null;
+          adminEditingPaperFile = null;
+        }
       }
       if(!paper.id) delete paper.id;
       try{
@@ -6882,7 +6987,8 @@ function wireForms(){
           role_title: document.getElementById('boardFormRole').value.trim(),
           bio: document.getElementById('boardFormBio').value.trim(),
           linkedin_url: document.getElementById('boardFormLinkedin').value.trim(),
-          display_order: parseInt(document.getElementById('boardFormOrder').value, 10) || 0,
+          display_order: parseInt(document.getElementById('boardFormOrder').value, 10) || 1,
+          card_size: document.getElementById('boardFormSize').value || 'auto',
           avatar_position_x: Math.round(boardAvatarPosX),
           avatar_position_y: Math.round(boardAvatarPosY)
         };
