@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="../">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 /* Works under any folder (GitHub Pages /NovaHelix/) or at a domain root. */
-(function(){var p=location.pathname,m=p.match(/^(.*\/)(?:researchers|papers|education|board|contact|privacy|login|signup|admin|profile|my-learning|educator|reset-password)\/(?:index\.html)?$/);
+(function(){var p=location.pathname,m=p.match(/^(.*\/)(?:researchers|leads|papers|education|board|contact|privacy|login|signup|admin|profile|my-learning|educator|reset-password)\/(?:index\.html)?$/);
 var base=m?m[1]:p.replace(/[^\/]*$/,'');window.SITE_BASE=base;
 var b=document.querySelector('base');if(!b){b=document.createElement('base');document.head.insertBefore(b,document.head.firstChild);}
 b.href=location.origin+base;})();
 </script>
-<title>Researchers &amp; Research Leads | Nova Helix Research</title>
-<meta name="description" content="Meet the researchers and research leads of Nova Helix Research, and the papers they are working on.">
+<title>Nova Helix Research — Remote-first research collective | Papers, researchers &amp; courses</title>
+<meta name="description" content="Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#16afff">
-<link rel="canonical" href="https://alyelsonbaty.github.io/NovaHelix/researchers/">
+<link rel="canonical" href="https://alyelsonbaty.github.io/NovaHelix/">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nova Helix Research">
-<meta property="og:title" content="Researchers &amp; Research Leads | Nova Helix Research">
-<meta property="og:description" content="Meet the researchers and research leads of Nova Helix Research, and the papers they are working on.">
-<meta property="og:url" content="https://alyelsonbaty.github.io/NovaHelix/researchers/">
+<meta property="og:title" content="Nova Helix Research — Remote-first research collective | Papers, researchers &amp; courses">
+<meta property="og:description" content="Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.">
+<meta property="og:url" content="https://alyelsonbaty.github.io/NovaHelix/">
 <meta property="og:image" content="https://alyelsonbaty.github.io/NovaHelix/og-image.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Researchers &amp; Research Leads | Nova Helix Research">
-<meta name="twitter:description" content="Meet the researchers and research leads of Nova Helix Research, and the papers they are working on.">
+<meta name="twitter:title" content="Nova Helix Research — Remote-first research collective | Papers, researchers &amp; courses">
+<meta name="twitter:description" content="Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.">
 <meta name="twitter:image" content="https://alyelsonbaty.github.io/NovaHelix/og-image.jpg">
 <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -1020,6 +1019,65 @@ a.syllabus-lesson:visited{ color:#444; }
 }
 .icon-btn:hover{ background:var(--line); }
 
+
+/* ---------- NAV DROPDOWN (Researchers / Research leads) ---------- */
+.nav-dd{position:relative;}
+.nav-dd-trigger{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ink);opacity:.75;padding:4px 0;cursor:pointer;transition:opacity .2s ease;position:relative;}
+.nav-dd-trigger .chev{font-size:9px;transition:transform .25s ease;}
+.nav-dd:hover .nav-dd-trigger,.nav-dd.open .nav-dd-trigger,.nav-dd-trigger.active{opacity:1;}
+.nav-dd:hover .chev,.nav-dd.open .chev{transform:rotate(180deg);}
+.nav-dd-trigger.active::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--blue);}
+.nav-dd-panel{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:18px;z-index:300;}
+.nav-dd:hover .nav-dd-panel,.nav-dd.open .nav-dd-panel{display:block;animation:ddIn .22s ease;}
+.nav-dd.closed .nav-dd-panel{display:none !important;}
+@keyframes ddIn{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+.nav-dd-panel{animation:none;}
+.nav-dd-cards{display:grid;grid-template-columns:repeat(2,320px);gap:16px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 30px 70px -24px rgba(10,10,10,.32);}
+.nav-links a.nav-dd-card{opacity:1;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:200px;background:#fff;border:1px solid var(--line);border-radius:16px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease;}
+.nav-links a.nav-dd-card::after{content:'';position:absolute;top:0;left:0;right:0;bottom:auto;height:3px;width:100%;background:linear-gradient(90deg,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.nav-links a.nav-dd-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 22px 44px -20px rgba(10,10,10,.2);}
+.nav-links a.nav-dd-card:hover::after{transform:scaleX(1);width:100%;}
+.nav-dd-card .dd-ic{width:44px;height:44px;border-radius:12px;background:var(--blue-soft);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;}
+.nav-dd-card .dd-ic svg{width:22px;height:22px;}
+.nav-dd-card h4{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.2;letter-spacing:-.01em;}
+.nav-dd-card p{font-size:13.5px;color:#555;line-height:1.55;}
+.nav-dd-card .dd-meta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#888;}
+.nav-dd-card.is-lead .dd-ic{background:var(--gold-soft);color:var(--gold-deep);}
+.mobile-nav-panel .mnav-sub{padding-left:16px;font-size:14px;}
+
+/* ---------- NOT-A-MEMBER POPUP ---------- */
+.nh-deny-overlay{position:fixed;inset:0;z-index:1200;background:rgba(7,11,18,.62);display:flex;align-items:center;justify-content:center;padding:20px;}
+.nh-deny{background:#fff;border-radius:20px;max-width:440px;width:100%;padding:32px;box-shadow:0 30px 70px -20px rgba(0,0,0,.45);position:relative;}
+.nh-deny .deny-ic{width:46px;height:46px;border-radius:50%;background:#FFF4E1;color:#B36B00;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
+.nh-deny h3{font-size:22px;margin-bottom:10px;}
+.nh-deny p{font-size:14.5px;color:#555;line-height:1.65;margin-bottom:14px;}
+.nh-deny .deny-user{display:flex;align-items:center;gap:10px;background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:4px 0 20px;}
+.nh-deny .deny-user div{flex:1;min-width:0;}
+.nh-deny .deny-user small{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;color:#888;text-transform:uppercase;}
+.nh-deny .deny-user b{display:block;font-size:13.5px;word-break:break-all;}
+
+/* ---------- 3D GLOBE ---------- */
+.globe-card{margin-top:56px;border-radius:28px;overflow:hidden;position:relative;background:radial-gradient(120% 90% at 20% 0%,#10243c 0%,#070B12 55%,#05080e 100%);border:1px solid rgba(22,175,255,.18);box-shadow:0 40px 90px -40px rgba(11,111,184,.55);display:grid;grid-template-columns:1fr;color:#fff;}
+@media (min-width:920px){.globe-card{grid-template-columns:1.35fr 1fr;}}
+.globe-card::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 12% 22%,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 78% 14%,rgba(255,255,255,.55),transparent),radial-gradient(1.5px 1.5px at 34% 82%,rgba(22,175,255,.8),transparent),radial-gradient(1px 1px at 90% 70%,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 55% 8%,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 6% 62%,rgba(255,255,255,.45),transparent),radial-gradient(1.5px 1.5px at 66% 90%,rgba(255,255,255,.4),transparent);}
+.globe-stage{position:relative;aspect-ratio:1/1;width:100%;max-height:640px;min-height:300px;cursor:grab;touch-action:pan-y;}
+.globe-stage.dragging{cursor:grabbing;}
+.globe-stage canvas{width:100%;height:100%;display:block;}
+.globe-tip{position:absolute;pointer-events:none;transform:translate(-50%,-130%);background:rgba(7,11,18,.92);border:1px solid rgba(22,175,255,.5);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em;padding:7px 11px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .15s ease;box-shadow:0 0 18px rgba(22,175,255,.35);}
+.globe-tip.on{opacity:1;}
+.globe-hint{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:10.5px;color:rgba(255,255,255,.45);pointer-events:none;}
+.globe-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:30px;color:rgba(255,255,255,.6);font-size:14px;}
+.globe-side{padding:36px 32px 40px;display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;}
+.globe-side .big{font-family:'Space Grotesk',sans-serif;font-size:clamp(54px,7vw,84px);font-weight:700;line-height:1;letter-spacing:-.03em;background:linear-gradient(180deg,#fff,#16AFFF);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.globe-side .lbl{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:-6px;}
+.globe-side p{font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.65;max-width:420px;}
+.globe-chips{display:flex;flex-wrap:wrap;gap:8px;max-height:190px;overflow:auto;padding-right:4px;}
+.globe-chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#cfeaff;background:rgba(22,175,255,.1);border:1px solid rgba(22,175,255,.32);border-radius:100px;padding:6px 12px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;}
+.globe-chip:hover{background:rgba(22,175,255,.24);border-color:#16AFFF;transform:translateY(-1px);}
+.globe-chip b{color:#16AFFF;margin-left:6px;font-weight:500;}
+
+/* ---------- IT: visiting accounts ---------- */
+.promote-btn{color:#0B6FB8;border-color:rgba(22,175,255,.4);}
 </style>
 </head>
 <body>
@@ -1039,7 +1097,25 @@ a.syllabus-lesson:visited{ color:#444; }
         <span class="brand-text"><b>Nova Helix</b><span>RESEARCH</span></span>
       </a>
       <div class="nav-links">
-        <a href="researchers/" data-page="researchers">Researchers</a>
+        <div class="nav-dd" id="navResearchDd">
+          <span class="nav-dd-trigger" id="navResearchTrigger" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Researchers <span class="chev">▼</span></span>
+          <div class="nav-dd-panel">
+            <div class="nav-dd-cards">
+              <a href="leads/" class="nav-dd-card is-lead" data-page="leads">
+                <div class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 16.9 6.1 20.1l1.3-6.6L2.5 8.9l6.6-.8z"/></svg></div>
+                <h4>Research leads</h4>
+                <p>The people who open and steer each paper, and decide who joins the team.</p>
+                <div class="dd-meta"><span id="ddLeadsCount">—</span><span>View →</span></div>
+              </a>
+              <a href="researchers/" class="nav-dd-card" data-page="researchers">
+                <div class="dd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.2c2.6.2 4.5 2 4.5 4.8"/></svg></div>
+                <h4>Researchers</h4>
+                <p>Everyone actively orbiting a research lead, across countries, all remote.</p>
+                <div class="dd-meta"><span id="ddResearchersCount">—</span><span>View →</span></div>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="papers/" data-page="papers">Papers</a>
         <a href="education/" data-page="education">Education</a>
         <a href="board/" data-page="board">Board</a>
@@ -1053,6 +1129,7 @@ a.syllabus-lesson:visited{ color:#444; }
     </nav>
   </div>
   <div class="mobile-nav-panel" id="mobileNavPanel">
+    <a href="leads/" data-page="leads">Research leads</a>
     <a href="researchers/" data-page="researchers">Researchers</a>
     <a href="papers/" data-page="papers">Papers</a>
     <a href="education/" data-page="education">Education</a>
@@ -1294,6 +1371,21 @@ a.syllabus-lesson:visited{ color:#444; }
         <div class="stat-box reveal reveal-delay-3"><b data-count="100" data-suffix="%">0</b><span>Remote collaboration</span></div>
         <div class="stat-box reveal reveal-delay-3"><b>2026</b><span>Founded</span></div>
       </div>
+
+      <div class="globe-card reveal" id="globeCard">
+        <div class="globe-stage" id="globeStage">
+          <canvas id="globeCanvas" aria-label="Interactive globe showing the countries our members are in"></canvas>
+          <div class="globe-tip" id="globeTip"></div>
+          <div class="globe-fallback" id="globeFallback">The map couldn't load right now. Please check your connection and refresh.</div>
+          <div class="globe-hint mono">Drag to rotate · hover a pin</div>
+        </div>
+        <div class="globe-side">
+          <div class="eyebrow mono" style="color:#16AFFF;">Where we are</div>
+          <div><div class="big" id="globeCountryCount">0</div><div class="lbl">countries with a member</div></div>
+          <p>Every pin is a country with at least one Nova Helix researcher or research lead. Pick one to spin the globe there.</p>
+          <div class="globe-chips" id="globeChips"></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1317,21 +1409,13 @@ a.syllabus-lesson:visited{ color:#444; }
   <div class="page-header">
     <div class="wrap">
       <div class="eyebrow mono"><span class="dot"></span> The people</div>
-      <h1>Current researchers</h1>
+      <h1>Researchers</h1>
       <p>Everyone actively orbiting a research lead right now — across 25+ countries, all remote, all opted in by choice.</p>
     </div>
   </div>
 
   <section class="section-tight">
     <div class="wrap">
-      <div class="leads-strip" id="leadsSection" style="display:none;">
-        <div class="section-subhead">
-          <h2>Research leads</h2>
-          <span class="count-pill" id="leadsCountPill">0</span>
-        </div>
-        <div class="researcher-grid leads-grid" id="leadsGrid"></div>
-      </div>
-
       <div class="section-subhead">
         <h2>Researchers</h2>
         <span class="count-pill" id="researchersCountPill">0</span>
@@ -1349,6 +1433,39 @@ a.syllabus-lesson:visited{ color:#444; }
       <p class="reveal reveal-delay-1">Fill out a short form and the team will follow up to set up your account.</p>
       <div class="join-actions reveal reveal-delay-2">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6w9_eehdJqXYw6BG2jqGy63ZnTa1nOWYHvsIrek8LppuOpg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-light">Join as a researcher</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-leads">
+  <div class="page-header">
+    <div class="wrap">
+      <div class="eyebrow mono"><span class="dot"></span> The people</div>
+      <h1>Research leads</h1>
+      <p>The people who open each paper, steer the work and decide who joins the team.</p>
+    </div>
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="section-subhead">
+        <h2>Research leads</h2>
+        <span class="count-pill" id="leadsCountPill">0</span>
+      </div>
+      <div class="researcher-grid leads-grid" id="leadsGrid">
+        <p style="color:#888;">Loading research leads…</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="join">
+    <div class="wrap">
+      <div class="eyebrow mono" style="justify-content:center; color:#16AFFF;">Have a question to lead?</div>
+      <h2 class="reveal">Propose a research lead.</h2>
+      <p class="reveal reveal-delay-1">Bring a question worth chasing and the team will help you set up a paper.</p>
+      <div class="join-actions reveal reveal-delay-2">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHn0rM1Z7a4Iv9YUj7UgInyz_qXqg_uEvNd6mOqv-3-jDpcg/viewform?usp=dialog" target="_blank" rel="noopener" class="btn btn-light">Propose a research lead</a>
       </div>
     </div>
   </section>
@@ -2408,6 +2525,27 @@ a.syllabus-lesson:visited{ color:#444; }
           </div>
         </div>
 
+        <!-- VISITING ACCOUNTS (IT / Admin) -->
+        <div class="admin-block" id="adminBlockVisiting">
+          <div class="admin-block-head">
+            <div>
+              <h2>Visiting accounts</h2>
+              <p>Everyone who signed up and hasn't been given a role yet. IT can promote a visiting account to researcher. Promotion only: it can't be undone from here.</p>
+            </div>
+          </div>
+          <div class="field" style="max-width:340px; margin-bottom:18px;">
+            <input type="text" id="visitingSearch" placeholder="Search by name, email or country">
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Country</th><th>Joined</th><th></th></tr>
+              </thead>
+              <tbody id="adminVisitingBody"></tbody>
+            </table>
+          </div>
+        </div>
+
         <!-- ALL ACCOUNTS -->
         <div class="admin-block" id="adminBlockAccounts">
           <div class="admin-block-head">
@@ -2919,6 +3057,22 @@ NH.setUserRole = async function(id, role){
   if(role !== 'researcher' && role !== 'research_lead'){ patch.field = null; }
   var { error } = await supabaseClient.from('profiles').update(patch).eq('id', id);
   if(error) throw new Error(error.message);
+};
+
+// IT / Admin: list visiting accounts and promote them to researcher.
+// Both go through SECURITY DEFINER functions (see supabase_it_promote_visiting.sql)
+// so IT never gets general write access and can never demote anyone.
+NH.listVisitingAccounts = async function(){
+  var r = await supabaseClient.rpc('list_visiting_accounts');
+  if(!r.error) return r.data || [];
+  console.error(r.error);
+  var q = await supabaseClient.from('profiles').select('*').eq('role','visiting').order('created_at', {ascending:false});
+  if(q.error) throw new Error(r.error.message);
+  return q.data || [];
+};
+NH.grantResearcherRole = async function(id){
+  var r = await supabaseClient.rpc('promote_visiting_to_researcher', { target_id: id });
+  if(r.error) throw new Error(r.error.message);
 };
 
 /* ---------------- papers ---------------- */
@@ -3485,7 +3639,7 @@ NH.listMyCertificates = async function(){
 // Nova Helix Research — router + page chrome behavior
 // ===========================================================
 
-var pageRoutes = ['home','researchers','papers','education','course-detail','lesson','my-learning','educator','board','contact','privacy','login','signup','admin','profile','reset-password'];
+var pageRoutes = ['home','researchers','leads','papers','education','course-detail','lesson','my-learning','educator','board','contact','privacy','login','signup','admin','profile','reset-password'];
 var homeAnchors = ['mission','how','research','network','join'];
 
 function showPage(name){
@@ -3502,6 +3656,10 @@ function showPage(name){
   document.querySelectorAll('.nav-links a[data-page], .mobile-nav-panel a[data-page]').forEach(function(a){
     a.classList.toggle('active', a.getAttribute('data-page') === name);
   });
+  var ddTrig = document.getElementById('navResearchTrigger');
+  if(ddTrig){ ddTrig.classList.toggle('active', name === 'researchers' || name === 'leads'); }
+  var ddBox = document.getElementById('navResearchDd');
+  if(ddBox){ ddBox.classList.remove('open'); if(ddBox.matches(':hover')){ ddBox.classList.add('closed'); } if(ddTrig) ddTrig.setAttribute('aria-expanded','false'); }
 
   if(name === 'reset-password' && typeof renderResetPasswordPage === 'function'){ renderResetPasswordPage(); }
   if(name === 'admin' && typeof renderAdminPage === 'function'){ renderAdminPage(); }
@@ -3519,11 +3677,12 @@ function showPage(name){
 // Detail views (course, lesson, apply) use "#course/ID" style links on the home address.
 var SITE_BASE = window.SITE_BASE || '/';
 var SITE_ORIGIN = location.origin;
-var staticPages = ['researchers','papers','education','board','contact','privacy','login','signup','admin','profile','my-learning','educator','reset-password'];
+var staticPages = ['researchers','leads','papers','education','board','contact','privacy','login','signup','admin','profile','my-learning','educator','reset-password'];
 var routeBases = ['course','lesson','apply'];
 var PAGE_SEO = {
   home:        ['Nova Helix Research — Remote-first research collective | Papers, researchers & courses', 'Nova Helix Research is an independent, remote-first research collective in 25+ countries. Join a paper, meet our researchers and research leads, and take courses.', true],
   researchers: ['Researchers & Research Leads | Nova Helix Research', 'Meet the researchers and research leads of Nova Helix Research, and the papers they are working on.', true],
+  leads:       ['Research Leads | Nova Helix Research', 'Meet the research leads of Nova Helix Research, who open and steer each paper.', true],
   papers:      ['Research Papers — Join a Team | Nova Helix Research', 'Browse open research papers at Nova Helix Research and apply to join a paper\'s research team, remotely, from anywhere.', true],
   education:   ['Research Courses & Education | Nova Helix Research', 'Learn research skills with courses from the Nova Helix Research community.', true],
   board:       ['Board & Governance | Nova Helix Research', 'The board of Nova Helix Research, an independent, remote-first research collective.', true],
@@ -3655,6 +3814,18 @@ window.addEventListener('hashchange', route);
   }
   document.addEventListener('scroll', updateHeader, {passive:true});
   updateHeader();
+})();
+
+/* ---------- People dropdown ---------- */
+(function(){
+  var dd = document.getElementById('navResearchDd');
+  var trig = document.getElementById('navResearchTrigger');
+  if(!dd || !trig) return;
+  function toggle(){ var o = dd.classList.toggle('open'); dd.classList.remove('closed'); trig.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+  trig.addEventListener('click', toggle);
+  trig.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } if(e.key === 'Escape'){ dd.classList.remove('open'); } });
+  dd.addEventListener('mouseleave', function(){ dd.classList.remove('closed'); });
+  document.addEventListener('click', function(e){ if(!dd.contains(e.target)){ dd.classList.remove('open'); trig.setAttribute('aria-expanded','false'); } });
 })();
 
 /* ---------- Mobile nav (hamburger) ---------- */
@@ -4172,11 +4343,9 @@ async function openPaperDetail(paperId){
         '<p style="font-size:12.5px; color:#888; margin-top:12px; text-align:center;">Tell the research lead what you\'d bring to it.</p>';
     }
   } else {
-    joinAreaHtml = '<a href="' + JOIN_FORM_LINK + '" target="_blank" rel="noopener" class="btn btn-primary btn-block">Join as a researcher</a>' +
+    joinAreaHtml = '<button type="button" class="btn btn-primary btn-block" id="paperApplyGateBtn">Apply to paper</button>' +
       '<p style="font-size:12.5px; color:#888; margin-top:12px; text-align:center;">' +
-      (NH.currentUser
-        ? 'Only researcher accounts can apply directly — fill out the form and mention this paper.'
-        : 'Already have a researcher account? <a href="login/">Log in</a> to apply directly.') +
+      (NH.currentUser ? 'Applications are open to research members.' : 'Log in with a researcher account to apply.') +
       '</p>';
   }
 
@@ -4196,7 +4365,46 @@ async function openPaperDetail(paperId){
   document.getElementById('paperModalCloseBtn').addEventListener('click', closePaperModal);
   var applyBtn = document.getElementById('paperApplyBtn');
   if(applyBtn){ applyBtn.addEventListener('click', closePaperModal); }
+  var gateBtn = document.getElementById('paperApplyGateBtn');
+  if(gateBtn){
+    gateBtn.addEventListener('click', function(){
+      if(!NH.currentUser){ closePaperModal(); navTo('login'); return; }
+      showNotMemberPopup();
+    });
+  }
   modal.classList.add('active');
+}
+
+/* ---------------- "not a research member" popup ---------------- */
+function showNotMemberPopup(){
+  var u = NH.currentUser || {};
+  var isVisiting = (u.role === 'visiting');
+  var username = u.email || ((u.first_name || '') + ' ' + (u.last_name || '')).trim() || '';
+  var overlay = document.createElement('div');
+  overlay.className = 'nh-deny-overlay';
+  overlay.innerHTML =
+    '<div class="nh-deny" role="dialog" aria-modal="true">' +
+      '<div class="deny-ic">!</div>' +
+      '<h3>You can\'t apply to this paper</h3>' +
+      (isVisiting
+        ? '<p>You don\'t have permission to apply because you\'re not a research member of Nova Helix. Your account is a visiting account.</p>' +
+          '<p>If you <b>are</b> a Nova Helix research member, please contact <b>IT</b> and/or the <b>Operations Director</b> and send them your username so they can update your account.</p>'
+        : '<p>Only researcher accounts can apply to join a paper, and your account type doesn\'t have that permission.</p>' +
+          '<p>If this looks wrong, please contact <b>IT</b> and/or the <b>Operations Director</b> with your username so they can check your account.</p>') +
+      (username ? '<div class="deny-user"><div><small>Your username</small><b id="nhDenyUser"></b></div><button type="button" class="btn btn-ghost btn-sm" id="nhDenyCopy">Copy</button></div>' : '') +
+      '<div style="display:flex; justify-content:flex-end;"><button type="button" class="btn btn-primary btn-sm" id="nhDenyOk">Got it</button></div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  var nameEl = overlay.querySelector('#nhDenyUser'); if(nameEl) nameEl.textContent = username;
+  function close(){ overlay.remove(); document.removeEventListener('keydown', onKey); }
+  function onKey(e){ if(e.key === 'Escape') close(); }
+  document.addEventListener('keydown', onKey);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+  overlay.querySelector('#nhDenyOk').addEventListener('click', close);
+  var copyBtn = overlay.querySelector('#nhDenyCopy');
+  if(copyBtn){ copyBtn.addEventListener('click', function(){
+    try{ navigator.clipboard.writeText(username); copyBtn.textContent = 'Copied'; }catch(e){ copyBtn.textContent = 'Select & copy'; }
+  }); }
 }
 
 function closePaperModal(){
@@ -4250,7 +4458,7 @@ async function renderApplyPage(paperId){
     gate.style.display = '';
     content.style.display = 'none';
     gateHeading.textContent = 'Researcher accounts only';
-    gateText.textContent = 'Applying to join a paper directly is only available to researcher accounts. Reach out from the Papers page instead.';
+    gateText.textContent = 'Applying to a paper is only available to research members of Nova Helix. If you are a member, contact IT and/or the Operations Director with your username so they can update your account.';
     gateLoginLink.style.display = 'none';
     return;
   }
@@ -4850,6 +5058,7 @@ var ROLE_MATRIX = [
   ['Add papers; edit description + team of any paper',   0,0,0,1,0,0,1],
   ['Create and edit courses they are assigned to',       0,0,0,0,1,0,1],
   ['Add, edit and remove researchers',                   0,0,0,0,0,1,1],
+  ['See visiting accounts and promote them to researcher', 0,0,0,0,0,1,1],
   ['Rename / delete papers, change lead, board, contact info',0,0,0,0,0,0,1],
   ['Read contact messages, change roles, reset passwords',0,0,0,0,0,0,1]
 ];
@@ -5064,14 +5273,330 @@ function renderHomeResearchers(leadAccounts, researcherAccounts){
   if(window.nhObserveReveal) window.nhObserveReveal();
 }
 
+/* ---------------- 3D GLOBE (where our members are) ---------------- */
+(function(){
+  var D3_URL = 'https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js';
+  var TOPO_URL = 'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js';
+  var ATLAS_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json';
+
+  function norm(s){
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\u2019`]/g, "'").replace(/\s+/g, ' ').trim();
+  }
+  // user-typed name -> world-atlas name (both normalised)
+  var ALIAS = {
+    'usa':'united states of america','us':'united states of america','u.s.':'united states of america','u.s.a.':'united states of america',
+    'america':'united states of america','united states':'united states of america','united states of america':'united states of america',
+    'uk':'united kingdom','u.k.':'united kingdom','great britain':'united kingdom','britain':'united kingdom','england':'united kingdom',
+    'scotland':'united kingdom','wales':'united kingdom','northern ireland':'united kingdom',
+    'uae':'united arab emirates','drc':'dem. rep. congo','congo (drc)':'dem. rep. congo','democratic republic of the congo':'dem. rep. congo',
+    'dr congo':'dem. rep. congo','congo-kinshasa':'dem. rep. congo','republic of the congo':'congo','congo (republic)':'congo','congo-brazzaville':'congo',
+    'ivory coast':"cote d'ivoire","cote d'ivoire":"cote d'ivoire",'turkiye':'turkey','turkiye (turkey)':'turkey','czech republic':'czechia',
+    'bosnia and herzegovina':'bosnia and herz.','bosnia':'bosnia and herz.','dominican republic':'dominican rep.',
+    'central african republic':'central african rep.','equatorial guinea':'eq. guinea','south sudan':'s. sudan','swaziland':'eswatini',
+    'republic of korea':'south korea','korea':'south korea','russian federation':'russia','burma':'myanmar','lao pdr':'laos','viet nam':'vietnam',
+    'palestinian territories':'palestine','state of palestine':'palestine','north macedonia':'macedonia','holland':'netherlands','the netherlands':'netherlands',
+    'solomon islands':'solomon is.','east timor':'timor-leste','timor leste':'timor-leste','syrian arab republic':'syria',
+    'iran (islamic republic of)':'iran','ksa':'saudi arabia','the gambia':'gambia','the bahamas':'bahamas','western sahara':'w. sahara'
+  };
+  // countries too small for the 110m atlas
+  var SMALL = {
+    'singapore':[1.35,103.82],'bahrain':[26.07,50.55],'malta':[35.9,14.4],'maldives':[3.2,73.2],'mauritius':[-20.3,57.55],
+    'cape verde':[16,-24],'cabo verde':[16,-24],'hong kong':[22.3,114.17],'macau':[22.2,113.55],'luxembourg':[49.8,6.1],'monaco':[43.74,7.42],
+    'liechtenstein':[47.16,9.55],'andorra':[42.5,1.52],'barbados':[13.19,-59.54],'seychelles':[-4.62,55.45],'comoros':[-11.9,43.3],
+    'puerto rico':[18.22,-66.5],'aruba':[12.52,-69.97],'jamaica':[18.1,-77.3],'trinidad and tobago':[10.69,-61.22],'kosovo':[42.6,20.9],
+    'saint lucia':[13.9,-60.97],'grenada':[12.12,-61.68],'tonga':[-21.18,-175.2],'samoa':[-13.76,-172.1],'brunei':[4.53,114.73],
+    'bahamas':[25.03,-77.4],'san marino':[43.94,12.46],'vatican city':[41.9,12.45],'sao tome and principe':[0.19,6.61],'palestine':[31.9,35.2]
+  };
+
+  var state = { names: [], libsPromise: null, ready: false, atlas: null, pins: [], memberSet: {}, started: false };
+
+  function loadScript(url){
+    return new Promise(function(res, rej){
+      var s = document.createElement('script'); s.src = url; s.async = true;
+      s.onload = res; s.onerror = function(){ rej(new Error('load ' + url)); };
+      document.head.appendChild(s);
+    });
+  }
+  function loadLibs(){
+    if(state.libsPromise) return state.libsPromise;
+    state.libsPromise = Promise.all([
+      window.d3 ? Promise.resolve() : loadScript(D3_URL),
+      window.topojson ? Promise.resolve() : loadScript(TOPO_URL)
+    ]).then(function(){ return fetch(ATLAS_URL).then(function(r){ if(!r.ok) throw new Error('atlas'); return r.json(); }); })
+      .then(function(topo){ state.atlas = topo; });
+    return state.libsPromise;
+  }
+
+  function resolveName(raw){
+    var s = norm(raw); if(!s) return null;
+    var tries = [s];
+    var noParen = s.replace(/\s*\([^)]*\)\s*/g, ' ').trim(); if(noParen !== s) tries.push(noParen);
+    s.split(/[,\/|-]/).reverse().forEach(function(part){ part = part.trim(); if(part && tries.indexOf(part) === -1) tries.push(part); });
+    return tries;
+  }
+
+  function buildPins(){
+    var d3 = window.d3;
+    var feats = window.topojson.feature(state.atlas, state.atlas.objects.countries).features;
+    var byName = {};
+    feats.forEach(function(f){ byName[norm(f.properties.name)] = f; });
+    var counts = {}, labels = {};
+    state.names.forEach(function(raw){
+      var tries = resolveName(raw); if(!tries) return;
+      var hit = null;
+      for(var i = 0; i < tries.length && !hit; i++){
+        var t = ALIAS[tries[i]] || tries[i];
+        if(byName[t]){ hit = { key: t, feat: byName[t], label: byName[t].properties.name }; }
+        else if(SMALL[t]){ hit = { key: t, small: SMALL[t], label: t.replace(/\b\w/g, function(c){ return c.toUpperCase(); }) }; }
+      }
+      if(!hit) return;
+      counts[hit.key] = (counts[hit.key] || 0) + 1;
+      labels[hit.key] = hit;
+    });
+    var pins = [], memberSet = {};
+    Object.keys(counts).forEach(function(k){
+      var h = labels[k], pt;
+      if(h.feat){
+        memberSet[h.feat.id !== undefined ? h.feat.id : k] = true;
+        var g = h.feat.geometry, target = h.feat;
+        if(g.type === 'MultiPolygon'){
+          var best = null, bestA = -1;
+          g.coordinates.forEach(function(c){
+            var poly = { type:'Polygon', coordinates:c }, a = d3.geoArea(poly);
+            if(a > bestA){ bestA = a; best = poly; }
+          });
+          target = { type:'Feature', geometry: best };
+        }
+        pt = d3.geoCentroid(target);
+      } else { pt = [h.small[1], h.small[0]]; }
+      var name = h.label;
+      if(name === 'United States of America') name = 'United States';
+      pins.push({ key:k, name:name, count:counts[k], pt:pt, featId: h.feat ? h.feat.id : null });
+    });
+    pins.sort(function(a, b){ return b.count - a.count || a.name.localeCompare(b.name); });
+    state.pins = pins;
+    state.memberFeatIds = {};
+    pins.forEach(function(p){ if(p.featId !== null && p.featId !== undefined) state.memberFeatIds[p.featId] = true; });
+    state.feats = feats;
+  }
+
+  function renderSide(){
+    var cnt = document.getElementById('globeCountryCount');
+    if(cnt) cnt.textContent = state.pins.length;
+    var chips = document.getElementById('globeChips');
+    if(!chips) return;
+    chips.innerHTML = '';
+    state.pins.forEach(function(p){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'globe-chip';
+      b.textContent = p.name;
+      var n = document.createElement('b'); n.textContent = p.count; b.appendChild(n);
+      b.addEventListener('click', function(){ if(state.focusOn) state.focusOn(p.pt); });
+      chips.appendChild(b);
+    });
+  }
+
+  function startGlobe(){
+    if(state.started){ renderSide(); return; }
+    state.started = true;
+    var d3 = window.d3;
+    var stage = document.getElementById('globeStage');
+    var canvas = document.getElementById('globeCanvas');
+    var tip = document.getElementById('globeTip');
+    if(!stage || !canvas) return;
+    var ctx = canvas.getContext('2d');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var W = 0, H = 0, R = 0, dpr = 1;
+    var proj = d3.geoOrthographic().clipAngle(90).precision(0.4);
+    var projHi = d3.geoOrthographic().clipAngle(90).precision(0.4);
+    var path = d3.geoPath(proj, ctx);
+    var graticule = d3.geoGraticule10();
+    var sphere = { type:'Sphere' };
+    var rot = [-25, -18], target = null, dragging = false, last = null, hoverPin = null, visible = true, hovering = false;
+    var BLUE = '#16AFFF';
+
+    function resize(){
+      var r = stage.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.max(280, r.width); H = Math.max(280, r.height);
+      canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+      R = Math.min(W, H) * 0.40;
+      proj.translate([W/2, H/2]).scale(R);
+      projHi.translate([W/2, H/2]).scale(R * 1.085);
+    }
+    resize();
+    if(window.ResizeObserver){ new ResizeObserver(resize).observe(stage); } else { window.addEventListener('resize', resize); }
+
+    state.focusOn = function(pt){ target = [-pt[0], -Math.max(-55, Math.min(55, pt[1]))]; };
+
+    // start facing the biggest member country
+    if(state.pins.length){ rot = [-state.pins[0].pt[0], -Math.max(-40, Math.min(40, state.pins[0].pt[1] * 0.7))]; }
+
+    function frame(t){
+      requestAnimationFrame(frame);
+      if(!visible) return;
+      if(target){
+        var dx = ((target[0] - rot[0] + 540) % 360) - 180;
+        rot[0] += dx * 0.09; rot[1] += (target[1] - rot[1]) * 0.09;
+        if(Math.abs(dx) < 0.2 && Math.abs(target[1] - rot[1]) < 0.2){ target = null; }
+      } else if(!dragging && !hovering && !reduce){ rot[0] += 0.12; }
+      draw(t || 0);
+    }
+
+    function draw(t){
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      var cx = W/2, cy = H/2;
+      proj.rotate(rot); projHi.rotate(rot);
+
+      // atmosphere glow
+      var g = ctx.createRadialGradient(cx, cy, R * 0.96, cx, cy, R * 1.32);
+      g.addColorStop(0, 'rgba(22,175,255,0.38)'); g.addColorStop(0.45, 'rgba(22,175,255,0.10)'); g.addColorStop(1, 'rgba(22,175,255,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 1.32, 0, Math.PI * 2); ctx.fill();
+
+      // ocean
+      var o = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
+      o.addColorStop(0, '#16456f'); o.addColorStop(0.55, '#0a2340'); o.addColorStop(1, '#050d19');
+      ctx.beginPath(); path(sphere); ctx.fillStyle = o; ctx.fill();
+
+      // graticule
+      ctx.beginPath(); path(graticule); ctx.strokeStyle = 'rgba(22,175,255,0.13)'; ctx.lineWidth = 0.6; ctx.stroke();
+
+      // land
+      ctx.lineJoin = 'round';
+      var feats = state.feats, i;
+      ctx.beginPath(); feats.forEach(function(f){ if(!state.memberFeatIds[f.id]) path(f); });
+      ctx.fillStyle = '#12304f'; ctx.fill();
+      ctx.strokeStyle = 'rgba(120,200,255,0.30)'; ctx.lineWidth = 0.6; ctx.stroke();
+      // member countries lit up
+      ctx.beginPath(); feats.forEach(function(f){ if(state.memberFeatIds[f.id]) path(f); });
+      ctx.fillStyle = 'rgba(22,175,255,0.55)'; ctx.fill();
+      ctx.strokeStyle = 'rgba(190,235,255,0.9)'; ctx.lineWidth = 0.9; ctx.stroke();
+
+      // shading for depth (light from top-left)
+      var sh = ctx.createRadialGradient(cx - R * 0.4, cy - R * 0.45, R * 0.15, cx, cy, R * 1.02);
+      sh.addColorStop(0, 'rgba(255,255,255,0.10)'); sh.addColorStop(0.5, 'rgba(0,0,0,0)'); sh.addColorStop(1, 'rgba(2,6,14,0.62)');
+      ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fillStyle = sh; ctx.fill();
+      // rim light
+      ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(22,175,255,0.55)'; ctx.lineWidth = 1.2; ctx.stroke();
+
+      // pins: pulse ring on the surface + stem + glowing head
+      var centre = [-rot[0], -rot[1]];
+      state.pins.forEach(function(p){
+        p._vis = d3.geoDistance(p.pt, centre) < Math.PI / 2 - 0.04;
+        if(!p._vis){ p._sx = null; return; }
+        var base = proj(p.pt), head = projHi(p.pt);
+        if(!base || !head){ p._sx = null; return; }
+        var phase = ((t / 1700) + (p.pt[0] * 0.013)) % 1;
+        var ring = d3.geoCircle().center(p.pt).radius(1 + phase * 5.5)();
+        ctx.beginPath(); path(ring);
+        ctx.strokeStyle = 'rgba(22,175,255,' + (0.8 * (1 - phase)).toFixed(3) + ')'; ctx.lineWidth = 1.4; ctx.stroke();
+        // base dot
+        ctx.beginPath(); ctx.arc(base[0], base[1], 2.2, 0, Math.PI * 2); ctx.fillStyle = '#bfe9ff'; ctx.fill();
+        // stem
+        ctx.beginPath(); ctx.moveTo(base[0], base[1]); ctx.lineTo(head[0], head[1]);
+        ctx.strokeStyle = 'rgba(190,235,255,0.9)'; ctx.lineWidth = 1.3; ctx.stroke();
+        // head
+        var rad = 3.6 + Math.min(p.count, 10) * 0.45;
+        var hot = (hoverPin === p);
+        ctx.save();
+        ctx.shadowColor = BLUE; ctx.shadowBlur = hot ? 26 : 14;
+        ctx.beginPath(); ctx.arc(head[0], head[1], hot ? rad + 1.6 : rad, 0, Math.PI * 2);
+        ctx.fillStyle = BLUE; ctx.fill();
+        ctx.restore();
+        ctx.beginPath(); ctx.arc(head[0], head[1], Math.max(1.4, rad * 0.38), 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+        p._sx = head[0]; p._sy = head[1]; p._rad = rad;
+      });
+      if(hoverPin && hoverPin._sx !== null && hoverPin._sx !== undefined){
+        tip.style.left = hoverPin._sx + 'px'; tip.style.top = hoverPin._sy + 'px';
+      }
+    }
+
+    function localXY(e){
+      var r = canvas.getBoundingClientRect();
+      return [(e.clientX - r.left) * (W / r.width), (e.clientY - r.top) * (H / r.height)];
+    }
+    function pickPin(xy){
+      var best = null, bd = 18;
+      state.pins.forEach(function(p){
+        if(!p._vis || p._sx === null || p._sx === undefined) return;
+        var d = Math.hypot(p._sx - xy[0], p._sy - xy[1]);
+        if(d < bd){ bd = d; best = p; }
+      });
+      return best;
+    }
+    function setHover(p){
+      hoverPin = p;
+      if(p){
+        tip.textContent = p.name + ' · ' + p.count + (p.count === 1 ? ' member' : ' members');
+        tip.classList.add('on');
+      } else { tip.classList.remove('on'); }
+    }
+    stage.addEventListener('pointerdown', function(e){
+      dragging = true; last = [e.clientX, e.clientY]; target = null;
+      stage.classList.add('dragging');
+      try{ stage.setPointerCapture(e.pointerId); }catch(x){}
+    });
+    stage.addEventListener('pointermove', function(e){
+      if(dragging){
+        var k = 0.35 * (R > 0 ? 200 / R : 1);
+        rot[0] += (e.clientX - last[0]) * k;
+        rot[1] = Math.max(-70, Math.min(70, rot[1] - (e.clientY - last[1]) * k));
+        last = [e.clientX, e.clientY];
+        setHover(null);
+      } else {
+        hovering = true;
+        var p = pickPin(localXY(e));
+        if(p !== hoverPin) setHover(p);
+        stage.style.cursor = p ? 'pointer' : '';
+      }
+    });
+    function endDrag(){ dragging = false; stage.classList.remove('dragging'); }
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+    stage.addEventListener('pointerleave', function(){ hovering = false; setHover(null); });
+
+    if(window.IntersectionObserver){
+      new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }, { threshold: 0.01 }).observe(stage);
+    }
+    renderSide();
+    requestAnimationFrame(frame);
+  }
+
+  function showFallback(){
+    var f = document.getElementById('globeFallback'), c = document.getElementById('globeCanvas');
+    if(f) f.style.display = 'flex';
+    if(c) c.style.display = 'none';
+  }
+
+  window.nhRenderGlobe = function(countryNames){
+    state.names = (countryNames || []).filter(Boolean);
+    var card = document.getElementById('globeCard');
+    if(!card) return;
+    var go = function(){
+      loadLibs().then(function(){ buildPins(); startGlobe(); }).catch(function(err){ console.error(err); showFallback(); });
+    };
+    if(state.started){ buildPins(); renderSide(); return; }
+    if(window.IntersectionObserver && !state.waiting){
+      state.waiting = true;
+      var io = new IntersectionObserver(function(es){
+        if(es[0].isIntersecting){ io.disconnect(); go(); }
+      }, { rootMargin: '400px' });
+      io.observe(card);
+    } else if(!window.IntersectionObserver){ go(); }
+  };
+})();
+
 /* ---------------- RENDER: RESEARCHERS PAGE ---------------- */
 
 async function renderResearchersPage(){
   var grid = document.getElementById('researchersGrid');
   if(!grid || !NH.ready) return;
   papersCache = await NH.listPapers();   // so cards can show the papers each person works on
-  // Research leads are researchers too, but they get their own featured
-  // strip up top so they stand out from the wider researcher directory.
+  // Research leads now have their own page (Leads); this renders both pages.
   var researcherAccounts = sortByProfileCompleteness(await NH.listResearchers());
   var leadAccounts = sortByProfileCompleteness(await NH.listResearchLeads());
   var researchers = leadAccounts.concat(researcherAccounts);
@@ -5080,21 +5605,23 @@ async function renderResearchersPage(){
   nhSetCount(document.getElementById('statResearcherCount'), researchers.length);
   renderHomeResearchers(leadAccounts, researcherAccounts);
 
-  var leadsSection = document.getElementById('leadsSection');
   var leadsGrid = document.getElementById('leadsGrid');
   var leadsCountPill = document.getElementById('leadsCountPill');
   var researchersCountPill = document.getElementById('researchersCountPill');
 
-  if(leadsSection && leadsGrid){
+  if(leadsGrid){
     if(leadAccounts.length){
-      leadsSection.style.display = '';
       leadsGrid.innerHTML = leadAccounts.map(function(r){ return leadCardHtml(r); }).join('');
       refreshBioClamps(leadsGrid);
-      if(leadsCountPill) leadsCountPill.textContent = leadAccounts.length;
     } else {
-      leadsSection.style.display = 'none';
+      leadsGrid.innerHTML = '<div class="empty-state reveal in" style="grid-column:1/-1;"><h3>No research leads yet</h3><p>Know a question worth leading? Propose one.</p></div>';
     }
   }
+  if(leadsCountPill) leadsCountPill.textContent = leadAccounts.length;
+  var ddL = document.getElementById('ddLeadsCount'), ddR = document.getElementById('ddResearchersCount');
+  if(ddL) ddL.textContent = leadAccounts.length + (leadAccounts.length === 1 ? ' lead' : ' leads');
+  if(ddR) ddR.textContent = researcherAccounts.length + (researcherAccounts.length === 1 ? ' researcher' : ' researchers');
+  if(window.nhRenderGlobe){ window.nhRenderGlobe(leadAccounts.concat(researcherAccounts).map(function(p){ return p.country; })); }
   if(researchersCountPill) researchersCountPill.textContent = researcherAccounts.length;
 
   if(researcherAccounts.length === 0){
@@ -5148,7 +5675,7 @@ var adminEditingPaperId = null;
 var adminEditingPaperFile = null;
 var adminEditingResearcherId = null;
 
-var ADMIN_BLOCK_IDS = ['adminBlockPapers','adminBlockCourses','adminBlockResearchers','adminBlockResearchLeads','adminBlockBoard','adminBlockContact','adminBlockMessages','adminBlockPermissions','adminBlockAccounts'];
+var ADMIN_BLOCK_IDS = ['adminBlockPapers','adminBlockCourses','adminBlockResearchers','adminBlockResearchLeads','adminBlockBoard','adminBlockContact','adminBlockMessages','adminBlockPermissions','adminBlockVisiting','adminBlockAccounts'];
 
 // Shared human-readable labels for account roles, used anywhere a role is
 // displayed (admin accounts table, profile page, course enrollments table).
@@ -5185,6 +5712,7 @@ async function renderAdminPage(){
     await renderAdminContactForm();
     await renderAdminMessages();
     await renderAdminPermissions();
+    await renderAdminVisiting();
     await renderAdminAccounts();
   } else if(role === 'research_director'){
     // research_director: only the Papers block. They can add papers and edit
@@ -5193,10 +5721,10 @@ async function renderAdminPage(){
     document.getElementById('addPaperBtn').style.display = '';
     await renderAdminPapers();
   } else if(role === 'it'){
-    // it: only the Researchers block — add, edit, and remove researchers,
-    // nothing else in the admin area is shown or reachable.
-    showAdminBlocks(['adminBlockResearchers']);
+    // it: the Researchers block plus Visiting accounts (promote-only).
+    showAdminBlocks(['adminBlockResearchers','adminBlockVisiting']);
     await renderAdminResearchers();
+    await renderAdminVisiting();
   } else {
     // research_lead: only the Papers block, and only papers they're
     // allowed to edit — no add/delete, everything else stays hidden.
@@ -5613,6 +6141,58 @@ function openLeadForm(r){
   }
 
   document.getElementById('leadFormPanel').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+async function renderAdminVisiting(){
+  var tbody = document.getElementById('adminVisitingBody');
+  if(!tbody) return;
+  var all = [];
+  try{ all = await NH.listVisitingAccounts(); }
+  catch(err){
+    tbody.innerHTML = '<tr><td colspan="5" style="padding:20px 10px; color:#c0392b; font-size:13.5px;">Couldn\'t load visiting accounts: ' + escapeHtml(err.message) + '. Has the SQL setup been run?</td></tr>';
+    return;
+  }
+  var search = document.getElementById('visitingSearch');
+  function draw(){
+    var q = (search && search.value || '').trim().toLowerCase();
+    var rows = all.filter(function(a){
+      if(!q) return true;
+      return ((a.first_name||'') + ' ' + (a.last_name||'') + ' ' + (a.email||'') + ' ' + (a.country||'')).toLowerCase().indexOf(q) !== -1;
+    });
+    tbody.innerHTML = rows.map(function(a){
+      var joined = a.created_at ? new Date(a.created_at).toLocaleDateString() : '—';
+      return '<tr>' +
+        '<td style="padding:12px 10px; border-bottom:1px solid var(--line); font-size:13.5px;">' + escapeHtml((a.first_name||'') + ' ' + (a.last_name||'')) + '</td>' +
+        '<td style="padding:12px 10px; border-bottom:1px solid var(--line); font-size:13px; color:#666;">' + escapeHtml(a.email || '—') + '</td>' +
+        '<td style="padding:12px 10px; border-bottom:1px solid var(--line); font-size:13px; color:#888;">' + escapeHtml(a.country || '—') + '</td>' +
+        '<td style="padding:12px 10px; border-bottom:1px solid var(--line); font-size:13px; color:#888;">' + escapeHtml(joined) + '</td>' +
+        '<td style="padding:12px 10px; border-bottom:1px solid var(--line);"><button class="btn btn-ghost btn-sm promote-btn" data-id="' + escapeHtml(a.id) + '" type="button">Promote to researcher</button></td>' +
+      '</tr>';
+    }).join('') || '<tr><td colspan="5" style="padding:20px 10px; color:#888; font-size:13.5px;">' + (all.length ? 'No visiting accounts match your search.' : 'No visiting accounts right now.') + '</td></tr>';
+    tbody.querySelectorAll('.promote-btn').forEach(function(btn){
+      btn.addEventListener('click', async function(){
+        var id = btn.getAttribute('data-id');
+        var acct = all.filter(function(x){ return x.id === id; })[0];
+        var nm = acct ? ((acct.first_name||'') + ' ' + (acct.last_name||'')).trim() : 'this account';
+        var ok = await showConfirm('Promote ' + nm + ' to researcher? This can\'t be undone from here.', { confirmLabel: 'Promote' });
+        if(!ok) return;
+        btn.disabled = true;
+        try{
+          await NH.grantResearcherRole(id);
+          showToast(nm + ' is now a researcher.', 'success');
+          await renderAdminVisiting();
+          if(typeof renderAdminResearchers === 'function'){ await renderAdminResearchers(); }
+          await renderResearchersPage();
+        }catch(err){
+          btn.disabled = false;
+          showToast('Could not promote: ' + err.message, 'error');
+        }
+      });
+    });
+  }
+  if(search && !search.dataset.bound){ search.dataset.bound = '1'; search.addEventListener('input', function(){ if(search._draw) search._draw(); }); }
+  if(search) search._draw = draw;
+  draw();
 }
 
 var adminAccountsScope = 'leads-researchers';
