@@ -1,0 +1,20 @@
+# Nova Helix Research
+
+> Nova Helix Research is an independent, non-profit, remote-first research collective in 25+ countries. Research leads open research papers, and student and early-career researchers apply online to join a paper's team. It is free to join and everything happens remotely.
+
+Main site: https://novahelix.wuaze.com/
+Contact: novahelix.contact@gmail.com
+
+## How it works
+- Research leads open and steer research papers.
+- Researchers create a free account, browse open papers, and apply with a short message about their experience.
+- The paper's research lead reviews the application. If accepted, the researcher joins the paper's team.
+
+## Pages
+- [Research papers](https://novahelix.wuaze.com/papers/): open papers you can apply to join
+- [Researchers](https://novahelix.wuaze.com/researchers/): the researchers and where they are
+- [Research leads](https://novahelix.wuaze.com/leads/): the people who open and steer each paper
+- [Education](https://novahelix.wuaze.com/education/): research-skills courses
+- [Board](https://novahelix.wuaze.com/board/): governance
+- [Contact](https://novahelix.wuaze.com/contact/): send a message or find us on LinkedIn, Facebook and Instagram
+- [Privacy policy](https://novahelix.wuaze.com/privacy/)
